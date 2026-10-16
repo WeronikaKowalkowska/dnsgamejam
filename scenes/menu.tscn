@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://c5toxoh678qo0"]
+
+[node name="Menu" type="Control" unique_id=1120773667]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="N" type="MarginContainer" parent="." unique_id=1635756552]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+theme_override_constants/margin_top = 32
+
+[node name="NE" type="MarginContainer" parent="." unique_id=1961371983]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+
+[node name="E" type="MarginContainer" parent="." unique_id=143606821]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 32
+
+[node name="SE" type="MarginContainer" parent="." unique_id=1237390628]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="S" type="MarginContainer" parent="." unique_id=604577861]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 32
+
+[node name="SW" type="MarginContainer" parent="." unique_id=2094047883]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="W" type="MarginContainer" parent="." unique_id=259143041]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+
+[node name="NW" type="MarginContainer" parent="." unique_id=1258549720]
+layout_mode = 1
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+
+[node name="C" type="CenterContainer" parent="." unique_id=282725769]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2

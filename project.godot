@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DNJ4"
+run/main_scene="uid://c5toxoh678qo0"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.12941177, 0.14509805, 0.19607843, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://dd7bh8w28aktt"
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+Const="*uid://c7k6d8gtnu15v"
+Colors="*uid://lbdf085j60r3"
+Utils="*uid://bh4pwq1xu774q"
+Scenes="*uid://bhnllpjy4ikoy"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "red"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.12941177, 0.14509805, 0.19607843, 1)

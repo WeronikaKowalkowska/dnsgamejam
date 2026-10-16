@@ -1,0 +1,74 @@
+{
+	"categories": [
+		{
+			"uuid": "3245a5d0-b755-4793-8176-c7071dcaf1c8",
+			"title": "2D",
+			"color": "6997ff"
+		},
+		{
+			"uuid": "9a8d7244-271c-4e8c-a594-f9c191203908",
+			"title": "UI",
+			"color": "70ff81"
+		},
+		{
+			"uuid": "a5c06c56-57a1-4e96-a49e-12c295953fd3",
+			"title": "Audio",
+			"color": "c761ff"
+		},
+		{
+			"uuid": "0e0aa882-e07d-4042-bc8c-6c280ce252fb",
+			"title": "Graphics",
+			"color": "ffdc05"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "5088962e-c0ec-4dea-a7b5-e2c6c8b34881",
+			"title": "Todo",
+			"tasks": [
+				"5a195e31-d2da-41f9-beeb-604828aca673"
+			]
+		},
+		{
+			"uuid": "f3ae3d79-7fd3-4e8e-8aa4-7380ed8fddde",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "57c941bf-0c75-4afc-93c5-b947ea295031",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "5a195e31-d2da-41f9-beeb-604828aca673",
+			"title": "New task",
+			"description": "",
+			"category": "3245a5d0-b755-4793-8176-c7071dcaf1c8",
+			"steps": [
+				{
+					"details": "ewerw",
+					"done": false
+				},
+				{
+					"details": "upupuio",
+					"done": false
+				}
+			]
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"5088962e-c0ec-4dea-a7b5-e2c6c8b34881"
+			],
+			[
+				"f3ae3d79-7fd3-4e8e-8aa4-7380ed8fddde"
+			],
+			[
+				"57c941bf-0c75-4afc-93c5-b947ea295031"
+			]
+		]
+	}
+}
