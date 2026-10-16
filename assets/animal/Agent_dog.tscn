@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://buo81e5n6vmcr"]
+
+[ext_resource type="Script" uid="uid://b5fbihhn6isju" path="res://assets/scripts/agent_dog.gd" id="1_nnpdd"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_swaa2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqvog"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=727850767]
+script = ExtResource("1_nnpdd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=158913400]
+mesh = SubResource("CapsuleMesh_swaa2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1481095810]
+shape = SubResource("CapsuleShape3D_hqvog")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=504216812]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfjrv0n5laawk"]
 
 [ext_resource type="Texture2D" uid="uid://dim3fo6c5gqh6" path="res://assets/icon.svg" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://buo81e5n6vmcr" path="res://assets/animal/Agent_dog.tscn" id="2_0wfyh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,6 +38,10 @@ size = Vector3(0.33740234, 1, 10.052185)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_15n48"]
 radius = 0.8572819
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_0wfyh"]
+vertices = PackedVector3Array(-4.950008, 1, -4.67376, -4.950008, 1, 4.57624, 5.049992, 1, 4.57624, 5.049992, 1, -4.67376)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Main" type="Node3D" unique_id=1048634786]
 
@@ -86,3 +91,14 @@ texture = ExtResource("1_o5qli")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D" unique_id=1382275718]
 shape = SubResource("SphereShape3D_15n48")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2081294840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041314125, 4.7683716e-07, -0.012318134)
+navigation_mesh = SubResource("NavigationMesh_0wfyh")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1475290762]
+transform = Transform3D(10.900016, 0, 0, 0, 1, 0, 0, 0, 10.34752, 0, 0, 0)
+use_collision = true
+
+[node name="CharacterBody3D" parent="NavigationRegion3D" unique_id=727850767 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.2403862)
