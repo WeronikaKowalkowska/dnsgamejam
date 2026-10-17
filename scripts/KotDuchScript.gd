@@ -129,6 +129,7 @@ func _physics_process(delta):
 	else:
 		# Jeśli dystans jest bezpieczny ($\le$ 10), resetujemy licznik
 		timer_oddalenia = 0.0
+		visible = true
 	
 	# Grawitacja
 	var target_velocity = velocity
