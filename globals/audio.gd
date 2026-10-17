@@ -24,8 +24,9 @@ func play_music() -> void:
 func stop_music() -> void:
 	music.stop()
 
-func play_sound(audiofile: AudioStream) -> void:
-	pass
+func play_sound(audiofile: AudioStream, offset: float = 0.0) -> void:
+	sfx.stream = audiofile
+	sfx.play(offset)
 
 func update_music_volume(value: int) -> void:
 	if value < 1:

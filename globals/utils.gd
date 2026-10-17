@@ -10,16 +10,17 @@ var current_language: int = 1:
 		
 		current_language = value
 
-var music_volume: int = 100:
+var music_volume: int = 50:
 	set(value):
 		music_volume = value
 		Signals.music_volume_changed.emit(value)
 
-var sfx_volume: int = 100:
+var sfx_volume: int = 50:
 	set(value):
 		sfx_volume = value
 		Signals.sfx_volume_changed.emit(value)
-		
+
+var all_buttons: Dictionary
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

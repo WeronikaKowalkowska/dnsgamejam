@@ -1,5 +1,14 @@
 extends CharacterBody3D
 
+@onready var label: Label = $'../GUI/Debug/VBoxContainer/Label'
+@onready var label_2: Label = $'../GUI/Debug/VBoxContainer/Label2'
+@onready var label_3: Label = $'../GUI/Debug/VBoxContainer/Label3'
+
+@onready var sprite_3d: AnimatedSprite3D = $Sprite3D
+
+var is_moving: bool = false
+var last_angle: int = 180
+
 @export var speed = 5.0
 @export var fall_acceleration = 75
 
@@ -138,24 +147,82 @@ func _physics_process(delta):
 	else:
 		target_velocity.y = 0
 
-	if navigation_agent.is_navigation_finished():
-		target_velocity.x = 0
-		target_velocity.z = 0
-		velocity = target_velocity
-		move_and_slide()
-		return
+	var direction = Vector3.ZERO
 
-	var current_agent_position = global_position
-	var next_path_position = navigation_agent.get_next_path_position()
+	# Calculate direction only if navigation is NOT finished
+	if not navigation_agent.is_navigation_finished():
+		var current_agent_position = global_position
+		var next_path_position = navigation_agent.get_next_path_position()
 
-	var direction = (next_path_position - current_agent_position).normalized()
-	direction.y = 0 
+		direction = (next_path_position - current_agent_position).normalized()
+		direction.y = 0 
+		
+		if Vector2(direction.x, direction.z).length() < 0.01:
+			direction.x = 0.0
+			direction.z = 0.0
+
+	is_moving = direction.x != 0.0 or direction.z != 0.0
+	
+	var vec_to_angle: int = last_angle
+	if is_moving:
+		vec_to_angle = round(rad_to_deg(Vector2(direction.x, direction.z).angle()) - 45)
+		last_angle = vec_to_angle # Update last_angle so the idle animation faces the correct way
+	
+	if not is_moving:
+			if last_angle > -112.5 and last_angle <= -67.5:
+				sprite_3d.play('idle_e')
+			if last_angle > -67.5 and last_angle <= -22.5:
+				sprite_3d.play('idle_se')
+			if last_angle > -22.5 and last_angle <= 22.5:
+				sprite_3d.play('idle_s')
+			if last_angle > 22.5 and last_angle <= 67.5:
+				sprite_3d.play('idle_sw')
+			if last_angle > 67.5 and last_angle <= 112.5:
+				sprite_3d.play('idle_w')
+			if last_angle > 112.5 and last_angle <= 134 or last_angle > -225 and last_angle <= -202.5 :
+				sprite_3d.play('idle_nw')
+			if last_angle > -202.5 and last_angle <= -157.5:
+				sprite_3d.play('idle_n')
+			if last_angle > -157.5 and last_angle <= -112.5:
+				sprite_3d.play('idle_ne')
+			
+			
+	else:
+		if vec_to_angle > -112.5 and vec_to_angle <= -67.5:
+			sprite_3d.play('dash_e')
+			print("dupa_e")
+		if vec_to_angle > -67.5 and vec_to_angle <= -22.5:
+			sprite_3d.play('dash_se')
+			print("dupa_se")
+		if vec_to_angle > -22.5 and vec_to_angle <= 22.5:
+			sprite_3d.play('dash_s')
+			print("dupa_s")
+		if vec_to_angle > 22.5 and vec_to_angle <= 67.5:
+			sprite_3d.play('dash_sw')
+			print("dupa_sw")
+		if vec_to_angle > 67.5 and vec_to_angle <= 112.5:
+			sprite_3d.play('dash_w')
+			print("dupa_w")
+		if vec_to_angle > 112.5 and vec_to_angle <= 134 or vec_to_angle > -225 and vec_to_angle <= -202.5 :
+			sprite_3d.play('dash_nw')
+			
+			print("dupa_nw")
+		if vec_to_angle > -202.5 and vec_to_angle <= -157.5:
+			sprite_3d.play('dash_n')
+			print("dupa_n")
+		if vec_to_angle > -157.5 and vec_to_angle <= -112.5:
+			sprite_3d.play('dash_ne')
+			print("dupa_e")
 	
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
 
 	velocity = target_velocity
 	move_and_slide()
+	
+	label.text = "dir x: " + str(direction.x) + "    dir z: " + str(direction.z)
+	label_2.text = str(last_angle)
+	label_3.text = str(is_moving)
 
 # Odwołania do węzłów:
 @onready var kot_character: CharacterBody3D = $"../KotCharacterBody3D"

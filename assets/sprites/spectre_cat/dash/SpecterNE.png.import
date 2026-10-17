@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dobe6by3ohddi"
-path.s3tc="res://.godot/imported/Grafika_bez_nazwy_2.png-1f81e5a9bf1947039c061c43d9587110.s3tc.ctex"
+uid="uid://b1gh8oo55h6wo"
+path.s3tc="res://.godot/imported/SpecterNE.png-41f270552aa411c4cb0db37825cbf18e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/Grafika_bez_nazwy_2.png"
-dest_files=["res://.godot/imported/Grafika_bez_nazwy_2.png-1f81e5a9bf1947039c061c43d9587110.s3tc.ctex"]
+source_file="res://assets/sprites/spectre_cat/dash/SpecterNE.png"
+dest_files=["res://.godot/imported/SpecterNE.png-41f270552aa411c4cb0db37825cbf18e.s3tc.ctex"]
 
 [params]
 
