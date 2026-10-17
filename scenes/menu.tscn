@@ -2,14 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dja4nxs7pm7s" path="res://scenes/menu.gd" id="1_con2f"]
 [ext_resource type="Texture2D" uid="uid://c52uk3hn06ly1" path="res://assets/paw_icon_64x64.svg" id="1_yqeox"]
+[ext_resource type="Shader" uid="uid://mpi21ywvjs2m" path="res://assets/scrolling_background.gdshader" id="2_mj5lg"]
 [ext_resource type="Texture2D" uid="uid://bmy1ot6qavb7m" path="res://assets/9panel.svg" id="2_vjb58"]
 [ext_resource type="Script" uid="uid://iukn6uiqv4jx" path="res://scenes/window_manager.gd" id="3_4ytvr"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_i6lef"]
+[ext_resource type="Texture2D" uid="uid://bpu2pkuln0khx" path="res://assets/cat_bowl_pattern.svg" id="3_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://bnabb2w0y2die" path="res://assets/cross.svg" id="4_mhnvy"]
 [ext_resource type="Script" uid="uid://cw2bah14bn03m" path="res://scenes/settings.gd" id="5_g3eks"]
 [ext_resource type="Texture2D" uid="uid://m5vrjewwnp1x" path="res://assets/checkbox_checked.svg" id="6_13sgg"]
 [ext_resource type="Texture2D" uid="uid://hk3dovv3e5dd" path="res://assets/slider_handle.svg" id="7_70i5f"]
 [ext_resource type="Texture2D" uid="uid://cx2enacu256wh" path="res://assets/checkbox_unchecked.svg" id="7_i6lef"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mj5lg"]
+shader = ExtResource("2_mj5lg")
+shader_parameter/pattern = ExtResource("3_ufwb2")
+shader_parameter/pattern_color = Color(0.2509804, 0.09803922, 0.29803923, 1)
+shader_parameter/tiling = 200.0
+shader_parameter/speed = Vector2(0.08, 0.27)
+shader_parameter/rotation = -0.2821851969776503
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
 bg_color = Color(1, 1, 1, 0.49803922)
@@ -30,13 +40,14 @@ grow_vertical = 2
 script = ExtResource("1_con2f")
 
 [node name="BackgroundColor" type="ColorRect" parent="." unique_id=1432178247]
+material = SubResource("ShaderMaterial_mj5lg")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.1882353, 0, 0.2509804, 1)
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=970126033]
 layout_mode = 1
@@ -172,12 +183,12 @@ theme_override_constants/margin_top = -32
 [node name="WindowTitle" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Title" unique_id=1405296428]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 32
 text = "window_title"
 horizontal_alignment = 1
 
 [node name="Settings" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin" unique_id=179150873]
+visible = false
 layout_mode = 2
 script = ExtResource("5_g3eks")
 
@@ -197,7 +208,6 @@ size_flags_stretch_ratio = 4.0
 
 [node name="MusicLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=362234747]
 layout_mode = 2
-theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 24
 text = "Music"
 
@@ -216,7 +226,6 @@ size_flags_vertical = 3
 
 [node name="SfxLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=904046101]
 layout_mode = 2
-theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 24
 text = "SFX"
 
@@ -238,7 +247,6 @@ layout_mode = 2
 
 [node name="FullScreenLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer" unique_id=1720697405]
 layout_mode = 2
-theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 24
 text = "Fullscreen"
 
@@ -257,7 +265,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 
 [node name="Credits" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin" unique_id=1620959623]
-visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits" unique_id=865178419]
@@ -278,7 +285,6 @@ theme_override_constants/margin_top = 32
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/line_separation = 4
-theme_override_constants/outline_size = 6
 theme_override_constants/table_h_separation = 3
 theme_override_font_sizes/normal_font_size = 24
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel tortor in tellus commodo vehicula sed id nisl. Ut tristique mollis nunc vitae vestibulum. Phasellus consequat tempor tincidunt. Vestibulum vitae odio ac ante viverra dictum. Aliquam pharetra, nunc vitae dictum interdum, sapien leo hendrerit ligula, non viverra nisl ante at sem. Vivamus venenatis purus nisi, in scelerisque mi interdum quis. Mauris sit amet volutpat massa, at commodo massa. Sed congue tempus eros. Vestibulum nec porttitor arcu. Nunc vitae ante sit amet sem porta ornare venenatis at turpis. Aliquam lectus ante, laoreet vel placerat non, tincidunt eget quam. Curabitur nulla neque, posuere eget sapien eu, efficitur convallis odio. Donec ultrices sagittis eleifend. Donec tortor turpis, consequat ut magna nec, elementum convallis urna. Maecenas a volutpat ipsum. Pellentesque dignissim et neque ut rhoncus."

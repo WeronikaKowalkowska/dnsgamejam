@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dkadcqcw4h0r2"
-path="res://.godot/imported/Gocake.otf-dd571e533291645a4c844aa092fee476.fontdata"
+path="res://.godot/imported/Gocake.otf-8c70b8caf4e5108c064ddbea3a420c77.fontdata"
 
 [deps]
 
-source_file="res://assets/Gocake.otf"
-dest_files=["res://.godot/imported/Gocake.otf-dd571e533291645a4c844aa092fee476.fontdata"]
+source_file="res://assets/fonts/Gocake.otf"
+dest_files=["res://.godot/imported/Gocake.otf-8c70b8caf4e5108c064ddbea3a420c77.fontdata"]
 
 [params]
 

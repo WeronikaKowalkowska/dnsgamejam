@@ -19,7 +19,10 @@ func _ready() -> void:
 	window_manager.hide()
 	quit_prompt.hide()
 	
-	play_btn.pressed.connect(func(): get_tree().change_scene_to_packed(Scenes.MAIN))
+	play_btn.pressed.connect(func():
+		Audio.stop_music()
+		get_tree().change_scene_to_packed(Scenes.MAIN)
+		)
 	
 	settings_btn.pressed.connect(request_window.bind("Settings"))
 	credits_btn.pressed.connect(request_window.bind("Credits"))

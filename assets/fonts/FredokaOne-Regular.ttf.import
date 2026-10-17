@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bgnw8q7mjsuip"
-path="res://.godot/imported/Matcha Mint.otf-359c31e8faf77bfde85881dc6e7abb38.fontdata"
+uid="uid://244w0mv23fp1"
+path="res://.godot/imported/FredokaOne-Regular.ttf-e5483090c9dc40742d4633dc0287aed2.fontdata"
 
 [deps]
 
-source_file="res://assets/Matcha Mint.otf"
-dest_files=["res://.godot/imported/Matcha Mint.otf-359c31e8faf77bfde85881dc6e7abb38.fontdata"]
+source_file="res://assets/fonts/FredokaOne-Regular.ttf"
+dest_files=["res://.godot/imported/FredokaOne-Regular.ttf-e5483090c9dc40742d4633dc0287aed2.fontdata"]
 
 [params]
 

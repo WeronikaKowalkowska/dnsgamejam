@@ -21,6 +21,9 @@ func play_music() -> void:
 	music.stream = current_music
 	music.play()
 
+func stop_music() -> void:
+	music.stop()
+
 func play_sound(audiofile: AudioStream) -> void:
 	pass
 

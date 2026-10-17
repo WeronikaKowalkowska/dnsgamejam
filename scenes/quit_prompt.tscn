@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://vc6kx3f2ix5" path="res://assets/9panel_red.svg" id="3_5nhc7"]
 [ext_resource type="Texture2D" uid="uid://2o41dm644n8t" path="res://assets/9panel_gray.svg" id="4_rmotf"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxp87"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb6dy"]
 texture = ExtResource("3_5nhc7")
 texture_margin_left = 24.0
@@ -81,6 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer" unique_id=1651853615]
+material = SubResource("ShaderMaterial_mxp87")
 custom_minimum_size = Vector2(372, 164)
 layout_mode = 2
 texture = ExtResource("2_k1f7e")
@@ -110,7 +113,6 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="CenterContainer/NinePatchRect/MarginContainer/VBoxContainer/Control" unique_id=532383490]
 layout_mode = 2
-theme_override_constants/outline_size = 6
 text = "Are you sure you want to quit?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/NinePatchRect/MarginContainer/VBoxContainer" unique_id=685022059]
@@ -133,7 +135,6 @@ grow_vertical = 2
 
 [node name="QuitLabel" type="Label" parent="CenterContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/exit_btn/CenterContainer" unique_id=1137057586]
 layout_mode = 2
-theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 20
 text = "Quit"
 
@@ -154,6 +155,5 @@ grow_vertical = 2
 
 [node name="CancelLabel" type="Label" parent="CenterContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/cancel_btn/CenterContainer" unique_id=4808486]
 layout_mode = 2
-theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 20
 text = "Cancel"

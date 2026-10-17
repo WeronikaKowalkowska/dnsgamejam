@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dugppib2s6tdj"
-path="res://.godot/imported/PUSAB___.otf-4ef7156358724d0362231fb09ddd6520.fontdata"
+uid="uid://bgnw8q7mjsuip"
+path="res://.godot/imported/Matcha Mint.otf-146a2c7fd1e7021c9b363fec1e0ac707.fontdata"
 
 [deps]
 
-source_file="res://assets/PUSAB___.otf"
-dest_files=["res://.godot/imported/PUSAB___.otf-4ef7156358724d0362231fb09ddd6520.fontdata"]
+source_file="res://assets/fonts/Matcha Mint.otf"
+dest_files=["res://.godot/imported/Matcha Mint.otf-146a2c7fd1e7021c9b363fec1e0ac707.fontdata"]
 
 [params]
 
