@@ -94,7 +94,7 @@ shape = SubResource("WorldBoundaryShape3D_15n48")
 transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 8.389073, 7.4877424, 7.2156544)
 cull_mask = 1048567
 projection = 1
-size = 18.0
+size = 20.0
 script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
