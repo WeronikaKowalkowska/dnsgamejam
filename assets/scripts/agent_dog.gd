@@ -17,7 +17,7 @@ var countState = 0
 var points: PackedVector3Array
 var indexPoint = -1
 
-var SPEED = 4.0
+var SPEED = 3.0
 const RANGE_IDLE = 3.0
 
 var movement_delta: float
@@ -88,7 +88,7 @@ func _check_cats() -> bool:
 	return false
 
 func _IDLE():
-	SPEED = 2.0
+	SPEED = 1.0
 	await get_tree().create_timer(2).timeout
 	var random_position: Vector3 
 	random_position.x = global_position.x + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
@@ -109,7 +109,7 @@ func _IDLE():
 		countState = 0
 
 func _PATROL():
-	SPEED = 4.0
+	SPEED = 3.0
 	navigation_agent_3d.set_target_position(path.to_global(points[indexPoint]))
 	indexPoint += 1
 	if (indexPoint >= points.size()):
@@ -121,10 +121,10 @@ func _PATROL():
 
 func _ATTACK():
 	if catAliveNode:
-		SPEED = 8.0
+		SPEED = 6.0
 		
 	if catSpectre:
-		SPEED = 6.0
+		SPEED = 5.0
 
 
 #func _SEARCH():

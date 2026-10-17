@@ -112,7 +112,7 @@ func can_place_at(target_pos: Vector3) -> bool:
 	return not is_colliding
 
 func _physics_process(delta):
-	if not visible:
+	if not visible and collision_shape.disabled:
 		return
 
 	# Sprawdzamy odległość od żywego kota
@@ -121,6 +121,7 @@ func _physics_process(delta):
 	if dystans_od_kota > MAKSYMALNY_DYSTANS:
 		# Jeśli dystans jest większy niż 10, zwiększamy licznik czasu
 		timer_oddalenia += delta
+		visible = sin((MAX_ODDALENIE_CZAS - timer_oddalenia) * 15) > 0.0;
 		if timer_oddalenia >= MAX_ODDALENIE_CZAS:
 			ukryj_duszka()
 			print("Duch zniknął z powodu zbyt dużej odległości od kota (> 10 przez 2s).")
@@ -128,7 +129,8 @@ func _physics_process(delta):
 	else:
 		# Jeśli dystans jest bezpieczny ($\le$ 10), resetujemy licznik
 		timer_oddalenia = 0.0
-
+		visible = true
+	
 	# Grawitacja
 	var target_velocity = velocity
 	if not is_on_floor():
