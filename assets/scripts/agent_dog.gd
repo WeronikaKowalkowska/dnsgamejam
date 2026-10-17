@@ -122,24 +122,24 @@ func _ATTACK():
 		SPEED = 6.0
 
 
-func _SEARCH():
-	SPEED = 2.0
-	if not lastAttackCat:
-		_state = PlayerState.PATROL
-	if lastAttackCat.is_in_group("catSpectre"):
-		SPEED = 1.0
-		if lastPositionAliveCat != Vector3.ZERO:
-			navigation_agent_3d.set_target_position(lastPositionAliveCat)
-			if (lastPositionAliveCat - global_position).length() < 2.0:
-				_state = PlayerState.PATROL
-				lastAttackCat = null
-		else:
-			_IDLE()
-	else:
-		_IDLE()
-	if (countState >= 10):
-		countState = 0
-		_state = PlayerState.PATROL
+#func _SEARCH():
+#	SPEED = 2.0
+#	if not lastAttackCat:
+#		_state = PlayerState.PATROL
+#	if lastAttackCat.is_in_group("catSpectre"):
+#		SPEED = 1.0
+#		if lastPositionAliveCat != Vector3.ZERO:
+#			navigation_agent_3d.set_target_position(lastPositionAliveCat)
+#			if (lastPositionAliveCat - global_position).length() < 2.0:
+#				_state = PlayerState.PATROL
+#				lastAttackCat = null
+#		else:
+#			_IDLE()
+#	else:
+#		_IDLE()
+#	if (countState >= 10):
+#		countState = 0
+#		_state = PlayerState.PATROL
 
 func _entered_collision_cat(body: Node3D):
 	if (body.is_in_group("catAlive")):
@@ -154,9 +154,9 @@ func _exited_collision_cat(body: Node3D):
 func _navigation_finished():
 	if _check_cats():
 		return
-	if not catAliveNode and not catSpectre and lastAttackCat and lastAttackCat.is_in_group("catSpectre"):
-		countState=0
-		_state = PlayerState.SEARCH
+	#if not catAliveNode and not catSpectre and lastAttackCat and lastAttackCat.is_in_group("catSpectre"):
+	#	countState=0
+	#	_state = PlayerState.SEARCH
 	match _state:
 		PlayerState.IDLE:
 			_IDLE()
@@ -165,10 +165,6 @@ func _navigation_finished():
 		PlayerState.PATROL:
 			_PATROL()
 			print("patroluje")
-			countState+=1
-		PlayerState.SEARCH:
-			_SEARCH()
-			print("szuka")
 			countState+=1
 
 func _physics_process(delta: float) -> void:
