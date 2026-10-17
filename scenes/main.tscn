@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bfjrv0n5laawk"]
 
+[ext_resource type="Script" uid="uid://dogitmr00h068" path="res://scenes/gui.gd" id="1_choun"]
+[ext_resource type="Script" uid="uid://cj7n8cutwe8vf" path="res://scenes/main.gd" id="1_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dim3fo6c5gqh6" path="res://assets/icon.svg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://buo81e5n6vmcr" path="res://assets/animal/Agent_dog.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/player.gd" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://c4j0dsgngrf5" path="res://assets/models/floor.glb" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ccqbfh8c0g4fq" path="res://assets/models/budynek1.glb" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
@@ -61,6 +64,12 @@ _data = {
 point_count = 6
 
 [node name="Main" type="Node3D" unique_id=1048634786]
+script = ExtResource("1_jkv2x")
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=201889666]
+script = ExtResource("1_choun")
+
+[node name="QuitPrompt" parent="GUI" unique_id=2141659490 instance=ExtResource("3_eb6dy")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873546969]
 environment = SubResource("Environment_0wfyh")
