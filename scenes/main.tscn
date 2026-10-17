@@ -93,7 +93,6 @@ size = 15.0
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 9.03474, 0.5773463, 2.3115363)
-visible = false
 axis_lock_linear_y = true
 script = ExtResource("2_choun")
 
