@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dogitmr00h068" path="res://scenes/gui.gd" id="1_choun"]
 [ext_resource type="Script" uid="uid://cj7n8cutwe8vf" path="res://scenes/main.gd" id="1_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dim3fo6c5gqh6" path="res://assets/icon.svg" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://buo81e5n6vmcr" path="res://assets/animal/Agent_dog.tscn" id="2_0wfyh"]
-[ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveMovement.gd" id="2_choun"]
+[ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveScript.gd" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://c4j0dsgngrf5" path="res://assets/models/floor.glb" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ccqbfh8c0g4fq" path="res://assets/models/budynek1.glb" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
-[ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchMovement.gd" id="4_ya4ey"]
+[ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchScript.gd" id="4_ya4ey"]
+[ext_resource type="Script" uid="uid://bbdk1qfr4mnll" path="res://scripts/KameraMovement.gd" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
@@ -92,6 +92,7 @@ transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.81613
 cull_mask = 1048567
 projection = 1
 size = 15.0
+script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 9.03474, 0.5773463, 2.3115363)
@@ -107,24 +108,24 @@ shape = SubResource("SphereShape3D_15n48")
 transform = Transform3D(1, 0, 0, 0, 1, 1.1920929e-07, 0, 0, 1.0000004, 0, 0, 0)
 texture = ExtResource("1_o5qli")
 
-[node name="KotDuchRigidBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
-transform = Transform3D(0.21107113, -0.97735393, -0.015101567, -0.57709646, -0.13707066, 0.80509096, -0.7889288, -0.16121642, -0.5929592, 1.8402369, 0.7234764, 7.0463343)
+[node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
+transform = Transform3D(0.21107113, -0.97735393, -0.015101567, -0.57709646, -0.13707066, 0.80509096, -0.7889288, -0.16121642, -0.5929592, 8.699884, 0.7234764, 5.8033695)
+
 collision_mask = 2
 script = ExtResource("4_ya4ey")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KotDuchRigidBody3D" unique_id=836013378]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KotDuchCharacterBody3D" unique_id=836013378]
 transform = Transform3D(1.0000002, -1.4901161e-08, 2.9802322e-08, -1.4901161e-08, 1.0000002, 0, 0, -7.450581e-09, 1.0000002, 0, 0, 0)
 shape = SubResource("SphereShape3D_15n48")
 
-[node name="Sprite3D" type="Sprite3D" parent="KotDuchRigidBody3D" unique_id=621464419]
+[node name="Sprite3D" type="Sprite3D" parent="KotDuchCharacterBody3D" unique_id=621464419]
 transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1.0000001, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_o5qli")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchRigidBody3D" unique_id=1646519035]
 
-[node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.2987297, 0.9486041, -4.4987745)
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1646519035]
+
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
 navigation_mesh = SubResource("NavigationMesh_tipki")
