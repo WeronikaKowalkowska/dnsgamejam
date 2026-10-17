@@ -128,12 +128,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1.0000001, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_o5qli")
 
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchRigidBody3D" unique_id=1646519035]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1646519035]
 
 [node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.2987297, 0.9486041, -4.4987745)
-
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
 navigation_mesh = SubResource("NavigationMesh_tipki")
@@ -199,7 +197,7 @@ height = 8.0
 vertices = PackedVector3Array(-11.884724, 0, -12.328873, -12.62565, 0, 11.747886, 12.883987, 0, 11.626556, 12.812683, 0, -12.255276)
 affect_navigation_mesh = true
 
-[node name="CharacterBody3D" parent="NavigationRegion3D" unique_id=727850767 instance=ExtResource("2_0wfyh")]
+[node name="CharacterBody3D" parent="NavigationRegion3D" unique_id=97622665 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6510859, -9.536743e-07, -4.0543585)
 
 [node name="Path3D" type="Path3D" parent="." unique_id=69274219]
