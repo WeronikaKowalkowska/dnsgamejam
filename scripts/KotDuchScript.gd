@@ -9,8 +9,11 @@ extends CharacterBody3D
 var default_collision_layer: int
 var default_collision_mask: int
 
-# Dodaj referencję do swojego Area3D (zmień ścieżkę, jeśli Area3D jest w innym miejscu sceny)
-@onready var pulapka_area: Area3D = $"../Area3D" 
+# Zmienne do obsługi licznika oddalenia od kota
+var timer_oddalenia: float = 0.0
+const MAX_ODDALENIE_CZAS: float = 2.0  # Czas w sekundach przed zniknięciem
+const MAKSYMALNY_DYSTANS: float = 10.0 # Maksymalna dopuszczalna odległość
+
 
 func _ready():
 	await get_tree().physics_frame
@@ -19,16 +22,6 @@ func _ready():
 	default_collision_layer = collision_layer
 	default_collision_mask = collision_mask
 	
-	# Łączymy sygnał body_entered z kodu automatycznie podczas startu gry:
-	if pulapka_area:
-		pulapka_area.body_entered.connect(_on_pulapka_body_entered)
-
-# Funkcja wykonująca się, gdy cokolwiek wejdzie w obszar Area3D
-func _on_pulapka_body_entered(body: Node3D):
-	# Sprawdzamy czy to dokładnie nasz duch
-	if body == self:
-		print("Duch dotknął obszaru i został usunięty!")
-		queue_free() # Usuwa obiekt duszka z gry
 		
 func _unhandled_input(event):
 	# Obsługa naciśnięcia klawisza "E" – ukrywanie duszka
@@ -50,11 +43,8 @@ func _unhandled_input(event):
 		var space_state = get_world_3d().direct_space_state
 		var query = PhysicsRayQueryParameters3D.create(from, to)
 		
-		# KLUCZOWA ZMIANA DLA IZOMETRII:
-		# Ustalamy maskę kolizji tak, aby raycast ignorował ściany i trafiał tylko w podłogę.
-		# Jeśli Twoja podłoga jest na 2. warstwie, maska to 2 (czyli wartość binarna 2 lub 1 << 1).
-		# Możesz też wpisać konkretną maskę warstwy podłogi. Dla 2. warstwy jest to 2.
-		query.collision_mask = 4  # Zmień numer, jeśli Twoja podłoga jest na innej warstwie!
+		# Ustalamy maskę kolizji tak, aby raycast ignorował ściany i trafiał tylko w podłogę (3 warstwa = 4)
+		query.collision_mask = 4 
 		
 		var result = space_state.intersect_ray(query)
 		
@@ -72,6 +62,7 @@ func ukryj_duszka():
 		collision_shape.disabled = true
 	collision_layer = 0
 	collision_mask = 0
+	timer_oddalenia = 0.0 # Resetujemy licznik po ukryciu
 
 func pokaz_duszka(nowa_pozycja: Vector3):
 	global_position = nowa_pozycja
@@ -84,6 +75,7 @@ func pokaz_duszka(nowa_pozycja: Vector3):
 	
 	collision_layer = default_collision_layer
 	collision_mask = default_collision_mask
+	timer_oddalenia = 0.0 # Resetujemy licznik przy pojawieniu się
 
 func probuj_pojawic_duszka(click_position: Vector3):
 	var kot_pos = kot_character.global_position
@@ -98,7 +90,7 @@ func probuj_pojawic_duszka(click_position: Vector3):
 		var direction = kot_pos.direction_to(click_position)
 		docelowa_pozycja = kot_pos + direction * 6.0
 
-	# 1. Sprawdzamy czy miejsce nie koliduje ze ścianą (np. czy nie próbujemy postawić duszka wewnątrz ściany)
+	# 1. Sprawdzamy czy miejsce nie koliduje ze ścianą
 	if not can_place_at(docelowa_pozycja):
 		print("Nie można postawić duszka – kolizja ze ścianą!")
 		return
@@ -122,6 +114,20 @@ func can_place_at(target_pos: Vector3) -> bool:
 func _physics_process(delta):
 	if not visible:
 		return
+
+	# Sprawdzamy odległość od żywego kota
+	var dystans_od_kota = global_position.distance_to(kot_character.global_position)
+	
+	if dystans_od_kota > MAKSYMALNY_DYSTANS:
+		# Jeśli dystans jest większy niż 10, zwiększamy licznik czasu
+		timer_oddalenia += delta
+		if timer_oddalenia >= MAX_ODDALENIE_CZAS:
+			ukryj_duszka()
+			print("Duch zniknął z powodu zbyt dużej odległości od kota (> 10 przez 2s).")
+			return
+	else:
+		# Jeśli dystans jest bezpieczny ($\le$ 10), resetujemy licznik
+		timer_oddalenia = 0.0
 
 	# Grawitacja
 	var target_velocity = velocity
