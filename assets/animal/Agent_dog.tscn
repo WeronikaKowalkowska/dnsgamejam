@@ -51,6 +51,7 @@ mesh = SubResource("CapsuleMesh_swaa2")
 shape = SubResource("CapsuleShape3D_hqvog")
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=424208173 groups=["catAlive"]]
+collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1481095810]
 shape = SubResource("CapsuleShape3D_hqvog")
@@ -61,6 +62,7 @@ shape = SubResource("CapsuleShape3D_hqvog")
 script = SubResource("GDScript_nnpdd")
 
 [node name="DetectionArea" type="Area3D" parent="View" unique_id=2094432167]
+collision_mask = 5
 script = SubResource("GDScript_n2imt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/DetectionArea" unique_id=1407215271]

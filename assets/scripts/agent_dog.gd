@@ -56,6 +56,11 @@ func _raycast_check_cat(cat: Node3D, group: StringName) -> bool:
 	var origin = global_position
 	var end = cat.global_position
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	if (positionStopInSpectreCar != Vector3.ZERO) and group == "catAlive":
+		query.collision_mask &= ~(1 << 2)
+		print("wylaczone")
+	else:
+		query.collision_mask |= ~(1 << 2) 
 	var raycastResult = space_state.intersect_ray(query)
 	if not raycastResult.is_empty():
 			var collider: Node = raycastResult["collider"]
