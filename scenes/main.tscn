@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://c0cgsrcbddj1r" path="res://assets/sprites/normal_cat_idle_e.png" id="7_yc10j"]
+[ext_resource type="Texture2D" uid="uid://cvmwnc3sortal" path="res://assets/sprites/normal_cat_idle_e.png" id="7_yc10j"]
 [ext_resource type="Texture2D" uid="uid://cdtvbmai6h3hm" path="res://assets/sprites/normal_cat_idle_s.png" id="8_muem4"]
 [ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat_idle_n.png" id="8_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://d0fpwl7scsycy" path="res://assets/models/wysepka.glb" id="8_tipki"]
@@ -21,8 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://dobe6by3ohddi" path="res://assets/sprites/Grafika_bez_nazwy_2.png" id="9_muem4"]
 [ext_resource type="Texture2D" uid="uid://ctqp70tq6k24l" path="res://assets/sprites/normal_cat_idle_nw.png" id="10_pm3ni"]
 [ext_resource type="Texture2D" uid="uid://cg2oc70jcynqg" path="res://assets/sprites/normal_cat_idle_se.png" id="12_jscy8"]
-[ext_resource type="Texture2D" uid="uid://nscyw8vodil7" path="res://assets/sprites/normal_cat_idle_w.png" id="12_y6deb"]
+[ext_resource type="Texture2D" uid="uid://hlum8j4hmvq2" path="res://assets/sprites/normal_cat_idle_w.png" id="12_y6deb"]
 [ext_resource type="Texture2D" uid="uid://cxt8gqtymr2ly" path="res://assets/sprites/normal_cat_idle_sw.png" id="13_pm3ni"]
+[ext_resource type="Shader" uid="uid://c220cndqpc08g" path="res://assets/glitch.gdshader" id="16_y6deb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -109,6 +110,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6deb"]
+render_priority = 0
+shader = ExtResource("16_y6deb")
+shader_parameter/texture_albedo = ExtResource("9_muem4")
+shader_parameter/intensity = 0.2830000134425
+shader_parameter/glitch_frequency = 6.40600030102512
+shader_parameter/glitch_duration = 0.23600001051148
+shader_parameter/red_displacement = 0.0350000016625
+shader_parameter/green_displacement = 0.03200000152
+shader_parameter/blue_displacement = 0.03200000152
+shader_parameter/scanline_intensity = 0.722000034295
+shader_parameter/noise_intensity = 0.2
+shader_parameter/slice_intensity = 0.5970000283575
+shader_parameter/ghost_intensity = 0.4990000237025
+shader_parameter/negative_intensity = 0.0
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_tipki"]
 vertices = PackedVector3Array(-13.1985855, 0.363657, 12.348515, -3.4485855, 0.363657, 12.348515, -11.6985855, 0.363657, 12.098515, -12.1985855, 0.363657, 11.598515, -13.1985855, 0.363657, -12.401485, -11.9485855, 0.363657, -12.401485, -8.9485855, 0.363657, -8.651485, 9.3014145, 0.363657, -8.651485, 9.3014145, 0.363657, -12.401485, -9.1985855, 0.363657, -12.401485, 13.0514145, 0.363657, 11.848515, 12.5514145, 0.363657, 12.348515, 13.3014145, 0.363657, 12.348515, 13.0514145, 0.363657, 9.848515, 13.3014145, 0.363657, -12.401485, 12.5514145, 0.363657, -12.401485, 12.5514145, 0.363657, 9.598515, -2.1985855, 0.363657, 0.84851456, -0.9485855, 0.363657, 1.0985146, -0.9485855, 0.363657, -0.65148544, -2.1985855, 0.363657, -1.4014854, -8.9485855, 0.363657, -6.6514854, -2.6985855, 0.363657, -1.9014854, -0.4485855, 0.363657, -1.1514854, 8.0514145, 0.363657, -1.1514854, 9.3014145, 0.363657, -6.6514854, 8.5514145, 0.363657, 0.34851456, 9.3014145, 0.363657, 0.34851456, -8.9485855, 0.363657, -1.9014854, -3.9485855, 0.363657, -0.15148544, -8.9485855, 0.363657, -0.15148544, -8.9485855, 0.363657, 1.8485146, -10.4485855, 0.363657, 2.3485146, -10.4485855, 0.363657, 10.348515, -3.9485855, 0.363657, 10.348515, -0.9485855, 0.363657, 6.3485146, -2.1985855, 0.363657, 9.348515, 9.3014145, 0.363657, 9.348515, 8.5514145, 0.363657, 6.3485146, 8.0514145, 0.363657, 6.8485146, -0.4485855, 0.363657, 6.8485146)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(3, 2, 0), PackedInt32Array(5, 3, 4), PackedInt32Array(4, 3, 0), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(12, 11, 10), PackedInt32Array(10, 13, 12), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 13), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 20), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 24), PackedInt32Array(24, 21, 25), PackedInt32Array(19, 20, 23), PackedInt32Array(23, 20, 22), PackedInt32Array(26, 24, 27), PackedInt32Array(27, 24, 25), PackedInt32Array(22, 28, 21), PackedInt32Array(31, 30, 29), PackedInt32Array(33, 32, 31), PackedInt32Array(33, 31, 34), PackedInt32Array(34, 31, 29), PackedInt32Array(18, 35, 17), PackedInt32Array(17, 35, 36), PackedInt32Array(37, 39, 38), PackedInt32Array(36, 35, 40), PackedInt32Array(26, 27, 38), PackedInt32Array(38, 27, 37), PackedInt32Array(39, 37, 40), PackedInt32Array(40, 37, 36)]
@@ -183,7 +200,7 @@ shape = SubResource("WorldBoundaryShape3D_15n48")
 transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 8.389073, 7.4877424, 7.2156544)
 cull_mask = 1048567
 projection = 1
-size = 20.0
+size = 10.0
 script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
@@ -198,10 +215,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000004, 0, 0, 0)
 shape = SubResource("SphereShape3D_15n48")
 
 [node name="Sprite3D" type="AnimatedSprite3D" parent="KotCharacterBody3D" unique_id=514135334]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_15n48")
-animation = &"idle_n"
+animation = &"idle_w"
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 8.699884, 0.7234764, 5.8033695)
@@ -214,7 +230,8 @@ transform = Transform3D(1.0000002, -1.4901161e-08, 2.9802322e-08, -1.4901161e-08
 shape = SubResource("SphereShape3D_15n48")
 
 [node name="Sprite3D" type="Sprite3D" parent="KotDuchCharacterBody3D" unique_id=621464419]
-transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1.0000001, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_y6deb")
 billboard = 1
 texture = ExtResource("9_muem4")
 
