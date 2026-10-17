@@ -74,23 +74,16 @@ cull_mask = 1048567
 projection = 1
 size = 15.0
 
-[node name="KotRigidBody3D" type="RigidBody3D" parent="." unique_id=1764808739 groups=["catAlive"]]
+[node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 9.03474, 0.5773463, 2.3115363)
 axis_lock_linear_y = true
-gravity_scale = 0.0
 script = ExtResource("2_choun")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="KotRigidBody3D" unique_id=1079881096]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KotRigidBody3D/CharacterBody3D" unique_id=1055128963]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KotCharacterBody3D" unique_id=1382275718]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1920929e-07, 0, 0, 1.0000004, 0, 0, 0)
 shape = SubResource("SphereShape3D_15n48")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KotRigidBody3D" unique_id=1382275718]
-transform = Transform3D(1, 0, 0, 0, 1, 1.1920929e-07, 0, 0, 1.0000004, 0, 0, 0)
-shape = SubResource("SphereShape3D_15n48")
-
-[node name="Sprite3D" type="Sprite3D" parent="KotRigidBody3D" unique_id=2095031919]
+[node name="Sprite3D" type="Sprite3D" parent="KotCharacterBody3D" unique_id=2095031919]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1920929e-07, 0, 0, 1.0000004, 0, 0, 0)
 texture = ExtResource("1_o5qli")
 
