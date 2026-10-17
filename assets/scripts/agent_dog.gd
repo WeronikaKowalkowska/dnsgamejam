@@ -17,12 +17,15 @@ var countState = 0
 var points: PackedVector3Array
 var indexPoint = -1
 
-const SPEED = 4.0
+var SPEED = 4.0
 const RANGE_IDLE = 3.0
 
 var movement_delta: float
 var catAliveNode: Node3D
 var catSpectre: Node3D
+var lastPositionAliveCat: Vector3
+var lastAttackCat: Node3D = null
+
 
 func _ready():
 	points = path.curve.get_baked_points()
@@ -71,14 +74,17 @@ func _raycast_check_cat(cat: Node3D, group: StringName) -> bool:
 
 func _check_cats() -> bool:
 	if catAliveNode:
+		lastPositionAliveCat = catAliveNode.global_position
 		if _raycast_check_cat(catAliveNode, "catAlive"):
 			print("catAlive")
+			lastAttackCat = catAliveNode
 			navigation_agent_3d.set_target_position(catAliveNode.position)
 			_state = PlayerState.ATTACK
 			return true
 	if catSpectre:
 		if _raycast_check_cat(catSpectre, "catSpectre"):
 			print("catSpectre")
+			lastAttackCat = catSpectre
 			navigation_agent_3d.set_target_position(catSpectre.position)
 			_state = PlayerState.ATTACK
 			return true
@@ -120,7 +126,15 @@ func _ATTACK():
 	if catSpectre:
 		print("KURDE")
 	
+	if not catAliveNode and not catSpectre and lastAttackCat.is_in_group("catSpectre"):
+		_state = PlayerState.SEARCH
 	print("OK")
+
+func _SEARCH():
+	if lastAttackCat.is_in_group("catSpectre"):
+		SPEED = 2.0
+		navigation_agent_3d.set_target_position(lastPositionAliveCat)
+	print("s")
 
 func _navigation_finished():
 	if _check_cats():
@@ -137,7 +151,9 @@ func _navigation_finished():
 		PlayerState.ATTACK:
 			_ATTACK()
 			print("atak")
-			
+		PlayerState.SEARCH:
+			_SEARCH()
+			print("szuka")
 	
 	#print("koniec")
 
