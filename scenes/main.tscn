@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://d0fpwl7scsycy" path="res://assets/models/wysepka.glb" id="8_tipki"]
+[ext_resource type="Script" uid="uid://boeb33g3uq6r1" path="res://scripts/miska.gd" id="16_jbj1t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -198,3 +199,13 @@ affect_navigation_mesh = true
 [node name="Path3D" type="Path3D" parent="." unique_id=69274219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
 curve = SubResource("Curve3D_85g3d")
+
+[node name="Miska" type="StaticBody3D" parent="." unique_id=1351539859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.313736)
+script = ExtResource("16_jbj1t")
+
+[node name="budynek1" parent="Miska" unique_id=1366675912 instance=ExtResource("3_tefeu")]
+transform = Transform3D(0.05, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.090993, 1.4623013, 0.93348503)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Miska" unique_id=1322606242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1.4288445, 2.5463562, 0, 0.6231899)

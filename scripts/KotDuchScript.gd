@@ -6,12 +6,15 @@ extends CharacterBody3D
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
+# Odwołanie do węzła wizualnego duszka
+@onready var sprite_wizualny: Sprite3D = $Sprite3D 
+
 var default_collision_layer: int
 var default_collision_mask: int
 
 # Zmienne do obsługi licznika oddalenia od kota
 var timer_oddalenia: float = 0.0
-const MAX_ODDALENIE_CZAS: float = 2.0  # Czas w sekundach przed zniknięciem
+const MAX_ODDALENIE_CZAS: float = 4.0  # Zmienione na 4 sekundy przed zniknięciem
 const MAKSYMALNY_DYSTANS: float = 10.0 # Maksymalna dopuszczalna odległość
 
 
@@ -22,6 +25,7 @@ func _ready():
 	default_collision_layer = collision_layer
 	default_collision_mask = collision_mask
 	
+	ustaw_alfa_duszka(1.0)
 		
 func _unhandled_input(event):
 	# Obsługa naciśnięcia klawisza "E" – ukrywanie duszka
@@ -63,11 +67,14 @@ func ukryj_duszka():
 	collision_layer = 0
 	collision_mask = 0
 	timer_oddalenia = 0.0 # Resetujemy licznik po ukryciu
+	ustaw_alfa_duszka(1.0)
 
 func pokaz_duszka(nowa_pozycja: Vector3):
 	global_position = nowa_pozycja
 	velocity = Vector3.ZERO
 	navigation_agent.target_position = nowa_pozycja
+	
+	ustaw_alfa_duszka(1.0)
 	
 	visible = true
 	if collision_shape:
@@ -121,13 +128,28 @@ func _physics_process(delta):
 	if dystans_od_kota > MAKSYMALNY_DYSTANS:
 		# Jeśli dystans jest większy niż 10, zwiększamy licznik czasu
 		timer_oddalenia += delta
+		
+		# Obliczamy postęp zanikania od 0.0 (start) do 1.0 (zniknięcie po 4s)
+		var progres_zanikania = clamp(timer_oddalenia / MAX_ODDALENIE_CZAS, 0.0, 1.0)
+		
+		# Efekt pulsowania podczas zanikania
+		var predkosc_pulsowania = 15.0 
+		var intensywnosc_pulsowania = (sin(Time.get_ticks_msec() * 0.001 * predkosc_pulsowania) + 1.0) / 2.0
+		
+		var bazowe_alfa = 1.0 - progres_zanikania
+		var finalne_alfa = bazowe_alfa * (0.5 + intensywnosc_pulsowania * 0.5) 
+		
+		ustaw_alfa_duszka(finalne_alfa)
+		
 		if timer_oddalenia >= MAX_ODDALENIE_CZAS:
 			ukryj_duszka()
-			print("Duch zniknął z powodu zbyt dużej odległości od kota (> 10 przez 2s).")
+			print("Duch zniknął z powodu zbyt dużej odległości od kota (> 10 przez 4s).")
 			return
 	else:
-		# Jeśli dystans jest bezpieczny ($\le$ 10), resetujemy licznik
-		timer_oddalenia = 0.0
+		# Jeśli dystans jest bezpieczny ($\le$ 10), resetujemy licznik i przezroczystość
+		if timer_oddalenia > 0.0:
+			timer_oddalenia = 0.0
+			ustaw_alfa_duszka(1.0)
 
 	# Grawitacja
 	var target_velocity = velocity
@@ -154,6 +176,11 @@ func _physics_process(delta):
 
 	velocity = target_velocity
 	move_and_slide()
+
+func ustaw_alfa_duszka(wartość_alfa: float):
+	if not sprite_wizualny:
+		return
+	sprite_wizualny.modulate.a = wartość_alfa
 
 # Odwołania do węzłów:
 @onready var kot_character: CharacterBody3D = $"../KotCharacterBody3D"
