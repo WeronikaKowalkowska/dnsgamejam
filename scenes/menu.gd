@@ -11,7 +11,7 @@ extends Control
 func _ready() -> void:
 	
 	window_manager.hide()
-	
+	play_btn.pressed.connect(func(): get_tree().change_scene_to_packed(Scenes.MAIN))
 	settings_btn.pressed.connect(request_window.bind("Settings"))
 	credits_btn.pressed.connect(request_window.bind("Credits"))
 	exit_btn.pressed.connect(exit)
