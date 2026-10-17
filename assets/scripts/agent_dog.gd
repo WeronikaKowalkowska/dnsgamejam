@@ -148,7 +148,7 @@ func _ATTACK():
 
 func _entered_collision_cat(body: Node3D):
 	if (body.is_in_group("catAlive")):
-		get_tree().change_scene_to_file("res://scenes/smierc.tscn") 
+		get_tree().reload_current_scene()
 	if (body.is_in_group("catSpectre")):
 		positionStopInSpectreCar = global_position
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg2oc70jcynqg"
-path.s3tc="res://.godot/imported/Grafika_bez_nazwy_3.png-ed14978b83b00bacc3f0fcaaf718c2d0.s3tc.ctex"
+uid="uid://nscyw8vodil7"
+path.s3tc="res://.godot/imported/normal_cat_idle_w.png-a6b749ddd055bcfe0ee3a9baf807c65a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/Grafika_bez_nazwy_3.png"
-dest_files=["res://.godot/imported/Grafika_bez_nazwy_3.png-ed14978b83b00bacc3f0fcaaf718c2d0.s3tc.ctex"]
+source_file="res://assets/sprites/normal_cat_idle_w.png"
+dest_files=["res://.godot/imported/normal_cat_idle_w.png-a6b749ddd055bcfe0ee3a9baf807c65a.s3tc.ctex"]
 
 [params]
 
