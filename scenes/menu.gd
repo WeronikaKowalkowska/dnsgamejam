@@ -5,10 +5,10 @@ const MAIN_THEME_2 = preload('uid://d28uuuwf0amvr')
 @onready var window_manager: Control = $WindowManager
 @onready var quit_prompt: Control = $QuitPrompt
 
-@onready var play_btn: Button = $W/VBoxContainer/PlayBtn
-@onready var settings_btn: Button = $W/VBoxContainer/SettingsBtn
-@onready var credits_btn: Button = $W/VBoxContainer/CreditsBtn
-@onready var exit_btn: Button = $W/VBoxContainer/ExitBtn
+@onready var play_btn: Button = $W/VBoxContainer/HBoxContainer/PlayBtn
+@onready var settings_btn: Button = $W/VBoxContainer/HBoxContainer2/SettingsBtn
+@onready var credits_btn: Button = $W/VBoxContainer/HBoxContainer3/CreditsBtn
+@onready var quit_btn: Button = $W/VBoxContainer/HBoxContainer4/QuitBtn
 
 func _ready() -> void:
 	Scenes.current_scene = "menu"
@@ -26,7 +26,7 @@ func _ready() -> void:
 	
 	settings_btn.pressed.connect(request_window.bind("Settings"))
 	credits_btn.pressed.connect(request_window.bind("Credits"))
-	exit_btn.pressed.connect(func(): quit_prompt.show())
+	quit_btn.pressed.connect(func(): quit_prompt.show())
 
 
 func _input(event: InputEvent) -> void:

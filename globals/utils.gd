@@ -1,5 +1,14 @@
 extends Node
 
+var current_language: int = 1:
+	set(value):
+		match value:
+			0:
+				TranslationServer.set_locale("English")
+			1:
+				TranslationServer.set_locale("Polish")
+		
+		current_language = value
 
 var music_volume: int = 100:
 	set(value):
@@ -14,7 +23,7 @@ var sfx_volume: int = 100:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	current_language = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
