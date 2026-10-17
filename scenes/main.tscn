@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://c0cgsrcbddj1r" path="res://assets/sprites/normal_cat_idle_e.png" id="7_yc10j"]
 [ext_resource type="Texture2D" uid="uid://cdtvbmai6h3hm" path="res://assets/sprites/normal_cat_idle_s.png" id="8_muem4"]
+[ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat_idle_n.png" id="8_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://d0fpwl7scsycy" path="res://assets/models/wysepka.glb" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://d3sys1wv213ro" path="res://assets/sprites/normal_cat_idle_ne.png" id="9_jscy8"]
 [ext_resource type="Texture2D" uid="uid://dobe6by3ohddi" path="res://assets/sprites/Grafika_bez_nazwy_2.png" id="9_muem4"]
@@ -53,7 +54,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_jscy8")
+"texture": ExtResource("8_pm3ni")
 }],
 "loop": 1,
 "name": &"idle_n",
@@ -200,7 +201,7 @@ shape = SubResource("SphereShape3D_15n48")
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_15n48")
-animation = &"idle_se"
+animation = &"idle_n"
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 8.699884, 0.7234764, 5.8033695)
