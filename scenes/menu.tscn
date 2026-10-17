@@ -188,7 +188,6 @@ text = "window_title"
 horizontal_alignment = 1
 
 [node name="Settings" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin" unique_id=179150873]
-visible = false
 layout_mode = 2
 script = ExtResource("5_g3eks")
 
@@ -206,13 +205,19 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="MusicLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=362234747]
+[node name="HBoxContainer2" type="HBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=420167291]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MusicLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer2" unique_id=362234747]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Music"
 
-[node name="MusicSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=86188292]
+[node name="MusicSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer2" unique_id=86188292]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_icons/grabber = ExtResource("7_70i5f")
 theme_override_icons/grabber_highlight = ExtResource("7_70i5f")
@@ -224,13 +229,19 @@ ticks_position = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SfxLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=904046101]
+[node name="HBoxContainer3" type="HBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=202400885]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SfxLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer3" unique_id=904046101]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "SFX"
 
-[node name="SfxSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=875990412]
+[node name="SfxSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer3" unique_id=875990412]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_icons/grabber = ExtResource("7_70i5f")
 theme_override_icons/grabber_highlight = ExtResource("7_70i5f")
