@@ -80,6 +80,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 sky_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1583634267]
+collision_layer = 3
 
 [node name="floor" parent="StaticBody3D" unique_id=1120960412 instance=ExtResource("2_tbgi4")]
 
@@ -95,6 +96,7 @@ script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 9.03474, 0.5773463, 2.3115363)
+collision_mask = 2
 axis_lock_linear_y = true
 script = ExtResource("2_choun")
 
@@ -108,6 +110,7 @@ texture = ExtResource("1_o5qli")
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
 transform = Transform3D(0.21107113, -0.97735393, -0.015101567, -0.57709646, -0.13707066, 0.80509096, -0.7889288, -0.16121642, -0.5929592, 8.699884, 0.7234764, 5.8033695)
+collision_mask = 2
 script = ExtResource("4_ya4ey")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KotDuchCharacterBody3D" unique_id=836013378]
@@ -130,6 +133,7 @@ visible = false
 use_collision = true
 
 [node name="StaticBodyBudynek2" type="StaticBody3D" parent="NavigationRegion3D" unique_id=60310690]
+collision_layer = 3
 
 [node name="budynek2" parent="NavigationRegion3D/StaticBodyBudynek2" unique_id=1094693730 instance=ExtResource("4_o6xl0")]
 
@@ -137,6 +141,7 @@ use_collision = true
 shape = SubResource("ConvexPolygonShape3D_choun")
 
 [node name="StaticBodyScianka1" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1224298803]
+collision_layer = 3
 
 [node name="scianka1" parent="NavigationRegion3D/StaticBodyScianka1" unique_id=2095668035 instance=ExtResource("5_tipki")]
 
@@ -144,6 +149,7 @@ shape = SubResource("ConvexPolygonShape3D_choun")
 shape = SubResource("ConvexPolygonShape3D_tipki")
 
 [node name="StaticBodyScianka2" type="StaticBody3D" parent="NavigationRegion3D" unique_id=376414420]
+collision_layer = 3
 
 [node name="scianka2" parent="NavigationRegion3D/StaticBodyScianka2" unique_id=2118710651 instance=ExtResource("6_tefeu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03548622, -0.035775185, 0.064956665)
@@ -152,6 +158,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03548622, -0.035775185, 0.0
 shape = SubResource("ConvexPolygonShape3D_85g3d")
 
 [node name="StaticBodyBudynek1" type="StaticBody3D" parent="NavigationRegion3D" unique_id=496260983]
+collision_layer = 3
 
 [node name="budynek1" parent="NavigationRegion3D/StaticBodyBudynek1" unique_id=1444964261 instance=ExtResource("3_tefeu")]
 
@@ -159,6 +166,7 @@ shape = SubResource("ConvexPolygonShape3D_85g3d")
 shape = SubResource("ConvexPolygonShape3D_ya4ey")
 
 [node name="StaticBodyScianka3" type="StaticBody3D" parent="NavigationRegion3D" unique_id=422490269]
+collision_layer = 3
 
 [node name="scianka3" parent="NavigationRegion3D/StaticBodyScianka3" unique_id=761456763 instance=ExtResource("7_o6xl0")]
 
@@ -167,6 +175,7 @@ shape = SubResource("ConvexPolygonShape3D_eb6dy")
 
 [node name="StaticBodyWysepka" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1206047736]
 transform = Transform3D(0.91521746, 0, 0, 0, 1, 0, 0, 0, 1, -0.38928032, 0, 0)
+collision_layer = 3
 
 [node name="wysepka" parent="NavigationRegion3D/StaticBodyWysepka" unique_id=1610928076 instance=ExtResource("8_tipki")]
 
