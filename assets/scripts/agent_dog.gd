@@ -25,6 +25,7 @@ var catAliveNode: Node3D
 var catSpectre: Node3D
 var lastPositionAliveCat: Vector3
 var lastAttackCat: Node3D = null
+var positionStopInSpectreCar: Vector3 = Vector3.ZERO
 
 
 func _ready():
@@ -54,12 +55,6 @@ func _on_body_exited(body: Node3D) -> void:
 
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Spacja")
-		
-	
-
 func _raycast_check_cat(cat: Node3D, group: StringName) -> bool:
 	var space_state = get_world_3d().direct_space_state
 	var origin = global_position
@@ -85,12 +80,16 @@ func _check_cats() -> bool:
 		if _raycast_check_cat(catSpectre, "catSpectre"):
 			print("catSpectre")
 			lastAttackCat = catSpectre
-			navigation_agent_3d.set_target_position(catSpectre.position)
+			if (positionStopInSpectreCar != Vector3.ZERO):
+				navigation_agent_3d.set_target_position(positionStopInSpectreCar)
+			else:
+				navigation_agent_3d.set_target_position(catSpectre.position)
 			_state = PlayerState.ATTACK
 			return true
 	return false
 
 func _IDLE():
+	SPEED = 2.0
 	await get_tree().create_timer(2).timeout
 	var random_position: Vector3 
 	random_position.x = global_position.x + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
@@ -111,6 +110,7 @@ func _IDLE():
 		countState = 0
 
 func _PATROL():
+	SPEED = 4.0
 	navigation_agent_3d.set_target_position(path.to_global(points[indexPoint]))
 	indexPoint += 1
 	if (indexPoint >= points.size()):
@@ -122,23 +122,32 @@ func _PATROL():
 
 func _ATTACK():
 	if catAliveNode:
-		print("XXD")
+		SPEED = 8.0
+		
 	if catSpectre:
-		print("KURDE")
+		SPEED = 6.0
 	
-	if not catAliveNode and not catSpectre and lastAttackCat.is_in_group("catSpectre"):
+	if not catAliveNode and not catSpectre and lastAttackCat and lastAttackCat.is_in_group("catSpectre"):
 		_state = PlayerState.SEARCH
-	print("OK")
 
 func _SEARCH():
+	SPEED = 4.0
 	if lastAttackCat.is_in_group("catSpectre"):
 		SPEED = 2.0
 		navigation_agent_3d.set_target_position(lastPositionAliveCat)
-	print("s")
+	
+
+func _entered_collision_cat(body: Node3D):
+	if (body.is_in_group("catAlive")):
+		get_tree().change_scene_to_file("res://scenes/smierc.tscn") 
+	if (body.is_in_group("catSpectre")):
+		positionStopInSpectreCar = global_position
+
+func _exited_collision_cat(body: Node3D):
+	if (body.is_in_group("catSpectre")):
+		positionStopInSpectreCar = Vector3.ZERO
 
 func _navigation_finished():
-	if _check_cats():
-		return
 	match _state:
 		PlayerState.IDLE:
 			_IDLE()
@@ -154,10 +163,15 @@ func _navigation_finished():
 		PlayerState.SEARCH:
 			_SEARCH()
 			print("szuka")
-	
+	if _check_cats():
+		return
 	#print("koniec")
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("move_right"):
+		if catSpectre:
+			catSpectre.global_position = Vector3.ZERO
+	_ATTACK()
 	_check_cats()
 	if navigation_agent_3d.is_navigation_finished():
 		return

@@ -118,12 +118,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1.0000001, 0, 0, 0)
 billboard = 1
 texture = ExtResource("1_o5qli")
 
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchRigidBody3D" unique_id=1646519035]
 
 [node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.2987297, 0.9486041, -4.4987745)
-
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
 navigation_mesh = SubResource("NavigationMesh_tipki")
