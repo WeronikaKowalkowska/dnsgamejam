@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://buo81e5n6vmcr"]
 
 [ext_resource type="Script" uid="uid://b5fbihhn6isju" path="res://assets/scripts/agent_dog.gd" id="1_nnpdd"]
+[ext_resource type="ArrayMesh" uid="uid://dhfx3e2fexicl" path="res://assets/models/view.obj" id="2_n2imt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s6cs2"]
 
@@ -61,5 +62,9 @@ script = SubResource("GDScript_n2imt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/DetectionArea" unique_id=1407215271]
 shape = SubResource("ConvexPolygonShape3D_nnpdd")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="View/DetectionArea" unique_id=1184850118]
+mesh = ExtResource("2_n2imt")
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_navigation_finished"]
 [connection signal="body_entered" from="View/DetectionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="View/DetectionArea" to="." method="_on_body_exited"]
