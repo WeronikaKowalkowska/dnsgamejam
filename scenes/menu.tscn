@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c52uk3hn06ly1" path="res://assets/paw_icon_64x64.svg" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://bmy1ot6qavb7m" path="res://assets/9panel.svg" id="2_vjb58"]
 [ext_resource type="Script" uid="uid://iukn6uiqv4jx" path="res://scenes/window_manager.gd" id="3_4ytvr"]
+[ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_i6lef"]
 [ext_resource type="Texture2D" uid="uid://bnabb2w0y2die" path="res://assets/cross.svg" id="4_mhnvy"]
 [ext_resource type="Script" uid="uid://cw2bah14bn03m" path="res://scenes/settings.gd" id="5_g3eks"]
 [ext_resource type="Texture2D" uid="uid://m5vrjewwnp1x" path="res://assets/checkbox_checked.svg" id="6_13sgg"]
@@ -154,6 +155,10 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="QuitPrompt" parent="." unique_id=2141659490 instance=ExtResource("3_i6lef")]
+visible = false
+layout_mode = 1
 
 [node name="WindowManager" type="Control" parent="." unique_id=1211294707]
 visible = false
