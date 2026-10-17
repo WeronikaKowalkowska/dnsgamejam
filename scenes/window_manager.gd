@@ -20,7 +20,6 @@ func _input(event: InputEvent) -> void:
 	if current_window:
 		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 			close_window()
-			get_viewport().set_input_as_handled()
 
 
 
