@@ -65,6 +65,8 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yfsik"]
+
 [node name="Main" type="Node3D" unique_id=1048634786]
 script = ExtResource("1_jkv2x")
 
@@ -81,7 +83,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 sky_mode = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1583634267]
-collision_layer = 3
+collision_layer = 7
 
 [node name="floor" parent="StaticBody3D" unique_id=1120960412 instance=ExtResource("2_tbgi4")]
 
@@ -197,3 +199,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6510859, -9.536743e-07, -4
 [node name="Path3D" type="Path3D" parent="." unique_id=69274219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
 curve = SubResource("Curve3D_85g3d")
+
+[node name="smiercDucha" type="Area3D" parent="." unique_id=1295172762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 10, 0.34692192, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="smiercDucha" unique_id=2059423782]
+transform = Transform3D(15, 0, 0, 0, 40, 0, 0, 0, 5, 18.309124, 1.0136547, -1.6345434)
+shape = SubResource("BoxShape3D_yfsik")
