@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bfjrv0n5laawk"]
 
+[ext_resource type="Script" uid="uid://dogitmr00h068" path="res://scenes/gui.gd" id="1_choun"]
+[ext_resource type="Script" uid="uid://cj7n8cutwe8vf" path="res://scenes/main.gd" id="1_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://dim3fo6c5gqh6" path="res://assets/icon.svg" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://buo81e5n6vmcr" path="res://assets/animal/Agent_dog.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c4j0dsgngrf5" path="res://assets/models/floor.glb" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ccqbfh8c0g4fq" path="res://assets/models/budynek1.glb" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
@@ -52,6 +55,12 @@ points = PackedVector3Array(-11.32505, -1.1005678, -11.743364, -9.772533, -1.100
 points = PackedVector3Array(0.4091835, -1.0001345, -0.2638371, 0.87433267, -1.0144792, 0.08179557, 0.4091835, -1.0001345, 5.8984375, 0.4091835, 0.99979043, -0.2638371, 8.702314, -1.0001345, -0.2638371, 0.87433267, -1.0144792, 5.5522013, 8.236353, -1.0144792, 0.08179557, 0.4091835, 0.99979043, 5.8984375, 8.702314, -1.0001345, 5.8984375, 0.6445993, 1.2343953, -0.08890957, 8.702314, 0.99979043, -0.2638371, 8.236353, -1.0144792, 5.5522013, 0.6445993, 1.2343953, 5.722907, 8.702314, 0.99979043, 5.8984375, 5.4446464, 1.3489213, 1.6495081, 8.466086, 1.2343953, -0.08890957, 5.4446464, 1.3489213, 3.8584206, 8.466086, 1.2343953, 5.722907, 6.853894, 1.3489213, 1.6495081, 6.853894, 1.3489213, 3.8584206)
 
 [node name="Main" type="Node3D" unique_id=1048634786]
+script = ExtResource("1_jkv2x")
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=201889666]
+script = ExtResource("1_choun")
+
+[node name="QuitPrompt" parent="GUI" unique_id=2141659490 instance=ExtResource("3_eb6dy")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873546969]
 environment = SubResource("Environment_0wfyh")
