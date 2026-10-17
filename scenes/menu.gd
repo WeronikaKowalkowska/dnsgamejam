@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	play_btn.pressed.connect(func():
 		Audio.stop_music()
-		get_tree().change_scene_to_packed(Scenes.MAIN)
+		get_tree().change_scene_to_file("res://scenes/tutorialScena.tscn")
 		)
 	
 	settings_btn.pressed.connect(request_window.bind("Settings"))

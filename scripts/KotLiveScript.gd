@@ -1,8 +1,6 @@
 extends CharacterBody3D
 
 @onready var sprite_3d: AnimatedSprite3D = $Sprite3D
-@onready var label: Label = $'../GUI/Debug/VBoxContainer/Label'
-@onready var label_2: Label = $'../GUI/Debug/VBoxContainer/Label2'
 
 # Prędkość gracza 
 @export var speed = 4
@@ -84,5 +82,3 @@ func _physics_process(delta):
 	# Poruszanie graczem
 	velocity = target_velocity
 	move_and_slide()
-	label.text = str(vec_to_angle)
-	label_2.text = str(last_angle)

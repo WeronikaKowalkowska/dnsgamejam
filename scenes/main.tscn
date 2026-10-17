@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cg2oc70jcynqg" path="res://assets/sprites/normal_cat_idle_se.png" id="12_jscy8"]
 [ext_resource type="Texture2D" uid="uid://nscyw8vodil7" path="res://assets/sprites/normal_cat_idle_w.png" id="12_y6deb"]
 [ext_resource type="Texture2D" uid="uid://cxt8gqtymr2ly" path="res://assets/sprites/normal_cat_idle_sw.png" id="13_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="24_y6deb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -224,6 +225,7 @@ texture = ExtResource("9_muem4")
 transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.299, 0.5, -4.499)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11001587, -0.122478485, 0.08366108)
 navigation_mesh = SubResource("NavigationMesh_tipki")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1663998963]
@@ -295,3 +297,6 @@ transform = Transform3D(0.91521746, 0, 0, 0, 1, 0, 0, 0, 1, -0.38928032, 0, 0)
 [node name="Path3D" type="Path3D" parent="." unique_id=69274219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
 curve = SubResource("Curve3D_85g3d")
+
+[node name="MichaZZarciem" parent="." unique_id=2050879544 instance=ExtResource("24_y6deb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.39075, 1.3113022e-08, -3.7227807)
