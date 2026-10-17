@@ -11,19 +11,19 @@ var catSpectre: Node3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("catAlive")):
-		print("Kot wszedl i umarl")
+		#print("Kot wszedl i umarl")
 		catAliveNode = body
 	if (body.is_in_group("catSpectre")):
-		print("Kot duch wszedl")
+		#print("Kot duch wszedl")
 		catSpectre = body
 	
 		
 func _on_body_exited(body: Node3D) -> void:
 	if (catAliveNode == body):
-		print("Kot wyszedl")
+		#print("Kot wyszedl")
 		catAliveNode = null
 	if (catSpectre == body):
-		print("Kot duch znikl")
+		#print("Kot duch znikl")
 		catSpectre = null
 
 
