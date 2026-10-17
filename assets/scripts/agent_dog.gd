@@ -19,9 +19,12 @@ func _on_body_entered(body: Node3D) -> void:
 	
 		
 func _on_body_exited(body: Node3D) -> void:
+	if (catAliveNode == body):
+		print("Kot wyszedl")
+		catAliveNode = null
 	if (catSpectre == body):
 		print("Kot duch znikl")
-		
+		catSpectre = null
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,12 +36,28 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	
 
+func _raycast_check_cat(cat: Node3D, group: StringName) -> bool:
+	var space_state = get_world_3d().direct_space_state
+	var origin = global_position
+	var end = cat.global_position
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	var raycastResult = space_state.intersect_ray(query)
+	if not raycastResult.is_empty():
+			var collider: Node = raycastResult["collider"]
+			if collider.is_in_group(group):
+				return true
+	return false
+
 func _check_cats() -> void:
 	if catAliveNode:
-		navigation_agent_3d.set_target_position(catAliveNode.position)
+		if _raycast_check_cat(catAliveNode, "catAlive"):
+			print("catAlive")
+			navigation_agent_3d.set_target_position(catAliveNode.position)
 		return
 	if catSpectre:
-		navigation_agent_3d.set_target_position(catSpectre.position)
+		if _raycast_check_cat(catSpectre, "catSpectre"):
+			print("catSpectre")
+			navigation_agent_3d.set_target_position(catSpectre.position)
 		return
 
 func _navigation_finished():
@@ -52,7 +71,7 @@ func _navigation_finished():
 		random_position.x = randf_range(-8.0, 8.0)
 		random_position.z = randf_range(-8.0, 8.0)
 		navigation_agent_3d.set_target_position(random_position)
-	print("koniec")
+	#print("koniec")
 
 func _physics_process(delta: float) -> void:
 	_check_cats()

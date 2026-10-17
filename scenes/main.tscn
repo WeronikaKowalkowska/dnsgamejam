@@ -85,7 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1.0000001, 0, 0, 0)
 texture = ExtResource("1_o5qli")
 
 [node name="KotDuchRigidBody3D" type="RigidBody3D" parent="." unique_id=1947282057 groups=["catSpectre"]]
-transform = Transform3D(0.21107113, -0.97735393, -0.015101567, -0.57709646, -0.13707066, 0.80509096, -0.7889288, -0.16121642, -0.5929592, 0, 0.7234764, 8.218493)
+transform = Transform3D(0.21107113, -0.97735393, -0.015101567, -0.57709646, -0.13707066, 0.80509096, -0.7889288, -0.16121642, -0.5929592, 1.8402369, 0.7234764, 7.0463343)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KotDuchRigidBody3D" unique_id=836013378]
 transform = Transform3D(1.0000002, -1.4901161e-08, 2.9802322e-08, -1.4901161e-08, 1.0000002, 0, 0, -7.450581e-09, 1.0000002, 0, 0, 0)
