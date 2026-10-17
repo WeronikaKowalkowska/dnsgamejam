@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg2oc70jcynqg"
-path.s3tc="res://.godot/imported/normal_cat_idle_se.png-e65c05e07f7c3edf6dd04e68d03a3b1e.s3tc.ctex"
+uid="uid://bq8h8ankbe48w"
+path.s3tc="res://.godot/imported/normal_cat_dash_sw4.png-7b44645f35430211b3e65cf172e18bcc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/normal_cat_idle_se.png"
-dest_files=["res://.godot/imported/normal_cat_idle_se.png-e65c05e07f7c3edf6dd04e68d03a3b1e.s3tc.ctex"]
+source_file="res://assets/sprites/normal_cat/dash/normal_cat_dash_sw4.png"
+dest_files=["res://.godot/imported/normal_cat_dash_sw4.png-7b44645f35430211b3e65cf172e18bcc.s3tc.ctex"]
 
 [params]
 

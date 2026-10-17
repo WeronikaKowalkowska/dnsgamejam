@@ -43,8 +43,8 @@ func _physics_process(delta):
 		is_moving = true
 		last_angle = vec_to_angle
 	
-	if is_moving:
-		match vec_to_angle:
+	if not is_moving:
+		match last_angle:
 			0:
 				sprite_3d.play('idle_s')
 			45:
@@ -61,6 +61,24 @@ func _physics_process(delta):
 				sprite_3d.play('idle_e')
 			-45:
 				sprite_3d.play('idle_se')
+	else:
+		match vec_to_angle:
+			0:
+				sprite_3d.play('dash_s')
+			45:
+				sprite_3d.play('dash_sw')
+			90:
+				sprite_3d.play('dash_w')
+			135:
+				sprite_3d.play('dash_nw')
+			180:
+				sprite_3d.play('dash_n')
+			-135:
+				sprite_3d.play('dash_ne')
+			-90:
+				sprite_3d.play('dash_e')
+			-45:
+				sprite_3d.play('dash_se')
 		
 	
 	

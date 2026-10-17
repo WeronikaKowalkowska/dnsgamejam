@@ -48,6 +48,10 @@ folder_colors={
 "res://addons/": "red"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 catAlive="Kot zywy"
