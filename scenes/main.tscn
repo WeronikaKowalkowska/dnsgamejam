@@ -120,6 +120,8 @@
 [ext_resource type="Texture2D" uid="uid://dc3ol50fsb762" path="res://animations/dog/Klatka_4w.png" id="81_eh25q"]
 [ext_resource type="Texture2D" uid="uid://bm1l1npxa7hdw" path="res://animations/ghost/Warstwa_1w.png" id="81_w6a6y"]
 [ext_resource type="Texture2D" uid="uid://bipffadnhvcc" path="res://animations/dog/Warstwa_1w.png" id="82_joh2r"]
+[ext_resource type="Script" uid="uid://cymix0krhqtov" path="res://assets/models/micha_z_zarciem.gd" id="121_2cr71"]
+[ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="122_1hbcg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -669,6 +671,8 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_thjtm"]
+
 [node name="Main" type="Node3D" unique_id=1048634786]
 script = ExtResource("1_jkv2x")
 
@@ -833,3 +837,12 @@ transform = Transform3D(0.91521746, 0, 0, 0, 1, 0, 0, 0, 1, -0.38928032, 0, 0)
 [node name="Path3D" type="Path3D" parent="." unique_id=69274219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
 curve = SubResource("Curve3D_85g3d")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=606826793]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1.0838761, 1.3113022e-08, 1.3571682)
+script = ExtResource("121_2cr71")
+
+[node name="MichaZZarciem" parent="Area3D" unique_id=111147647 instance=ExtResource("122_1hbcg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1680669789]
+shape = SubResource("SphereShape3D_thjtm")

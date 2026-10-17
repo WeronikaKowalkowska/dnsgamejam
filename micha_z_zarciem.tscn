@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://du0thmb26nwad"]
+
+[ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="1_efdf0"]
+
+[node name="MichaZZarciem" unique_id=111147647 instance=ExtResource("1_efdf0")]
