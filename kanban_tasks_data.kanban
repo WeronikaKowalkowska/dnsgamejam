@@ -25,9 +25,7 @@
 		{
 			"uuid": "5088962e-c0ec-4dea-a7b5-e2c6c8b34881",
 			"title": "Todo",
-			"tasks": [
-				"5a195e31-d2da-41f9-beeb-604828aca673"
-			]
+			"tasks": []
 		},
 		{
 			"uuid": "f3ae3d79-7fd3-4e8e-8aa4-7380ed8fddde",
@@ -46,16 +44,7 @@
 			"title": "New task",
 			"description": "",
 			"category": "3245a5d0-b755-4793-8176-c7071dcaf1c8",
-			"steps": [
-				{
-					"details": "ewerw",
-					"done": false
-				},
-				{
-					"details": "upupuio",
-					"done": false
-				}
-			]
+			"steps": []
 		}
 	],
 	"layout": {
