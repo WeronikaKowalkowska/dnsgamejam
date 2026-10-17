@@ -1,5 +1,6 @@
 @tool
 extends Control
+const MAIN_THEME_2 = preload('uid://d28uuuwf0amvr')
 
 @onready var window_manager: Control = $WindowManager
 @onready var quit_prompt: Control = $QuitPrompt
@@ -11,6 +12,9 @@ extends Control
 
 func _ready() -> void:
 	Scenes.current_scene = "menu"
+	
+	Audio.current_music = MAIN_THEME_2
+	Audio.play_music()
 	
 	window_manager.hide()
 	quit_prompt.hide()
