@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # Prędkość gracza 
-@export var speed = 2
+@export var speed = 4
 
 # Przyspieszenie grawitacyjne
 @export var fall_acceleration = 75
