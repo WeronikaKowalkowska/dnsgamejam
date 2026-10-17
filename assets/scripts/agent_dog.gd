@@ -21,50 +21,46 @@ var SPEED = 4.0
 const RANGE_IDLE = 3.0
 
 var movement_delta: float
-var catAliveNode: Node3D
-var catSpectre: Node3D
-var lastPositionAliveCat: Vector3
+var catAliveNode: Node3D = null
+var catSpectre: Node3D = null
+var lastPositionAliveCat: Vector3 = Vector3.ZERO
 var lastAttackCat: Node3D = null
+var positionStopInSpectreCar: Vector3 = Vector3.ZERO
 
 
 func _ready():
-	points = path.curve.get_baked_points()
-	if points.size() > 0:
-		indexPoint = 0
-	#_path_patrol()
-	_IDLE()
+	if path:
+		points = path.curve.get_baked_points()
+		if points.size() > 0:
+			indexPoint = 0
 	_state = PlayerState.IDLE
+	_IDLE()
 
 func _on_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("catAlive")):
-		#print("Kot wszedl i umarl")
 		catAliveNode = body
 	if (body.is_in_group("catSpectre")):
-		#print("Kot duch wszedl")
 		catSpectre = body
 	
 		
 func _on_body_exited(body: Node3D) -> void:
 	if (catAliveNode == body):
-		#print("Kot wyszedl")
 		catAliveNode = null
 	if (catSpectre == body):
-		#print("Kot duch znikl")
 		catSpectre = null
 
 
-
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		print("Spacja")
-		
-	
 
 func _raycast_check_cat(cat: Node3D, group: StringName) -> bool:
 	var space_state = get_world_3d().direct_space_state
 	var origin = global_position
 	var end = cat.global_position
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	if (positionStopInSpectreCar != Vector3.ZERO) and group == "catAlive":
+		query.collision_mask &= ~(1 << 2)
+		print("wylaczone")
+	else:
+		query.collision_mask |= ~(1 << 2) 
 	var raycastResult = space_state.intersect_ray(query)
 	if not raycastResult.is_empty():
 			var collider: Node = raycastResult["collider"]
@@ -76,21 +72,23 @@ func _check_cats() -> bool:
 	if catAliveNode:
 		lastPositionAliveCat = catAliveNode.global_position
 		if _raycast_check_cat(catAliveNode, "catAlive"):
-			print("catAlive")
 			lastAttackCat = catAliveNode
+			_ATTACK()
 			navigation_agent_3d.set_target_position(catAliveNode.position)
-			_state = PlayerState.ATTACK
 			return true
 	if catSpectre:
 		if _raycast_check_cat(catSpectre, "catSpectre"):
-			print("catSpectre")
 			lastAttackCat = catSpectre
-			navigation_agent_3d.set_target_position(catSpectre.position)
-			_state = PlayerState.ATTACK
+			_ATTACK()
+			if (positionStopInSpectreCar != Vector3.ZERO):
+				navigation_agent_3d.set_target_position(positionStopInSpectreCar)
+			else:
+				navigation_agent_3d.set_target_position(catSpectre.position)
 			return true
 	return false
 
 func _IDLE():
+	SPEED = 2.0
 	await get_tree().create_timer(2).timeout
 	var random_position: Vector3 
 	random_position.x = global_position.x + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
@@ -106,39 +104,64 @@ func _IDLE():
 		random_position.z = global_position.z + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
 		navigation_agent_3d.set_target_position(random_position)
 		
-	if (randi_range(1, 50) <= countState):
+	if (randi_range(1, 20) <= countState):
 		_state = PlayerState.PATROL
 		countState = 0
 
 func _PATROL():
+	SPEED = 4.0
 	navigation_agent_3d.set_target_position(path.to_global(points[indexPoint]))
 	indexPoint += 1
 	if (indexPoint >= points.size()):
 		indexPoint = 0
 	
-	if (randi_range(1, 2500) <= countState):
+	if (randi_range(1, 5000) <= countState):
 		_state = PlayerState.IDLE
 		countState = 0
 
 func _ATTACK():
 	if catAliveNode:
-		print("XXD")
+		SPEED = 8.0
+		
 	if catSpectre:
-		print("KURDE")
-	
-	if not catAliveNode and not catSpectre and lastAttackCat.is_in_group("catSpectre"):
-		_state = PlayerState.SEARCH
-	print("OK")
+		SPEED = 6.0
 
-func _SEARCH():
-	if lastAttackCat.is_in_group("catSpectre"):
-		SPEED = 2.0
-		navigation_agent_3d.set_target_position(lastPositionAliveCat)
-	print("s")
+
+#func _SEARCH():
+#	SPEED = 2.0
+#	if not lastAttackCat:
+#		_state = PlayerState.PATROL
+#	if lastAttackCat.is_in_group("catSpectre"):
+#		SPEED = 1.0
+#		if lastPositionAliveCat != Vector3.ZERO:
+#			navigation_agent_3d.set_target_position(lastPositionAliveCat)
+#			if (lastPositionAliveCat - global_position).length() < 2.0:
+#				_state = PlayerState.PATROL
+#				lastAttackCat = null
+#		else:
+#			_IDLE()
+#	else:
+#		_IDLE()
+#	if (countState >= 10):
+#		countState = 0
+#		_state = PlayerState.PATROL
+
+func _entered_collision_cat(body: Node3D):
+	if (body.is_in_group("catAlive")):
+		get_tree().change_scene_to_file("res://scenes/smierc.tscn") 
+	if (body.is_in_group("catSpectre")):
+		positionStopInSpectreCar = global_position
+
+func _exited_collision_cat(body: Node3D):
+	if (body.is_in_group("catSpectre")):
+		positionStopInSpectreCar = Vector3.ZERO
 
 func _navigation_finished():
 	if _check_cats():
 		return
+	#if not catAliveNode and not catSpectre and lastAttackCat and lastAttackCat.is_in_group("catSpectre"):
+	#	countState=0
+	#	_state = PlayerState.SEARCH
 	match _state:
 		PlayerState.IDLE:
 			_IDLE()
@@ -148,14 +171,6 @@ func _navigation_finished():
 			_PATROL()
 			print("patroluje")
 			countState+=1
-		PlayerState.ATTACK:
-			_ATTACK()
-			print("atak")
-		PlayerState.SEARCH:
-			_SEARCH()
-			print("szuka")
-	
-	#print("koniec")
 
 func _physics_process(delta: float) -> void:
 	_check_cats()

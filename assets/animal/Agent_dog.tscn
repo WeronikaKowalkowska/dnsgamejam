@@ -47,7 +47,13 @@ script = ExtResource("1_nnpdd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=158913400]
 mesh = SubResource("CapsuleMesh_swaa2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1481095810]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1652413449]
+shape = SubResource("CapsuleShape3D_hqvog")
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=424208173 groups=["catAlive"]]
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1481095810]
 shape = SubResource("CapsuleShape3D_hqvog")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=504216812]
@@ -56,11 +62,14 @@ shape = SubResource("CapsuleShape3D_hqvog")
 script = SubResource("GDScript_nnpdd")
 
 [node name="DetectionArea" type="Area3D" parent="View" unique_id=2094432167]
+collision_mask = 5
 script = SubResource("GDScript_n2imt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="View/DetectionArea" unique_id=1407215271]
 shape = SubResource("ConvexPolygonShape3D_nnpdd")
 
+[connection signal="body_entered" from="DetectionArea" to="." method="_entered_collision_cat"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_exited_collision_cat"]
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_navigation_finished"]
 [connection signal="body_entered" from="View/DetectionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="View/DetectionArea" to="." method="_on_body_exited"]
