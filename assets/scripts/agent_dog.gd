@@ -6,17 +6,23 @@ extends CharacterBody3D
 const SPEED = 4.0
 
 var movement_delta: float
-var catsNode: Array[Node3D]
+var catAliveNode: Node3D
+var catSpectre: Node3D
 
 func _on_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("catAlive")):
 		print("Kot wszedl i umarl")
-		catsNode.append(body)
+		catAliveNode = body
+	if (body.is_in_group("catSpectre")):
+		print("Kot duch wszedl")
+		catSpectre = body
+	
 		
+func _on_body_exited(body: Node3D) -> void:
+	if (catSpectre == body):
+		print("Kot duch znikl")
 		
-#func _on_body_exited(body: Node3D) -> void:
-	#if (body in catsNode):
-		#print("Kot poszedl")
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
@@ -27,10 +33,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	
 
-func _navigation_finished():
-	if not catsNode.is_empty():
-		navigation_agent_3d.set_target_position(catsNode[0].position)
+func _check_cats() -> void:
+	if catAliveNode:
+		navigation_agent_3d.set_target_position(catAliveNode.position)
 		return
+	if catSpectre:
+		navigation_agent_3d.set_target_position(catSpectre.position)
+		return
+
+func _navigation_finished():
+	_check_cats()
 	var random_position := Vector3.ZERO
 	random_position.x = randf_range(-8.0, 8.0)
 	random_position.z = randf_range(-8.0, 8.0)
@@ -43,8 +55,7 @@ func _navigation_finished():
 	print("koniec")
 
 func _physics_process(delta: float) -> void:
-	if not catsNode.is_empty():
-		navigation_agent_3d.set_target_position(catsNode[0].position)
+	_check_cats()
 	if navigation_agent_3d.is_navigation_finished():
 		return
 	
