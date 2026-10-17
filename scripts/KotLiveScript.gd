@@ -1,10 +1,17 @@
 extends CharacterBody3D
 
+@onready var sprite_3d: AnimatedSprite3D = $Sprite3D
+@onready var label: Label = $'../GUI/Debug/VBoxContainer/Label'
+@onready var label_2: Label = $'../GUI/Debug/VBoxContainer/Label2'
+
 # Prędkość gracza 
 @export var speed = 4
 
 # Przyspieszenie grawitacyjne
 @export var fall_acceleration = 75
+
+var is_moving: bool = true
+var last_angle: int = 180
 
 # Wektor (x,y,z) przechowujacy speed i direction
 var target_velocity = Vector3.ZERO
@@ -17,6 +24,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_back"):
 		direction.x += 1
 		print("back")
+		print(direction.x)
 	if Input.is_action_pressed("move_forward"):
 		direction.x -= 1
 		print("forward")
@@ -26,10 +34,44 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		direction.z -= 1
 		print("right")
+	
+	var vec_to_angle: int = round(rad_to_deg(Vector2(direction.x, direction.z).angle()))
+	
+	if direction.z == 0.0 and direction.x == 0:
+		is_moving = false
+	else:
+		is_moving = true
+		last_angle = vec_to_angle
+	
+	if is_moving:
+		match vec_to_angle:
+			0:
+				sprite_3d.play('idle_s')
+			45:
+				sprite_3d.play('idle_sw')
+			90:
+				sprite_3d.play('idle_w')
+			135:
+				sprite_3d.play('idle_nw')
+			180:
+				sprite_3d.play('idle_n')
+			-135:
+				sprite_3d.play('idle_ne')
+			-90:
+				sprite_3d.play('idle_e')
+			-45:
+				sprite_3d.play('idle_se')
 		
+	
+	
+	
+
 	if direction != Vector3.ZERO:
 		direction = direction.normalized() # Gracz nie bedzie przyspieszał idąc po przekatnej
 		direction = direction.rotated(Vector3.UP, deg_to_rad(-45))
+		print(direction.z)
+	
+	
 	
 	# Obliczanie predkosci gracza
 	target_velocity.x = direction.x * speed
@@ -42,3 +84,5 @@ func _physics_process(delta):
 	# Poruszanie graczem
 	velocity = target_velocity
 	move_and_slide()
+	label.text = str(vec_to_angle)
+	label_2.text = str(last_angle)
