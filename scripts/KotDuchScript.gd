@@ -6,6 +6,8 @@ extends CharacterBody3D
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
+@onready var sprite_3d: AnimatedSprite3D = $Sprite3D
+
 var default_collision_layer: int
 var default_collision_mask: int
 
@@ -156,6 +158,25 @@ func _physics_process(delta):
 
 	velocity = target_velocity
 	move_and_slide()
+	
+	var vec_to_angle: int = round(rad_to_deg(Vector2(direction.x, direction.z).angle()))
+	match vec_to_angle:
+		0:
+			sprite_3d.play('walk_s')
+		45:
+			sprite_3d.play('walk_sw')
+		90:
+			sprite_3d.play('walk_w')
+		135:
+			sprite_3d.play('walk_nw')
+		180:
+			sprite_3d.play('walk_n')
+		-135:
+			sprite_3d.play('walk_ne')
+		-90:
+			sprite_3d.play('walk_e')
+		-45:
+			sprite_3d.play('walk_se')
 
 # Odwołania do węzłów:
 @onready var kot_character: CharacterBody3D = $"../KotCharacterBody3D"

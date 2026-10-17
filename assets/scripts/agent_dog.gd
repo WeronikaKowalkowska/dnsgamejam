@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $View/DetectionArea
 @onready var path: Path3D = get_tree().current_scene.get_node("Path3D")
+@onready var sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
 
 enum PlayerState {
 	IDLE,
@@ -188,6 +189,26 @@ func _physics_process(delta: float) -> void:
 		navigation_agent_3d.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
+		
+	#var direction = Vector3.ZERO
+	var vec_to_angle: int = round(rad_to_deg(Vector2(next_path_position.x, next_path_position.z).angle()))
+	match vec_to_angle:
+		0:
+			sprite_3d.play('walk_s')
+		45:
+			sprite_3d.play('walk_sw')
+		90:
+			sprite_3d.play('walk_w')
+		135:
+			sprite_3d.play('walk_nw')
+		180:
+			sprite_3d.play('walk_n')
+		-135:
+			sprite_3d.play('walk_ne')
+		-90:
+			sprite_3d.play('walk_e')
+		-45:
+			sprite_3d.play('walk_se')
 
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
