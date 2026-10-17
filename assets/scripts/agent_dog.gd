@@ -1,13 +1,30 @@
 extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+@onready var detection_area: Area3D = $View/DetectionArea
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+var catsNode: Array[Node3D]
+
+func _on_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("cats")):
+		print("Kot wszedl")
+		catsNode.append(body)
+		navigation_agent_3d.set_target_position(body.position)
+	print("Coś weszło: ", body.name)
+
+func _on_body_exited(body: Node3D) -> void:
+	if (body in catsNode):
+		print("Kot poszedl")
+
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept"):
+		var random_position := Vector3.ZERO
+		random_position.x = randf_range(-5.0, 5.0)
+		random_position.z = randf_range(-5.0, 5.0)
+		navigation_agent_3d.set_target_position(random_position)
 		
 	
 

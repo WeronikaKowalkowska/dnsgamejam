@@ -82,6 +82,7 @@ mesh = SubResource("BoxMesh_sugp2")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1223964158]
 transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 2.7448692, 7.4877424, 3.0285923)
+cull_mask = 1048567
 projection = 1
 size = 15.0
 
@@ -101,4 +102,7 @@ transform = Transform3D(10.900016, 0, 0, 0, 1, 0, 0, 0, 10.34752, 0, 0, 0)
 use_collision = true
 
 [node name="CharacterBody3D" parent="NavigationRegion3D" unique_id=727850767 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.2403862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0184236, 1.5453901, 0)
+
+[node name="CharacterBody3D2" parent="NavigationRegion3D" unique_id=1065303818 groups=["cats"] instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5542707, 1.5453901, 0)

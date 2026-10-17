@@ -2,9 +2,44 @@
 
 [ext_resource type="Script" uid="uid://b5fbihhn6isju" path="res://assets/scripts/agent_dog.gd" id="1_nnpdd"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6cs2"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_swaa2"]
+material = SubResource("ShaderMaterial_s6cs2")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hqvog"]
+
+[sub_resource type="GDScript" id="GDScript_nnpdd"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_n2imt"]
+script/source = "extends Area3D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nnpdd"]
+points = PackedVector3Array(5.178601, 2.601538, -12, 5.178601, -2.601538, -12, -5.178601, 2.601538, -12, 0.40147305, 0.4023521, 0, 0.40147305, -0.4028616, 0, -5.178601, -2.601538, -12, -0.40350103, 0.4023521, 0, -0.40350103, -0.4028616, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=727850767]
 script = ExtResource("1_nnpdd")
@@ -16,3 +51,15 @@ mesh = SubResource("CapsuleMesh_swaa2")
 shape = SubResource("CapsuleShape3D_hqvog")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=504216812]
+
+[node name="View" type="Node3D" parent="." unique_id=1398076606]
+script = SubResource("GDScript_nnpdd")
+
+[node name="DetectionArea" type="Area3D" parent="View" unique_id=2094432167]
+script = SubResource("GDScript_n2imt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/DetectionArea" unique_id=1407215271]
+shape = SubResource("ConvexPolygonShape3D_nnpdd")
+
+[connection signal="body_entered" from="View/DetectionArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="View/DetectionArea" to="." method="_on_body_exited"]
