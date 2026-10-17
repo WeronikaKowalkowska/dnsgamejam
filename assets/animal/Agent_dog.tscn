@@ -39,12 +39,19 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nnpdd"]
-points = PackedVector3Array(5.178601, 2.601538, -12, 5.178601, -2.601538, -12, -5.178601, 2.601538, -12, 0.40147305, 0.4023521, 0, 0.40147305, -0.4028616, 0, -5.178601, -2.601538, -12, -0.40350103, 0.4023521, 0, -0.40350103, -0.4028616, 0)
+points = PackedVector3Array(4.9990373, 1.1535, 7.876877, -1.7095646, -1.4619079, -0.5835905, -5.088443, -1.4619079, -0.24568939, -1.7095646, 1.5786061, -0.5835905, -5.088443, -1.4619079, 8.200117, 5.3844395, -1.4619079, -0.24568939, -4.7030406, 1.1535, 7.876877, 5.3844395, -1.4619079, 8.200117, 4.9990373, 1.1535, 0.052681543, -4.7030406, 1.1535, 0.052681543, 1.6662382, 1.5786061, -0.5835905, 1.6662382, -1.4619079, -0.5835905, 1.6662382, 1.5786061, -0.24568939, -1.7095646, 1.5786061, -0.24568939)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n2imt"]
+points = PackedVector3Array(-6.397174, -3.2885294, -13.0598955, -6.7776175, 3.6049216, -13.421317, 6.735779, 3.6049216, -13.421317, 6.735779, -3.4882233, -12.407217, -1.4935801, 1.383398, -1.4063427, 1.7846473, 1.4125243, -1.5845158, -1.5703124, -1.3357408, -1.1147602, -6.4389887, -3.4882233, -12.067927, -6.7776175, 3.6049216, -12.745251, 6.355335, -3.2885294, -13.0598955, 6.735779, 3.6049216, -12.745251, 1.5284737, -1.3357408, -1.1147602, 6.39715, -3.4882233, -12.067927, -2.1539357, 1.42983, -2.430374, 1.7940875, -1.3029062, -1.556189, 1.4517415, 1.383398, -1.4063427)
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=727850767]
 script = ExtResource("1_nnpdd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=158913400]
+mesh = SubResource("CapsuleMesh_swaa2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=282892011]
+transform = Transform3D(1, 0, 0, 0, 0.27193797, 0, 0, 0, 0.76156676, 0.079488754, 0.4028554, -0.31512833)
 mesh = SubResource("CapsuleMesh_swaa2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1652413449]
@@ -65,8 +72,13 @@ script = SubResource("GDScript_nnpdd")
 collision_mask = 5
 script = SubResource("GDScript_n2imt")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="View/DetectionArea" unique_id=1407215271]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="View/DetectionArea" unique_id=273862597]
+transform = Transform3D(0.5462282, 0, 0, 0, 0.9879288, 0, 0, 0, 0.4978066, 0, 0, -0.7408409)
 shape = SubResource("ConvexPolygonShape3D_nnpdd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="View/DetectionArea" unique_id=411720168]
+transform = Transform3D(1.790651, 0, 0, 0, 1, 0, 0, 0, 1.9808598, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_n2imt")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_entered_collision_cat"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_exited_collision_cat"]
