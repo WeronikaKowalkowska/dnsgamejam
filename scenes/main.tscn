@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c4j0dsgngrf5" path="res://assets/models/floor.glb" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ccqbfh8c0g4fq" path="res://assets/models/budynek1.glb" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://tnu2bxmplgci" path="res://scenes/tutorial.gd" id="4_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
+[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="4_og1vs"]
 [ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchScript.gd" id="4_ya4ey"]
 [ext_resource type="Script" uid="uid://bbdk1qfr4mnll" path="res://scripts/KameraMovement.gd" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
@@ -24,6 +26,13 @@
 [ext_resource type="Texture2D" uid="uid://hlum8j4hmvq2" path="res://assets/sprites/normal_cat_idle_w.png" id="12_y6deb"]
 [ext_resource type="Texture2D" uid="uid://cxt8gqtymr2ly" path="res://assets/sprites/normal_cat_idle_sw.png" id="13_pm3ni"]
 [ext_resource type="Shader" uid="uid://c220cndqpc08g" path="res://assets/glitch.gdshader" id="16_y6deb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6deb"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -181,6 +190,55 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="GUI/Debug/VBoxContainer" unique_id=1643726705]
 layout_mode = 2
 
+[node name="Tutorial" type="Control" parent="GUI" unique_id=1364312850]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_2wyq8")
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Tutorial" unique_id=1577599672]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="GUI/Tutorial/MarginContainer" unique_id=104339049]
+custom_minimum_size = Vector2(384, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y6deb")
+
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Tutorial/MarginContainer/PanelContainer" unique_id=1381733835]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer" unique_id=49667302]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StepTitle" type="Label" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1400883829]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "step_title"
+horizontal_alignment = 1
+
+[node name="StepDescription" type="RichTextLabel" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=795552176]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_separation = 4
+theme_override_fonts/normal_font = ExtResource("4_og1vs")
+theme_override_font_sizes/normal_font_size = 18
+text = "step_description"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873546969]
 environment = SubResource("Environment_0wfyh")
 
@@ -220,7 +278,7 @@ sprite_frames = SubResource("SpriteFrames_15n48")
 animation = &"idle_w"
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 8.699884, 0.7234764, 5.8033695)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 7.0380735, 0.7234764, 7.261724)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("4_ya4ey")
