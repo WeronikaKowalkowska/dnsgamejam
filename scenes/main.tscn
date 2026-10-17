@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bbdk1qfr4mnll" path="res://scripts/KameraMovement.gd" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cg2oc70jcynqg" path="res://assets/sprites/Grafika_bez_nazwy_3.png" id="7_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://d0fpwl7scsycy" path="res://assets/models/wysepka.glb" id="8_tipki"]
 [ext_resource type="Texture2D" uid="uid://dobe6by3ohddi" path="res://assets/sprites/Grafika_bez_nazwy_2.png" id="9_muem4"]
@@ -112,6 +113,9 @@ shape = SubResource("SphereShape3D_15n48")
 [node name="Sprite3D" type="AnimatedSprite3D" parent="KotCharacterBody3D" unique_id=514135334]
 transform = Transform3D(1, 0, 0, 0, 1, 1.1920929e-07, 0, 0, 1.0000004, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_15n48")
+
+[node name="Sprite3D2" type="Sprite3D" parent="KotCharacterBody3D" unique_id=1106111930]
+texture = ExtResource("7_jbj1t")
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
 transform = Transform3D(0.21107113, -0.97735393, -0.015101567, -0.57709646, -0.13707066, 0.80509096, -0.7889288, -0.16121642, -0.5929592, 8.699884, 0.7234764, 5.8033695)
