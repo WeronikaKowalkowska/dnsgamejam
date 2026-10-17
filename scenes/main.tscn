@@ -51,6 +51,14 @@ points = PackedVector3Array(-11.32505, -1.1005678, -11.743364, -9.772533, -1.100
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_trceg"]
 points = PackedVector3Array(0.4091835, -1.0001345, -0.2638371, 0.87433267, -1.0144792, 0.08179557, 0.4091835, -1.0001345, 5.8984375, 0.4091835, 0.99979043, -0.2638371, 8.702314, -1.0001345, -0.2638371, 0.87433267, -1.0144792, 5.5522013, 8.236353, -1.0144792, 0.08179557, 0.4091835, 0.99979043, 5.8984375, 8.702314, -1.0001345, 5.8984375, 0.6445993, 1.2343953, -0.08890957, 8.702314, 0.99979043, -0.2638371, 8.236353, -1.0144792, 5.5522013, 0.6445993, 1.2343953, 5.722907, 8.702314, 0.99979043, 5.8984375, 5.4446464, 1.3489213, 1.6495081, 8.466086, 1.2343953, -0.08890957, 5.4446464, 1.3489213, 3.8584206, 8.466086, 1.2343953, 5.722907, 6.853894, 1.3489213, 1.6495081, 6.853894, 1.3489213, 3.8584206)
 
+[sub_resource type="Curve3D" id="Curve3D_85g3d"]
+bake_interval = 1.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7.960755, 0, 0.78999996, 0.04, 0, 0, 0.88, 0, 0, 14.119606, 0, 0.29300022, 0, 0, 0, 0, 0, 0, 10.43, 0, 3.251545, 0, -0.435, 0, 0, 0, 0, 2.1341877, 0, 3.7973447, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
 [node name="Main" type="Node3D" unique_id=1048634786]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1873546969]
@@ -94,6 +102,9 @@ shape = SubResource("SphereShape3D_15n48")
 [node name="Sprite3D" type="Sprite3D" parent="KotDuchRigidBody3D" unique_id=621464419]
 transform = Transform3D(1, 0, 0, 0, 1, 2.9802322e-08, 0, 0, 1.0000001, 0, 0, 0)
 texture = ExtResource("1_o5qli")
+
+[node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.2987297, 0.9486041, -4.4987745)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
 navigation_mesh = SubResource("NavigationMesh_tipki")
@@ -153,5 +164,6 @@ height = 8.0
 vertices = PackedVector3Array(-11.884724, 0, -12.328873, -12.62565, 0, 11.747886, 12.883987, 0, 11.626556, 12.812683, 0, -12.255276)
 affect_navigation_mesh = true
 
-[node name="CharacterBody3D" parent="NavigationRegion3D" unique_id=727850767 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(0.99999994, -2.9802322e-08, 2.9802322e-08, 0, 1, 0, 2.9802322e-08, -2.9802322e-08, 0.99999994, -2.29873, 0.94860315, -4.498774)
+[node name="Path3D" type="Path3D" parent="." unique_id=69274219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
+curve = SubResource("Curve3D_85g3d")
