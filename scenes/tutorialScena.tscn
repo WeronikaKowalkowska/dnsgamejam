@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gdim62rciu3p"]
 
+[ext_resource type="Script" uid="uid://cgeyqshfv0j31" path="res://scenes/tutorial_scena.gd" id="1_gxhor"]
 [ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveScript.gd" id="2_lreeg"]
 [ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_n.png" id="4_tgp1v"]
 [ext_resource type="Texture2D" uid="uid://d3sys1wv213ro" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_ne.png" id="5_gtmbk"]
@@ -59,8 +60,6 @@
 [ext_resource type="Texture2D" uid="uid://ci67c7ohiw8h6" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_e2.png" id="52_xhv06"]
 [ext_resource type="Texture2D" uid="uid://dg7a4po0cld3m" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_e3.png" id="53_2rbow"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="53_6do30"]
-[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="53_o1yh7"]
-[ext_resource type="Script" uid="uid://tnu2bxmplgci" path="res://scenes/tutorial.gd" id="54_e6hiv"]
 [ext_resource type="Texture2D" uid="uid://bsx60h7qy4a0j" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_e4.png" id="54_gxhor"]
 [ext_resource type="Texture2D" uid="uid://ba8foa8stq7a5" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_n1.png" id="55_alm0x"]
 [ext_resource type="Texture2D" uid="uid://u5hmxjxg6apm" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_n2.png" id="56_vci78"]
@@ -93,16 +92,11 @@
 [ext_resource type="Texture2D" uid="uid://cvmwnc3sortal" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_e.png" id="83_7qukw"]
 [ext_resource type="Texture2D" uid="uid://hlum8j4hmvq2" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_w.png" id="90_xf0gy"]
 [ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="91_8cgj6"]
+[ext_resource type="Script" uid="uid://ceejfakoqggwv" path="res://assets/models/micha.gd" id="94_alm0x"]
+[ext_resource type="Texture2D" uid="uid://bbioc760a7dum" path="res://assets/food_marker_purple.svg" id="95_vci78"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wddr1"]
 size = Vector3(0.68011475, 1, 0.8000488)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7j2a"]
-bg_color = Color(0, 0, 0, 0.49803922)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alm0x"]
 bg_color = Color(0, 0, 0, 0.49803922)
@@ -112,7 +106,6 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q5kk5"]
-radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_of2g4"]
 animations = [{
@@ -318,7 +311,6 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8cgj6"]
-radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhv06"]
 animations = [{
@@ -528,10 +520,6 @@ vertices = PackedVector3Array(4.2309556, 0.3200736, -4.1332703, 2.9809556, 0.320
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(12, 11, 8), PackedInt32Array(8, 11, 9), PackedInt32Array(9, 11, 10), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(18, 17, 11), PackedInt32Array(11, 17, 10), PackedInt32Array(19, 15, 16), PackedInt32Array(21, 19, 20), PackedInt32Array(20, 19, 16), PackedInt32Array(2, 3, 22), PackedInt32Array(22, 3, 12), PackedInt32Array(20, 23, 21), PackedInt32Array(21, 23, 5), PackedInt32Array(0, 23, 4), PackedInt32Array(5, 23, 7), PackedInt32Array(7, 23, 0), PackedInt32Array(8, 22, 12), PackedInt32Array(7, 24, 6), PackedInt32Array(6, 24, 25), PackedInt32Array(14, 26, 13), PackedInt32Array(13, 26, 27), PackedInt32Array(30, 29, 28), PackedInt32Array(31, 0, 1), PackedInt32Array(33, 31, 32), PackedInt32Array(32, 31, 1), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 27), PackedInt32Array(39, 38, 37), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(46, 45, 44), PackedInt32Array(40, 47, 43), PackedInt32Array(43, 47, 28), PackedInt32Array(48, 44, 49), PackedInt32Array(49, 44, 30), PackedInt32Array(46, 39, 45), PackedInt32Array(45, 39, 25), PackedInt32Array(25, 39, 37), PackedInt32Array(25, 24, 45), PackedInt32Array(33, 32, 50), PackedInt32Array(50, 32, 51), PackedInt32Array(30, 44, 29), PackedInt32Array(50, 51, 52), PackedInt32Array(53, 50, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(53, 54, 55), PackedInt32Array(48, 46, 44), PackedInt32Array(56, 55, 54), PackedInt32Array(55, 56, 57), PackedInt32Array(57, 56, 58), PackedInt32Array(38, 36, 37), PackedInt32Array(37, 36, 26), PackedInt32Array(26, 36, 27), PackedInt32Array(59, 57, 58), PackedInt32Array(59, 58, 47), PackedInt32Array(47, 58, 28), PackedInt32Array(28, 58, 30), PackedInt32Array(35, 60, 34), PackedInt32Array(34, 60, 61), PackedInt32Array(49, 30, 60), PackedInt32Array(60, 30, 61)]
 agent_radius = 0.75
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_xhv06"]
-height = 0.6773071
-radius = 0.38964844
-
 [sub_resource type="Curve3D" id="Curve3D_8cgj6"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 12.476852, 0, 0, 0, 0, 0, 0, 0.7439735, 0, 3.6743069, 0, 0, 0, 0, 0, 0, 2.2884307, 0, 3.3307421, 0, 0, 0, 0, 0, 0, 4.984945, 0, 3.4593108, 0, 0, 0, 0, 0, 0, 6.1567736, 0, 6.8506017, 0, 0, 0, 0, 0, 0, 3.5770671, 0, 7.070252, 0, 0, 0, 0, 0, 0, 3.4078832, -4.7683716e-07, 12.020632, 0, 0, 0, 0, 0, 0, 5.7132225, 4.7683716e-07, 12.729961, 0, 0, 0, 0, 0, 0, 6.5181904, 0, 10.649708, 0, 0, 0, 0, 0, 0, 6.224077, 0, 2.8434641, 0, 0, 0, 0, 0, 0, 1.9132729, 0, 2.3799372, 0, 0, 0, 0, 0, 0, 2.117382, 0, 0.061228275, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -539,7 +527,12 @@ _data = {
 }
 point_count = 13
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_krvuk"]
+height = 0.24719238
+radius = 0.25
+
 [node name="Tutorial" type="Node3D" unique_id=1731204749]
+script = ExtResource("1_gxhor")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1941674531]
 transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 3.5522394, 7.4877424, 3.5267682)
@@ -587,55 +580,6 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="GUI/Debug/VBoxContainer" unique_id=2143691713]
 layout_mode = 2
-
-[node name="Tutorial" type="Control" parent="GUI" unique_id=1239382553]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("54_e6hiv")
-
-[node name="MarginContainer" type="MarginContainer" parent="GUI/Tutorial" unique_id=1063327080]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-
-[node name="PanelContainer" type="PanelContainer" parent="GUI/Tutorial/MarginContainer" unique_id=1121548876]
-custom_minimum_size = Vector2(384, 200)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s7j2a")
-
-[node name="MarginContainer" type="MarginContainer" parent="GUI/Tutorial/MarginContainer/PanelContainer" unique_id=2062490889]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer" unique_id=1563620726]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="StepTitle" type="Label" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=819788769]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "step_title"
-horizontal_alignment = 1
-
-[node name="StepDescription" type="RichTextLabel" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=12033617]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/line_separation = 4
-theme_override_fonts/normal_font = ExtResource("53_o1yh7")
-theme_override_font_sizes/normal_font_size = 18
-text = "step_description"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="GameOver" type="Control" parent="GUI" unique_id=1941260101]
 process_mode = 3
@@ -730,18 +674,24 @@ height = 8.0
 vertices = PackedVector3Array(-11.884724, 0, -12.328873, -12.62565, 0, 11.747886, 12.883987, 0, 11.626556, 12.812683, 0, -12.255276)
 affect_navigation_mesh = true
 
-[node name="Micha" parent="." unique_id=111147647 instance=ExtResource("91_8cgj6")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.9963157, 0, 8.954105)
+[node name="Path3D" type="Path3D" parent="." unique_id=1659979741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.231, 0, -6.409158)
+curve = SubResource("Curve3D_8cgj6")
 
-[node name="MichaArea" type="Area3D" parent="Micha" unique_id=332590575]
+[node name="Micha" parent="." unique_id=535132500 instance=ExtResource("91_8cgj6")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.7611282, 2.515316e-07, 8.702157)
+script = ExtResource("94_alm0x")
+
+[node name="MichaArea" type="Area3D" parent="Micha" unique_id=200450518]
 collision_layer = 512
 collision_mask = 2048
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=1135939090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33816528, 0)
-shape = SubResource("CylinderShape3D_xhv06")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=1780211175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123107895, 0)
+shape = SubResource("CylinderShape3D_krvuk")
 
-[node name="Path3D" type="Path3D" parent="." unique_id=1659979741]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.231, 0, -6.409158)
-curve = SubResource("Curve3D_8cgj6")
+[node name="Marker" type="Sprite3D" parent="Micha" unique_id=1067125023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43007922, 0)
+billboard = 1
+texture = ExtResource("95_vci78")

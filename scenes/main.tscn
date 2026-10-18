@@ -122,7 +122,6 @@ background_color = Color(0.12318372, 0.09510297, 0.365275, 1)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_15n48"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_15n48"]
-radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15n48"]
 animations = [{

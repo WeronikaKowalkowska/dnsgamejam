@@ -96,7 +96,7 @@ theme_override_constants/margin_right = 256
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 92
 bbcode_enabled = true
-text = "[color=violet]HoloCat[/color]"
+text = "[color=violet]HolCat[/color]"
 fit_content = true
 horizontal_alignment = 2
 
