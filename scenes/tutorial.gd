@@ -8,6 +8,7 @@ var step: int = -1:
 		if value > 10:
 			step = -1
 			hide()
+			Scenes.is_tutorial_complete = true
 			return
 			
 		step = value
@@ -53,8 +54,13 @@ var step: int = -1:
 func _ready() -> void:
 	# Uruchamiamy pierwszy krok zaraz po załadowaniu sceny
 	step = 0
+	if Scenes.is_tutorial_complete:
+		hide()
 
 func _input(event: InputEvent) -> void:
+	if Scenes.is_tutorial_complete:
+		return
+	
 	if step == -1:
 		return
 
