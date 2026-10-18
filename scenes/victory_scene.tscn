@@ -117,14 +117,14 @@ theme_override_constants/separation = 8
 [node name="VictoryLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1079365213]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Zwycięstwo!"
+text = "Victory!"
 horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=267512362]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_dwl3t")
 theme_override_font_sizes/normal_font_size = 20
-text = "Dziękujemy za zagranie!"
+text = "Thank you for playing!"
 fit_content = true
 horizontal_alignment = 1
 
