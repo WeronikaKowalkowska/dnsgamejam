@@ -6,6 +6,8 @@ const DOG_BARK_V_2_1 = preload('uid://c624kfsfxxyug')
 @onready var detection_area: Area3D = $View/DetectionArea
 @onready var path: Path3D = get_tree().current_scene.get_node("Path3D")
 
+static var spectre_attacker: Node3D = null
+
 @onready var game_over: Control = $'../GUI/GameOver'
 
 
@@ -86,14 +88,20 @@ func _check_cats() -> bool:
 			navigation_agent_3d.set_target_position(catAliveNode.position)
 			return true
 	if catSpectre:
+		if spectre_attacker != null and spectre_attacker != self:
+			return false	
 		if _raycast_check_cat(catSpectre, "catSpectre"):
 			lastAttackCat = catSpectre
+			spectre_attacker = self
 			_ATTACK()
 			if (positionStopInSpectreCar != Vector3.ZERO):
 				navigation_agent_3d.set_target_position(positionStopInSpectreCar)
 			else:
 				navigation_agent_3d.set_target_position(catSpectre.position)
 			return true
+		else:
+			if spectre_attacker == self:
+				spectre_attacker = null
 	return false
 
 func _IDLE():
