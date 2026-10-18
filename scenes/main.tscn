@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
 [ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="4_og1vs"]
 [ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchScript.gd" id="4_ya4ey"]
-[ext_resource type="Script" uid="uid://bbdk1qfr4mnll" path="res://scripts/KameraMovement.gd" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
@@ -557,6 +556,9 @@ radius = 0.25
 
 [node name="Main" type="Node3D" unique_id=1048634786]
 script = ExtResource("1_jkv2x")
+
+[node name="CamCenter" type="Node3D" parent="." unique_id=1277362542]
+transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 0, 0, 0)
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=201889666]
 script = ExtResource("1_choun")
