@@ -652,7 +652,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Tutorial" type="Control" parent="GUI" unique_id=1364312850]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -707,7 +706,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=272739057]
 layout_mode = 2
-text = "pomiń"
+text = "dalej"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="GUI/Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=2048265614]

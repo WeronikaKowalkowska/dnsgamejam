@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://iukn6uiqv4jx" path="res://scenes/window_manager.gd" id="3_4ytvr"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_i6lef"]
 [ext_resource type="Texture2D" uid="uid://bpu2pkuln0khx" path="res://assets/cat_bowl_pattern.svg" id="3_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://bwot45gw4r3fd" path="res://assets/logo.svg" id="4_i42df"]
 [ext_resource type="Texture2D" uid="uid://bnabb2w0y2die" path="res://assets/cross.svg" id="4_mhnvy"]
 [ext_resource type="Script" uid="uid://cw2bah14bn03m" path="res://scenes/settings.gd" id="5_g3eks"]
 [ext_resource type="Texture2D" uid="uid://m5vrjewwnp1x" path="res://assets/checkbox_checked.svg" id="6_13sgg"]
@@ -84,22 +85,21 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 3
 
-[node name="NE" type="MarginContainer" parent="." unique_id=1318426593]
+[node name="NE" type="MarginContainer" parent="." unique_id=1263536749]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-offset_bottom = 239.0
-grow_horizontal = 2
-theme_override_constants/margin_top = 128
-theme_override_constants/margin_right = 256
+offset_left = -598.0
+offset_bottom = 242.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 192
+theme_override_constants/margin_right = 192
 
-[node name="Label" type="RichTextLabel" parent="NE" unique_id=1782739347]
+[node name="Logo" type="TextureRect" parent="NE" unique_id=159241083]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 92
-bbcode_enabled = true
-text = "[color=violet]HolCat[/color]"
-fit_content = true
-horizontal_alignment = 2
+texture = ExtResource("4_i42df")
+stretch_mode = 2
 
 [node name="W" type="MarginContainer" parent="." unique_id=259143041]
 layout_mode = 1
