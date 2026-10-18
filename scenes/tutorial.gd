@@ -70,7 +70,7 @@ func _input(event: InputEvent) -> void:
 	match step:
 		0: # W, A, S, D
 			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode in [KEY_W, KEY_A, KEY_S, KEY_D]:
+				if event.keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_SPACE]:
 					can_advance = true
 		1: # Informacyjny - Spacja
 			if event is InputEventKey and event.pressed and not event.echo:
@@ -78,23 +78,17 @@ func _input(event: InputEvent) -> void:
 					can_advance = true
 		2: # Przycisk "E"
 			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode == KEY_E:
+				if event.keycode in [KEY_E, KEY_SPACE]:
 					can_advance = true
-		3: # Klawisz "ALT"
+		3, 4: # Klawisz "ALT"
 			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode == KEY_ALT:
+				if event.keycode in [KEY_ALT, KEY_SPACE]:
 					can_advance = true
-		4: # Prawy przycisk myszy
-			if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-				can_advance = true
 		5: # Przycisk "E"
 			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode == KEY_E:
+				if event.keycode in [KEY_E, KEY_SPACE]:
 					can_advance = true
-		6: # Prawy przycisk myszy
-			if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-				can_advance = true
-		7, 8, 9, 10: # Kroki informacyjne - Spacja
+		6, 7, 8, 9, 10: # Kroki informacyjne - Spacja
 			if event is InputEventKey and event.pressed and not event.echo:
 				if event.keycode == KEY_SPACE:
 					can_advance = true
