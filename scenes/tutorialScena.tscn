@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gdim62rciu3p"]
 
+[ext_resource type="Script" uid="uid://tnu2bxmplgci" path="res://scenes/tutorial.gd" id="1_swd00"]
 [ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveScript.gd" id="2_lreeg"]
 [ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_n.png" id="4_tgp1v"]
 [ext_resource type="Texture2D" uid="uid://d3sys1wv213ro" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_ne.png" id="5_gtmbk"]
@@ -51,6 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://dtgeoux4jfpqa" path="res://assets/sprites/spectre_cat/dash/SE.png" id="49_gy6dp"]
 [ext_resource type="Texture2D" uid="uid://bde7d6mxaj40r" path="res://assets/sprites/spectre_cat/dash/SW.png" id="50_7asyu"]
 [ext_resource type="Texture2D" uid="uid://dqiwc40p6erxn" path="res://assets/sprites/spectre_cat/dash/W.png" id="51_tr6gx"]
+[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="53_o1yh7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sh1ab"]
 radius = 0.9
@@ -334,6 +336,13 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cuqs"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [node name="Tutorial" type="Node3D" unique_id=1731204749]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=584504574]
@@ -359,6 +368,7 @@ animation = &"idle_n"
 transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 3.5522394, 7.4877424, 3.5267682)
 cull_mask = 1048567
 projection = 1
+current = true
 size = 20.0
 script = ExtResource("13_lreeg")
 
@@ -400,3 +410,52 @@ sprite_frames = SubResource("SpriteFrames_xhv06")
 animation = &"idle_n"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1027850638]
+
+[node name="Tutorial" type="Control" parent="." unique_id=926602513]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_swd00")
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial" unique_id=96324614]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="Tutorial/MarginContainer" unique_id=233274613]
+custom_minimum_size = Vector2(384, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2cuqs")
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial/MarginContainer/PanelContainer" unique_id=1743197098]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial/MarginContainer/PanelContainer/MarginContainer" unique_id=618759014]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StepTitle" type="Label" parent="Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1947483226]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "step_title"
+horizontal_alignment = 1
+
+[node name="StepDescription" type="RichTextLabel" parent="Tutorial/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=220180498]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_separation = 4
+theme_override_fonts/normal_font = ExtResource("53_o1yh7")
+theme_override_font_sizes/normal_font_size = 18
+text = "step_description"
+horizontal_alignment = 1
+vertical_alignment = 1
