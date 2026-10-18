@@ -95,215 +95,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wddr1"]
 size = Vector3(0.68011475, 1, 0.8000488)
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_g8vqi"]
-vertices = PackedVector3Array(-4.3655753, 1.2748961, -9.723913, 9.384424, 1.2748961, -9.973913, 9.384424, 1.2748961, -11.473913, -4.8655753, 1.2748961, -11.473913, -4.8655753, 1.2748961, 7.776087, -4.3655753, 1.2748961, 7.776087, -3.3655753, -1.2251039, -11.223913, -3.3655753, -1.2251039, -10.723913, 9.134424, -1.2251039, -10.723913, 9.134424, -1.2251039, -11.223913, 2.8844247, -1.2251039, -4.223913, 3.1344247, -1.2251039, -3.7239132, 3.8844247, -1.2251039, -3.7239132, 3.8844247, -1.2251039, -8.973913, 1.8844247, -1.2251039, -6.973913, 2.1344247, -1.2251039, -4.223913, -1.8655753, -1.2251039, -3.9739132, 0.13442469, -1.2251039, -4.223913, 0.13442469, -1.2251039, -6.723913, -3.3655753, -1.2251039, -8.973913, -3.3655753, -1.2251039, 7.276087, -1.8655753, -1.2251039, 7.276087, 2.8844247, -1.2251039, -2.2239132, 2.8844247, -1.2251039, -1.7239132, 3.3844247, -1.2251039, -1.4739132, 4.1344247, -1.2251039, -2.4739132, 8.384424, -1.2251039, -0.4739132, 8.634424, -1.2251039, 0.5260868, 9.134424, -1.2251039, 0.5260868, 8.384424, -1.2251039, -2.7239132, 3.3844247, -1.2251039, 1.5260868, 4.3844247, -1.2251039, 2.0260868, 4.8844247, -1.2251039, 1.5260868, 4.8844247, -1.2251039, -0.4739132, 6.3844247, -1.2251039, -5.973913, 5.8844247, -1.2251039, -4.723913, 8.384424, -1.2251039, -4.723913, 9.134424, -1.2251039, -5.973913, 6.1344247, -1.2251039, -7.723913, 9.134424, -1.2251039, -7.973913, 9.134424, -1.2251039, -8.973913, 5.8844247, -1.2251039, -8.973913, 3.8844247, -1.2251039, 2.5260868, 4.3844247, -1.2251039, 2.2760868, 3.1344247, -1.2251039, 2.5260868, 3.8844247, -1.2251039, 6.276087, 1.3844247, -1.2251039, 2.2760868, 1.3844247, -1.2251039, -1.4739132, 0.13442469, -1.2251039, -2.2239132, 0.13442469, -1.2251039, 7.276087, 4.8844247, -1.2251039, 7.276087, 4.8844247, -1.2251039, 6.526087, 5.8844247, -1.2251039, 2.5260868, 8.384424, -1.2251039, 1.5260868, 5.8844247, -1.2251039, 6.276087, 9.134424, -1.2251039, 7.276087)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 14), PackedInt32Array(12, 14, 13), PackedInt32Array(10, 15, 14), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(14, 18, 13), PackedInt32Array(13, 18, 19), PackedInt32Array(21, 20, 16), PackedInt32Array(16, 20, 19), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(25, 22, 12), PackedInt32Array(12, 22, 11), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 33), PackedInt32Array(33, 30, 24), PackedInt32Array(24, 25, 33), PackedInt32Array(33, 25, 26), PackedInt32Array(26, 25, 29), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 37), PackedInt32Array(39, 38, 40), PackedInt32Array(40, 38, 41), PackedInt32Array(38, 34, 41), PackedInt32Array(41, 34, 35), PackedInt32Array(36, 37, 29), PackedInt32Array(29, 37, 28), PackedInt32Array(43, 42, 31), PackedInt32Array(31, 42, 44), PackedInt32Array(31, 44, 30), PackedInt32Array(44, 42, 45), PackedInt32Array(47, 46, 48), PackedInt32Array(48, 46, 49), PackedInt32Array(51, 50, 45), PackedInt32Array(45, 50, 49), PackedInt32Array(23, 47, 22), PackedInt32Array(22, 47, 48), PackedInt32Array(44, 45, 46), PackedInt32Array(46, 45, 49), PackedInt32Array(31, 32, 43), PackedInt32Array(43, 32, 52), PackedInt32Array(52, 32, 53), PackedInt32Array(53, 27, 28), PackedInt32Array(54, 52, 53), PackedInt32Array(51, 54, 50), PackedInt32Array(50, 54, 55), PackedInt32Array(53, 28, 54), PackedInt32Array(54, 28, 55)]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_8cgj6"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xhv06"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_x7cl7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_swd00")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_o1yh7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_2cuqs")
-}],
-"loop": 1,
-"name": &"dash_e",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_rq3lp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_homuu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_6do30")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_e6hiv")
-}],
-"loop": 1,
-"name": &"dash_n",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_htg7l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_s7j2a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_4xj2i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_pfddq")
-}],
-"loop": 1,
-"name": &"dash_ne",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("24_cf8r4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_ixd4s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_3v3iy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_my4dt")
-}],
-"loop": 1,
-"name": &"dash_nw",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("28_s04q5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_02wa1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_axyjo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_32kpw")
-}],
-"loop": 1,
-"name": &"dash_s",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("32_ngrrr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_u2su5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_o2gkg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_ckrlg")
-}],
-"loop": 1,
-"name": &"dash_se",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("36_8rvew")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_s8ia8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_4xeyc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_xd8eh")
-}],
-"loop": 1,
-"name": &"dash_sw",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("40_xuu8u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_dmfug")
-}, {
-"duration": 1.0,
-"texture": ExtResource("42_rithk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("43_mkkow")
-}],
-"loop": 1,
-"name": &"dash_w",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("44_r3jib")
-}],
-"loop": 1,
-"name": &"idle_e",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45_asglt")
-}],
-"loop": 1,
-"name": &"idle_n",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("46_gyv0u")
-}],
-"loop": 1,
-"name": &"idle_ne",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("47_vn2jx")
-}],
-"loop": 1,
-"name": &"idle_nw",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("48_r15n0")
-}],
-"loop": 1,
-"name": &"idle_s",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("49_gy6dp")
-}],
-"loop": 1,
-"name": &"idle_se",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("50_7asyu")
-}],
-"loop": 1,
-"name": &"idle_sw",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("51_tr6gx")
-}],
-"loop": 1,
-"name": &"idle_w",
-"speed": 12.0
-}]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7j2a"]
 bg_color = Color(0, 0, 0, 0.49803922)
 corner_radius_top_left = 16
@@ -312,6 +103,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q5kk5"]
+radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_of2g4"]
 animations = [{
@@ -516,13 +308,229 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_8cgj6"]
+radius = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhv06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_x7cl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_swd00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_o1yh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2cuqs")
+}],
+"loop": 1,
+"name": &"dash_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_rq3lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_homuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6do30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_e6hiv")
+}],
+"loop": 1,
+"name": &"dash_n",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_htg7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s7j2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4xj2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pfddq")
+}],
+"loop": 1,
+"name": &"dash_ne",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_cf8r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ixd4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3v3iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_my4dt")
+}],
+"loop": 1,
+"name": &"dash_nw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_s04q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_02wa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_axyjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_32kpw")
+}],
+"loop": 1,
+"name": &"dash_s",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_ngrrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_u2su5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_o2gkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ckrlg")
+}],
+"loop": 1,
+"name": &"dash_se",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_8rvew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_s8ia8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4xeyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xd8eh")
+}],
+"loop": 1,
+"name": &"dash_sw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_xuu8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dmfug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_rithk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_mkkow")
+}],
+"loop": 1,
+"name": &"dash_w",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_r3jib")
+}],
+"loop": 1,
+"name": &"idle_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_asglt")
+}],
+"loop": 1,
+"name": &"idle_n",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_gyv0u")
+}],
+"loop": 1,
+"name": &"idle_ne",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_vn2jx")
+}],
+"loop": 1,
+"name": &"idle_nw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_r15n0")
+}],
+"loop": 1,
+"name": &"idle_s",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_gy6dp")
+}],
+"loop": 1,
+"name": &"idle_se",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_7asyu")
+}],
+"loop": 1,
+"name": &"idle_sw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_tr6gx")
+}],
+"loop": 1,
+"name": &"idle_w",
+"speed": 12.0
+}]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_8cgj6"]
+vertices = PackedVector3Array(4.2309556, 0.3200736, -4.1332703, 2.9809556, 0.3200736, -4.3832703, 2.4809556, 0.3200736, -3.8832703, 3.4809556, 0.3200736, -2.3832703, 3.9809556, 0.3200736, -1.8832703, 3.9809556, 0.3200736, 1.1167297, 3.9809556, 0.3200736, 3.6167297, 4.2309556, 0.3200736, 3.3667297, 0.4809556, 0.3200736, -4.3832703, 0.4809556, 0.3200736, -6.6332703, -2.2690444, 0.3200736, -6.6332703, -1.5190444, 0.3200736, -1.8832703, -0.7690444, 0.3200736, -2.6332703, 1.2309556, 0.3200736, 5.1167297, 1.4809556, 0.3200736, 4.8667297, 1.4809556, 0.3200736, 1.1167297, 1.2309556, 0.3200736, 0.11672974, -2.2690444, 0.3200736, 8.86673, -1.5190444, 0.3200736, 8.86673, 1.9809556, 0.3200736, 0.61672974, 3.4809556, 0.3200736, 0.11672974, 3.4809556, 0.3200736, 0.61672974, 0.9809556, 0.3200736, -3.8832703, 3.9809556, 0.3200736, -0.38327026, 4.7309556, 0.3200736, 3.8667297, 3.9809556, 0.3200736, 4.8667297, 1.9809556, 0.3200736, 5.3667297, 1.2309556, 0.3200736, 8.86673, 8.980955, 0.3200736, 1.3667297, 8.980955, 0.3200736, 3.1167297, 9.480955, 0.3200736, 5.6167297, 4.2309556, 0.3200736, -5.3832703, 2.9809556, 0.3200736, -6.6332703, 4.7309556, 0.3200736, -5.8832703, 6.4809556, 0.3200736, 8.86673, 6.4809556, 0.3200736, 8.61673, 4.9809556, 0.3200736, 7.8667297, 3.4809556, 0.3200736, 5.3667297, 4.9809556, 0.3200736, 6.6167297, 5.9809556, 0.3200736, 4.6167297, 8.480955, 0.3200736, -0.63327026, 6.9809556, 0.3200736, -0.63327026, 6.9809556, 0.3200736, 0.86672974, 8.480955, 0.3200736, 0.86672974, 8.480955, 0.3200736, 3.6167297, 6.4809556, 0.3200736, 3.8667297, 6.7309556, 0.3200736, 3.8667297, 8.980955, 0.3200736, -1.1332703, 7.7309556, 0.3200736, 3.8667297, 8.980955, 0.3200736, 5.3667297, 6.2309556, 0.3200736, -5.8832703, 9.480955, 0.3200736, -6.6332703, 7.2309556, 0.3200736, -5.8832703, 6.9809556, 0.3200736, -5.1332703, 7.2309556, 0.3200736, -4.1332703, 6.9809556, 0.3200736, -3.1332703, 7.7309556, 0.3200736, -3.6332703, 8.480955, 0.3200736, -3.1332703, 9.480955, 0.3200736, -3.6332703, 8.980955, 0.3200736, -2.6332703, 7.7309556, 0.3200736, 8.11673, 9.480955, 0.3200736, 8.86673)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(12, 11, 8), PackedInt32Array(8, 11, 9), PackedInt32Array(9, 11, 10), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(18, 17, 11), PackedInt32Array(11, 17, 10), PackedInt32Array(19, 15, 16), PackedInt32Array(21, 19, 20), PackedInt32Array(20, 19, 16), PackedInt32Array(2, 3, 22), PackedInt32Array(22, 3, 12), PackedInt32Array(20, 23, 21), PackedInt32Array(21, 23, 5), PackedInt32Array(0, 23, 4), PackedInt32Array(5, 23, 7), PackedInt32Array(7, 23, 0), PackedInt32Array(8, 22, 12), PackedInt32Array(7, 24, 6), PackedInt32Array(6, 24, 25), PackedInt32Array(14, 26, 13), PackedInt32Array(13, 26, 27), PackedInt32Array(30, 29, 28), PackedInt32Array(31, 0, 1), PackedInt32Array(33, 31, 32), PackedInt32Array(32, 31, 1), PackedInt32Array(35, 34, 36), PackedInt32Array(36, 34, 27), PackedInt32Array(39, 38, 37), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(46, 45, 44), PackedInt32Array(40, 47, 43), PackedInt32Array(43, 47, 28), PackedInt32Array(48, 44, 49), PackedInt32Array(49, 44, 30), PackedInt32Array(46, 39, 45), PackedInt32Array(45, 39, 25), PackedInt32Array(25, 39, 37), PackedInt32Array(25, 24, 45), PackedInt32Array(33, 32, 50), PackedInt32Array(50, 32, 51), PackedInt32Array(30, 44, 29), PackedInt32Array(50, 51, 52), PackedInt32Array(53, 50, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(53, 54, 55), PackedInt32Array(48, 46, 44), PackedInt32Array(56, 55, 54), PackedInt32Array(55, 56, 57), PackedInt32Array(57, 56, 58), PackedInt32Array(38, 36, 37), PackedInt32Array(37, 36, 26), PackedInt32Array(26, 36, 27), PackedInt32Array(59, 57, 58), PackedInt32Array(59, 58, 47), PackedInt32Array(47, 58, 28), PackedInt32Array(28, 58, 30), PackedInt32Array(35, 60, 34), PackedInt32Array(34, 60, 61), PackedInt32Array(49, 30, 60), PackedInt32Array(60, 30, 61)]
+agent_radius = 0.75
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xhv06"]
 height = 0.6773071
 radius = 0.38964844
 
-[node name="Tutorial" type="Node3D" unique_id=1731204749]
+[sub_resource type="Curve3D" id="Curve3D_8cgj6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 12.476852, 0, 0, 0, 0, 0, 0, 0.7439735, 0, 3.6743069, 0, 0, 0, 0, 0, 0, 2.2884307, 0, 3.3307421, 0, 0, 0, 0, 0, 0, 4.984945, 0, 3.4593108, 0, 0, 0, 0, 0, 0, 6.1567736, 0, 6.8506017, 0, 0, 0, 0, 0, 0, 3.5770671, 0, 7.070252, 0, 0, 0, 0, 0, 0, 3.4078832, -4.7683716e-07, 12.020632, 0, 0, 0, 0, 0, 0, 5.7132225, 4.7683716e-07, 12.729961, 0, 0, 0, 0, 0, 0, 6.5181904, 0, 10.649708, 0, 0, 0, 0, 0, 0, 6.224077, 0, 2.8434641, 0, 0, 0, 0, 0, 0, 1.9132729, 0, 2.3799372, 0, 0, 0, 0, 0, 0, 2.117382, 0, 0.061228275, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 13
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=584504574]
+[node name="Tutorial" type="Node3D" unique_id=1731204749]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1941674531]
 transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 3.5522394, 7.4877424, 3.5267682)
@@ -537,7 +545,6 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 sky_mode = 1
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1132485551]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6751218, -1.7251015, -4.0500894)
 collision_layer = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=642584916]
@@ -545,31 +552,6 @@ transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 25, 2.481842, 0, 0.19226074)
 shape = SubResource("BoxShape3D_wddr1")
 
 [node name="level1_19" parent="StaticBody3D2" unique_id=1436227087 instance=ExtResource("31_jke2q")]
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=318971240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1493797)
-navigation_mesh = SubResource("NavigationMesh_g8vqi")
-
-[node name="buildings" parent="NavigationRegion3D" unique_id=1157841335 instance=ExtResource("13_g8vqi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6751218, -1.7251015, -1.9007096)
-
-[node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=1082254950 groups=["catSpectre"]]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 7.038, -0.97662085, -2.6571472)
-collision_layer = 4
-collision_mask = 2
-script = ExtResource("11_5xv8u")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="KotDuchCharacterBody3D" unique_id=293243750]
-transform = Transform3D(1.0000002, -1.4901161e-08, 2.9802322e-08, -1.4901161e-08, 1.0000002, 0, 0, -7.450581e-09, 1.0000002, 0, 0, 0)
-shape = SubResource("SphereShape3D_8cgj6")
-
-[node name="Sprite3D" type="AnimatedSprite3D" parent="KotDuchCharacterBody3D" unique_id=1169944157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
-billboard = 1
-sprite_frames = SubResource("SpriteFrames_xhv06")
-animation = &"idle_n"
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1027850638]
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1479193054]
 script = ExtResource("52_homuu")
@@ -645,11 +627,14 @@ text = "step_description"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CharacterBodyDog3D" parent="." unique_id=1058109685 instance=ExtResource("11_swd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3776581, 0.9999995, 0.66900325)
+
 [node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("11_swd00")]
-transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.299, -0.9360695, 4.842858)
+transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -1.986, 1, 4.843)
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=498940902 groups=["catAlive"]]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 6.6428585, -1.2250376, 2.312)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 9.02498, 0.5, 0.4144621)
 collision_layer = 2053
 collision_mask = 2
 axis_lock_linear_y = true
@@ -664,8 +649,41 @@ billboard = 1
 sprite_frames = SubResource("SpriteFrames_of2g4")
 animation = &"dash_ne"
 
+[node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=1082254950 groups=["catSpectre"]]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 8.804494, 0.5, -3.326449)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("11_5xv8u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KotDuchCharacterBody3D" unique_id=293243750]
+transform = Transform3D(1.0000002, -1.4901161e-08, 2.9802322e-08, -1.4901161e-08, 1.0000002, 0, 0, -7.450581e-09, 1.0000002, 0, 0, 0)
+shape = SubResource("SphereShape3D_8cgj6")
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="KotDuchCharacterBody3D" unique_id=1169944157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_xhv06")
+animation = &"idle_n"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1027850638]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=318971240]
+navigation_mesh = SubResource("NavigationMesh_8cgj6")
+
+[node name="buildings" parent="NavigationRegion3D" unique_id=1157841335 instance=ExtResource("13_g8vqi")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1173780769]
+transform = Transform3D(19.880089, 0, 0, 0, 1, 0, 0, 0, 21.76654, 2.421, -0.5, 0)
+visible = false
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="NavigationRegion3D" unique_id=1619464217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9971163, 0)
+height = 8.0
+vertices = PackedVector3Array(-11.884724, 0, -12.328873, -12.62565, 0, 11.747886, 12.883987, 0, 11.626556, 12.812683, 0, -12.255276)
+affect_navigation_mesh = true
+
 [node name="Micha" parent="." unique_id=111147647 instance=ExtResource("91_8cgj6")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1371305, -1.5074387, -10.034291)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.9963157, 0, 8.954105)
 
 [node name="MichaArea" type="Area3D" parent="Micha" unique_id=332590575]
 collision_layer = 512
@@ -675,3 +693,7 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=1135939090]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33816528, 0)
 shape = SubResource("CylinderShape3D_xhv06")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1659979741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.231, 0, -6.409158)
+curve = SubResource("Curve3D_8cgj6")
