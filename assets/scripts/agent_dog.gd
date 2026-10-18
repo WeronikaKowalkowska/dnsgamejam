@@ -1,8 +1,13 @@
 extends CharacterBody3D
 
+const DOG_BARK_V_2_1 = preload('uid://c624kfsfxxyug')
+
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $View/DetectionArea
 @onready var path: Path3D = get_tree().current_scene.get_node("Path3D")
+
+@onready var game_over: Control = $'../GUI/GameOver'
+
 
 enum PlayerState {
 	IDLE,
@@ -27,8 +32,12 @@ var lastPositionAliveCat: Vector3 = Vector3.ZERO
 var lastAttackCat: Node3D = null
 var positionStopInSpectreCar: Vector3 = Vector3.ZERO
 
+var barked: bool = false
+
 
 func _ready():
+	game_over.hide()
+	
 	if path:
 		points = path.curve.get_baked_points()
 		if points.size() > 0:
@@ -119,7 +128,16 @@ func _PATROL():
 		_state = PlayerState.IDLE
 		countState = 0
 
+func bark() -> void:
+	if not barked:
+		Audio.sfx.pitch_scale = [1.5, 2, 1.8].pick_random()
+		Audio.play_sound(DOG_BARK_V_2_1)
+		barked = true
+		await get_tree().create_timer([3,2,4].pick_random()).timeout
+		barked = false
+
 func _ATTACK():
+	bark()
 	if catAliveNode:
 		SPEED = 6.0
 		
@@ -148,7 +166,9 @@ func _ATTACK():
 
 func _entered_collision_cat(body: Node3D):
 	if (body.is_in_group("catAlive")):
-		get_tree().reload_current_scene()
+		get_tree().paused = true
+		game_over.show()
+		
 	if (body.is_in_group("catSpectre")):
 		positionStopInSpectreCar = global_position
 
