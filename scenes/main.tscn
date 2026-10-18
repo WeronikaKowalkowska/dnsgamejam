@@ -5,13 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://buo81e5n6vmcr" path="res://assets/animal/Agent_dog.tscn" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveScript.gd" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://c4j0dsgngrf5" path="res://assets/models/floor.glb" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dq5sq1mag3hyy" path="res://assets/restart_button_wo_128x128.svg" id="3_akjxb"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://ccqbfh8c0g4fq" path="res://assets/models/budynek1.glb" id="3_tefeu"]
+[ext_resource type="Script" uid="uid://diq2k2x8b62wj" path="res://scenes/game_over.gd" id="3_vrx01"]
 [ext_resource type="Script" uid="uid://tnu2bxmplgci" path="res://scenes/tutorial.gd" id="4_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
 [ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="4_og1vs"]
 [ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchScript.gd" id="4_ya4ey"]
-[ext_resource type="Script" uid="uid://bbdk1qfr4mnll" path="res://scripts/KameraMovement.gd" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
@@ -97,6 +98,15 @@
 [ext_resource type="Texture2D" uid="uid://6onw3r3fa6yl" path="res://assets/sprites/spectre_cat/dash/Klatka_3w.png" id="80_vny5k"]
 [ext_resource type="Texture2D" uid="uid://d18t2j7ya21t" path="res://assets/sprites/spectre_cat/dash/Klatka_4w.png" id="81_8lcmr"]
 [ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="97_673bd"]
+[ext_resource type="Texture2D" uid="uid://bbioc760a7dum" path="res://assets/food_marker_purple.svg" id="100_1uevf"]
+[ext_resource type="Script" uid="uid://ceejfakoqggwv" path="res://assets/models/micha.gd" id="100_tc087"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uevf"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6deb"]
 bg_color = Color(0, 0, 0, 0.49803922)
@@ -558,8 +568,60 @@ radius = 0.25
 [node name="Main" type="Node3D" unique_id=1048634786]
 script = ExtResource("1_jkv2x")
 
+[node name="CamCenter" type="Node3D" parent="." unique_id=1277362542]
+transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CamCenter" unique_id=1223964158]
+transform = Transform3D(1, 0, 0, 0, 1, 8.940697e-08, 0, -5.9604645e-08, 1, 0.8300004, 1.4305115e-06, 16)
+cull_mask = 1048567
+projection = 1
+size = 20.0
+
 [node name="GUI" type="CanvasLayer" parent="." unique_id=201889666]
 script = ExtResource("1_choun")
+
+[node name="Victory" type="Control" parent="GUI" unique_id=1548375040]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOver" type="Control" parent="GUI" unique_id=244580700]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_vrx01")
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/GameOver" unique_id=1647691379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GUI/GameOver/CenterContainer" unique_id=1190697916]
+custom_minimum_size = Vector2(384, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1uevf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/GameOver/CenterContainer" unique_id=1329607462]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=179074848]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Game Over"
+
+[node name="RestartBtn" type="TextureButton" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=298551806]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_akjxb")
 
 [node name="QuitPrompt" parent="GUI" unique_id=2141659490 instance=ExtResource("3_eb6dy")]
 visible = false
@@ -646,13 +708,6 @@ collision_layer = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1819890612]
 shape = SubResource("WorldBoundaryShape3D_15n48")
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1223964158]
-transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 8.389073, 7.4877424, 7.2156544)
-cull_mask = 1048567
-projection = 1
-size = 21.0
-script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 9.03474, 0.5773463, 2.3115363)
@@ -761,6 +816,7 @@ curve = SubResource("Curve3D_85g3d")
 
 [node name="Micha" parent="." unique_id=963131759 instance=ExtResource("97_673bd")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.4462337, 1.3113022e-08, -4.454154)
+script = ExtResource("100_tc087")
 
 [node name="MichaArea" type="Area3D" parent="Micha" unique_id=20281287]
 collision_layer = 512
@@ -770,3 +826,8 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=864823935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123107895, 0)
 shape = SubResource("CylinderShape3D_gtd1r")
+
+[node name="Marker" type="Sprite3D" parent="Micha" unique_id=408536832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43007922, 0)
+billboard = 1
+texture = ExtResource("100_1uevf")

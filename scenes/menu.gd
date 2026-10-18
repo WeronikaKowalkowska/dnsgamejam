@@ -2,6 +2,8 @@
 extends Control
 const MAIN_THEME_2 = preload('uid://d28uuuwf0amvr')
 const CLICK_SOUND_2P_0 = preload('uid://8wy38mi7jk7a')
+const FINAL_MEOW = preload('uid://b2g3715y4l3c5')
+
 
 @onready var window_manager: Control = $WindowManager
 @onready var quit_prompt: Control = $QuitPrompt
@@ -39,7 +41,9 @@ func _ready() -> void:
 	quit_btn.pressed.connect(func(): quit_prompt.show())
 
 func any_button_pressed() -> void:
-	Audio.play_sound(CLICK_SOUND_2P_0, 0.145)
+	Audio.sfx.pitch_scale = [0.75, 1, 1.5].pick_random()
+	var random_click: AudioStreamMP3 = [CLICK_SOUND_2P_0, CLICK_SOUND_2P_0, CLICK_SOUND_2P_0, FINAL_MEOW].pick_random()
+	Audio.play_sound(random_click, 0.145)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("quit_request") and not event.is_echo():

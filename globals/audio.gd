@@ -15,6 +15,8 @@ func _ready() -> void:
 	
 	Signals.music_volume_changed.connect(update_music_volume)
 	Signals.sfx_volume_changed.connect(update_sfx_volume)
+	
+	sfx.max_polyphony = 10
 
 
 func play_music() -> void:
@@ -27,6 +29,9 @@ func stop_music() -> void:
 func play_sound(audiofile: AudioStream, offset: float = 0.0) -> void:
 	sfx.stream = audiofile
 	sfx.play(offset)
+	await sfx.finished
+	sfx.pitch_scale = 1.0
+	sfx.volume_db = 1.0
 
 func update_music_volume(value: int) -> void:
 	if value < 1:
@@ -36,7 +41,7 @@ func update_music_volume(value: int) -> void:
 		if music_muted:
 			music_muted = false
 			play_music()
-	music.volume_db = linear_to_db(value / 100.0)
+	music.volume_db = linear_to_db(value / 200.0)
 
 func update_sfx_volume(value: int) -> void:
 	sfx.volume_db = linear_to_db(value / 100.0)
