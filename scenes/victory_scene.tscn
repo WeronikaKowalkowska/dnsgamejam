@@ -124,7 +124,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_dwl3t")
 theme_override_font_sizes/normal_font_size = 20
-text = "Dziękujemy za zagranie!"
+text = "Thank you for playing!"
 fit_content = true
 horizontal_alignment = 1
 
