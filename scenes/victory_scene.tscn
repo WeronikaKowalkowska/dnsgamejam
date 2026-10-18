@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://bdb5yr0eowc2d"]
+
+[ext_resource type="Texture2D" uid="uid://bpu2pkuln0khx" path="res://assets/cat_bowl_pattern.svg" id="1_fefd3"]
+[ext_resource type="Script" uid="uid://brvyw81qf85ip" path="res://scenes/victory_scene.gd" id="1_lkccn"]
+[ext_resource type="Texture2D" uid="uid://c58au0dsung25" path="res://assets/victory.svg" id="1_xjjhm"]
+[ext_resource type="Texture2D" uid="uid://vc6kx3f2ix5" path="res://assets/9panel_red.svg" id="2_sl7wn"]
+[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="3_dwl3t"]
+
+[sub_resource type="Shader" id="Shader_lkccn"]
+code = "shader_type canvas_item;
+
+// Shader for creating an animated pattern background.
+// Works well with kenney's pattern pack: https://kenney.nl/assets/pattern-pack-extra
+
+// Assign this shader to a ColorRect node and set \"Anchors Preset\" to \"Full Rect\" to create a background.
+// Works with other 2D nodes as well.
+
+// Assign the pattern texture here.
+// Should be a black and white square texture containing the base pattern.
+uniform sampler2D pattern: repeat_enable;
+// The color you want the pattern to appear as.
+uniform vec4 pattern_color: source_color = vec4(1.0);
+
+// Factor by which UVs are divided.
+// Affects the size of each repeating pattern.
+uniform float tiling = 100.0;
+// How fast the background moves.
+uniform vec2 speed = vec2(0.1, 0.5);
+// Rotation of the base pattern in a range from -2pi to 2pi.
+// You can also use a range from -360 to 360 degrees and convert to radians in the vertex shader.
+uniform float rotation: hint_range(-6.28318530717959, 6.28318530717959) = 0.0;
+
+// Compute UVs in the vertex shader and pass them to the fragment shader.
+varying vec2 tiled_uv;
+
+// Called for every vertex the material is visible on.
+void vertex() {
+	// Compute UVs to sample the pattern texture
+	// We use VERTEX instead of UV to avoid stretching on rectangular backgrounds
+	tiled_uv = VERTEX / tiling + TIME * speed;
+	// Apply a rotation using a rotation matrix
+	float c = cos(rotation);
+	float s = sin(rotation);
+	tiled_uv = mat2(vec2(c, -s), vec2(s, c)) * tiled_uv;
+}
+
+// Called for every pixel the material is visible on.
+void fragment() {
+	// Mix the color of the ColorRect with the color of the pattern based on the pattern texture
+	// The third parameter is basically the value of the pattern and tells how much of each color to use in the mix
+	COLOR = mix(COLOR, pattern_color, texture(pattern, tiled_uv));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dwl3t"]
+shader = SubResource("Shader_lkccn")
+shader_parameter/pattern = ExtResource("1_fefd3")
+shader_parameter/pattern_color = Color(1, 0.7019608, 0, 1)
+shader_parameter/tiling = 200.0
+shader_parameter/speed = Vector2(0.08, 0.27)
+shader_parameter/rotation = -0.2821851969776503
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fefd3"]
+texture = ExtResource("2_sl7wn")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lkccn"]
+texture = ExtResource("2_sl7wn")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.735357, 0.735357, 0.735357, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwl3t"]
+texture = ExtResource("2_sl7wn")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.9699662, 0.9699662, 0.9699662, 1)
+
+[node name="VictoryScene" type="Control" unique_id=424813733]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lkccn")
+
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=1437441934]
+material = SubResource("ShaderMaterial_dwl3t")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.93333334, 0.6117647, 0.2509804, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1736706442]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1439560854]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VictoryLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1079365213]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Zwycięstwo!"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=267512362]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_dwl3t")
+theme_override_font_sizes/normal_font_size = 20
+text = "Dziękujemy za zagranie!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=1743202493]
+layout_mode = 2
+texture = ExtResource("1_xjjhm")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer" unique_id=775803489]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="exit_btn" type="Button" parent="CenterContainer/VBoxContainer" unique_id=580201284]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_fefd3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_lkccn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dwl3t")
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer/exit_btn" unique_id=153294120]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuitLabel" type="Label" parent="CenterContainer/VBoxContainer/exit_btn/CenterContainer" unique_id=1591927908]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"

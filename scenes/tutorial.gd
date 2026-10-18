@@ -17,8 +17,8 @@ var step: int = -1:
 				hide()
 				return
 			0:
-				step_title.text = "Sterowanie"
-				step_description.text = "Naciskaj przyciski W, A, S, D\naby poruszać kotem.\n(Spacja)"
+				step_title.text = "Controls"
+				step_description.text = "Press W, A, S, D\n to move the cat.\n(Space)"
 			1:
 				step_title.text = "Hologram"
 				step_description.text = "Masz możliwość utworzenia hologramowej wersji twojej postaci.\n(Spacja)"
@@ -27,7 +27,7 @@ var step: int = -1:
 				step_description.text = "Naciśnij przycisk \"E\" aby mieć możliwość utworzenia hologramu.\n(Spacja)"
 			3:
 				step_title.text = "Stawianie hologramu"
-				step_description.text = "Naciśnij prawy przycisk myszy w podświetlonym okręgu, aby móc umieścić hologram na jego obszarze.\n(Spacja)"
+				step_description.text = "Naciśnij prawy przycisk myszy, aby móc umieścić hologram.\n(Spacja)"
 			4:
 				step_title.text = "Usuwanie hologramu"
 				step_description.text = "Kliknij ponownie przycisk \"E\" aby usunąć hologram.\n(Spacja)"

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://m5vrjewwnp1x" path="res://assets/checkbox_checked.svg" id="6_13sgg"]
 [ext_resource type="Texture2D" uid="uid://hk3dovv3e5dd" path="res://assets/slider_handle.svg" id="7_70i5f"]
 [ext_resource type="Texture2D" uid="uid://cx2enacu256wh" path="res://assets/checkbox_unchecked.svg" id="7_i6lef"]
+[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="12_6cdou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mj5lg"]
 shader = ExtResource("2_mj5lg")
@@ -203,7 +204,6 @@ visible = false
 layout_mode = 1
 
 [node name="WindowManager" type="Control" parent="." unique_id=1211294707]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -384,7 +384,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
 [node name="Credits" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin" unique_id=1620959623]
-visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits" unique_id=865178419]
@@ -415,6 +414,7 @@ size_flags_vertical = 3
 theme_override_constants/line_separation = 4
 theme_override_constants/paragraph_separation = 12
 theme_override_constants/table_h_separation = 3
+theme_override_fonts/normal_font = ExtResource("12_6cdou")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Piotr Gutkowski
