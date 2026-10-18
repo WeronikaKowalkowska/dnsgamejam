@@ -1,6 +1,250 @@
 [gd_scene format=3 uid="uid://buo81e5n6vmcr"]
 
 [ext_resource type="Script" uid="uid://b5fbihhn6isju" path="res://assets/scripts/agent_dog.gd" id="1_nnpdd"]
+[ext_resource type="Texture2D" uid="uid://bvvm6wrny18r5" path="res://assets/sprites/dog/dash/Warstwa_1e.png" id="2_n2imt"]
+[ext_resource type="Texture2D" uid="uid://b54tuufyv0ne2" path="res://assets/sprites/dog/dash/Klatka_2e.png" id="3_hirx1"]
+[ext_resource type="Texture2D" uid="uid://b064ygyithj1t" path="res://assets/sprites/dog/dash/Klatka_3e.png" id="4_e8kr7"]
+[ext_resource type="Texture2D" uid="uid://duamo70qxgyam" path="res://assets/sprites/dog/dash/Klatka_4e.png" id="5_dwhpr"]
+[ext_resource type="Texture2D" uid="uid://cc8s1dwqdygs8" path="res://assets/sprites/dog/dash/Warstwa_1n.png" id="6_hs533"]
+[ext_resource type="Texture2D" uid="uid://bmt48rbh7sioh" path="res://assets/sprites/dog/dash/Klatka_2n.png" id="7_u1661"]
+[ext_resource type="Texture2D" uid="uid://btao0o5i2irrt" path="res://assets/sprites/dog/dash/Klatka_3n.png" id="8_vtupl"]
+[ext_resource type="Texture2D" uid="uid://dxsuu2l0esh3n" path="res://assets/sprites/dog/dash/Klatka_4n.png" id="9_xl5yt"]
+[ext_resource type="Texture2D" uid="uid://dacf7brqwbys1" path="res://assets/sprites/dog/dash/Warstwa_1ne.png" id="10_yu3hk"]
+[ext_resource type="Texture2D" uid="uid://do4ipr685doso" path="res://assets/sprites/dog/dash/Klatka_2ne.png" id="11_3d06y"]
+[ext_resource type="Texture2D" uid="uid://b85jb33aaj5o1" path="res://assets/sprites/dog/dash/Klatka_3ne.png" id="12_au7pw"]
+[ext_resource type="Texture2D" uid="uid://cr2dy5nncl5rl" path="res://assets/sprites/dog/dash/Klatka_4ne.png" id="13_egh7g"]
+[ext_resource type="Texture2D" uid="uid://bml0hlerb1j44" path="res://assets/sprites/dog/dash/Warstwa_1nw.png" id="14_6wdrw"]
+[ext_resource type="Texture2D" uid="uid://m4af5cswxfml" path="res://assets/sprites/dog/dash/Klatka_2nw.png" id="15_5ghoy"]
+[ext_resource type="Texture2D" uid="uid://cysntjfv4upxq" path="res://assets/sprites/dog/dash/Klatka_3nw.png" id="16_n585b"]
+[ext_resource type="Texture2D" uid="uid://bfxkg0530sy3t" path="res://assets/sprites/dog/dash/Klatka_4nw.png" id="17_rssy8"]
+[ext_resource type="Texture2D" uid="uid://bdihv651rbinq" path="res://assets/sprites/dog/dash/Warstwa_1s.png" id="18_et2a8"]
+[ext_resource type="Texture2D" uid="uid://cwm4kcoxvjigm" path="res://assets/sprites/dog/dash/Klatka_2s.png" id="19_lqvh2"]
+[ext_resource type="Texture2D" uid="uid://d2yperfdgkmtl" path="res://assets/sprites/dog/dash/Wstawiono_obrazs.png" id="20_ie3m6"]
+[ext_resource type="Texture2D" uid="uid://lgi2r0wklrj5" path="res://assets/sprites/dog/dash/Klatka_3s.png" id="21_ttht0"]
+[ext_resource type="Texture2D" uid="uid://cei2l1bihc23d" path="res://assets/sprites/dog/dash/Warstwa_1se.png" id="22_6wdrw"]
+[ext_resource type="Texture2D" uid="uid://c7a1bh14p4ypp" path="res://assets/sprites/dog/dash/Klatka_2se.png" id="23_5ghoy"]
+[ext_resource type="Texture2D" uid="uid://cm0ja748p6wvd" path="res://assets/sprites/dog/dash/se.png" id="24_n585b"]
+[ext_resource type="Texture2D" uid="uid://du43ni05lvx7u" path="res://assets/sprites/dog/dash/Klatka_3se.png" id="25_rssy8"]
+[ext_resource type="Texture2D" uid="uid://cc55ixg57nswb" path="res://assets/sprites/dog/dash/Warstwa_1sw.png" id="26_5vool"]
+[ext_resource type="Texture2D" uid="uid://ckevoxd3k4hd8" path="res://assets/sprites/dog/dash/Klatka_2sw.png" id="27_m5mw6"]
+[ext_resource type="Texture2D" uid="uid://jbcq17nuyork" path="res://assets/sprites/dog/dash/Klatka_4sw.png" id="28_i8sun"]
+[ext_resource type="Texture2D" uid="uid://bcc1e32tocse" path="res://assets/sprites/dog/dash/Klatka_3sw.png" id="29_w2vmv"]
+[ext_resource type="Texture2D" uid="uid://dbkfyrhvw7p40" path="res://assets/sprites/dog/dash/Warstwa_1w.png" id="30_d283h"]
+[ext_resource type="Texture2D" uid="uid://byjpn5bn2dlve" path="res://assets/sprites/dog/dash/Klatka_2w.png" id="31_1vckl"]
+[ext_resource type="Texture2D" uid="uid://bame6ywd7dys7" path="res://assets/sprites/dog/dash/Klatka_4w.png" id="32_n3nep"]
+[ext_resource type="Texture2D" uid="uid://iwj11gfbuicl" path="res://assets/sprites/dog/dash/Klatka_3w.png" id="33_oq3nw"]
+[ext_resource type="Texture2D" uid="uid://mn84p2gvgphv" path="res://assets/sprites/dog/idle/DogE.png" id="34_iq7hc"]
+[ext_resource type="Texture2D" uid="uid://4uw0dbykvcro" path="res://assets/sprites/dog/idle/DogN.png" id="35_7wy3v"]
+[ext_resource type="Texture2D" uid="uid://c37jlbqqrxx6c" path="res://assets/sprites/dog/idle/DogNE.png" id="36_vvivf"]
+[ext_resource type="Texture2D" uid="uid://b1407mk3amobu" path="res://assets/sprites/dog/idle/DogNW.png" id="37_wu08r"]
+[ext_resource type="Texture2D" uid="uid://d4gy2n8sqi02y" path="res://assets/sprites/dog/idle/DogS.png" id="38_fshkl"]
+[ext_resource type="Texture2D" uid="uid://dyakjryg4vayt" path="res://assets/sprites/dog/idle/DogSE.png" id="39_f6u3w"]
+[ext_resource type="Texture2D" uid="uid://qwt07a0bmdlg" path="res://assets/sprites/dog/idle/DogSW.png" id="40_o606w"]
+[ext_resource type="Texture2D" uid="uid://bj7h2n0fmeb4w" path="res://assets/sprites/dog/idle/DogW.png" id="41_birnh"]
+[ext_resource type="Script" uid="uid://7n1pa2boebmg" path="res://assets/animal/dog_sprite.gd" id="42_7wy3v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnpdd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n2imt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hirx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dwhpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8kr7")
+}],
+"loop": 1,
+"name": &"dash_e",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hs533")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u1661")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vtupl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xl5yt")
+}],
+"loop": 1,
+"name": &"dash_n",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yu3hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3d06y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_egh7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_au7pw")
+}],
+"loop": 1,
+"name": &"dash_ne",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_6wdrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_n585b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5ghoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rssy8")
+}],
+"loop": 1,
+"name": &"dash_nw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_et2a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lqvh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ie3m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ttht0")
+}],
+"loop": 1,
+"name": &"dash_s",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_6wdrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5ghoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_n585b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rssy8")
+}],
+"loop": 1,
+"name": &"dash_se",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_5vool")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_m5mw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_i8sun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_w2vmv")
+}],
+"loop": 1,
+"name": &"dash_sw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_d283h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1vckl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_n3nep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_oq3nw")
+}],
+"loop": 1,
+"name": &"dash_w",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_iq7hc")
+}],
+"loop": 1,
+"name": &"idle_e",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_7wy3v")
+}],
+"loop": 1,
+"name": &"idle_n",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_vvivf")
+}],
+"loop": 1,
+"name": &"idle_ne",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_wu08r")
+}],
+"loop": 1,
+"name": &"idle_nw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_fshkl")
+}],
+"loop": 1,
+"name": &"idle_s",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_f6u3w")
+}],
+"loop": 1,
+"name": &"idle_se",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_o606w")
+}],
+"loop": 1,
+"name": &"idle_sw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_birnh")
+}],
+"loop": 1,
+"name": &"idle_w",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s6cs2"]
 
@@ -47,7 +291,15 @@ points = PackedVector3Array(-6.397174, -3.2885294, -13.0598955, -6.7776175, 3.60
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=727850767]
 script = ExtResource("1_nnpdd")
 
+[node name="DogSprite" type="AnimatedSprite3D" parent="." unique_id=50610951]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_nnpdd")
+animation = &"idle_nw"
+script = ExtResource("42_7wy3v")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=158913400]
+visible = false
 mesh = SubResource("CapsuleMesh_swaa2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=282892011]

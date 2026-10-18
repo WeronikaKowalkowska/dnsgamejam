@@ -21,6 +21,26 @@ shader_parameter/tiling = 200.0
 shader_parameter/speed = Vector2(0.08, 0.27)
 shader_parameter/rotation = -0.2821851969776503
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufwb2"]
+content_margin_left = 4.0
+content_margin_right = 8.0
+bg_color = Color(1, 1, 1, 0.49803922)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 16
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="DPITexture" id="DPITexture_ufwb2"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\"><path fill=\"none\" stroke=\"#b2b2b2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-opacity=\".85\" stroke-width=\"2\" d=\"m2 4 4 4 4-4\"/></svg>
+"
+fix_alpha_border = true
+base_scale = 1.5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70i5f"]
 bg_color = Color(1, 1, 1, 0.49803922)
 corner_radius_top_left = 8
@@ -49,6 +69,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.1882353, 0, 0.2509804, 1)
 
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1343809212]
+color = Color(0.6156863, 0.4509804, 0.8627451, 0.18431373)
+antialiased = true
+polygon = PackedVector2Array(32, -8, 211, 724, 632, 725, 438, -10)
+
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=970126033]
 layout_mode = 1
 anchors_preset = 15
@@ -57,6 +82,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 3
+
+[node name="NE" type="MarginContainer" parent="." unique_id=1318426593]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 239.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 256
+
+[node name="Label" type="RichTextLabel" parent="NE" unique_id=1782739347]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 92
+bbcode_enabled = true
+text = "[color=violet]HoloCat[/color]"
+fit_content = true
+horizontal_alignment = 2
 
 [node name="W" type="MarginContainer" parent="." unique_id=259143041]
 layout_mode = 1
@@ -70,34 +112,70 @@ theme_override_constants/margin_left = 128
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="PlayBtn" type="Button" parent="W/VBoxContainer" unique_id=2119249436]
+[node name="HBoxContainer" type="HBoxContainer" parent="W/VBoxContainer" unique_id=1942852118]
 layout_mode = 2
+
+[node name="PlayBtn" type="Button" parent="W/VBoxContainer/HBoxContainer" unique_id=2119249436]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_pressed_color = Color(0.78352344, 0.7835234, 0.7835234, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "Play"
 icon = ExtResource("1_yqeox")
 flat = true
 alignment = 0
 
-[node name="SettingsBtn" type="Button" parent="W/VBoxContainer" unique_id=1958535579]
+[node name="HBoxContainer2" type="HBoxContainer" parent="W/VBoxContainer" unique_id=620592170]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="W/VBoxContainer/HBoxContainer2" unique_id=1745812647]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="SettingsBtn" type="Button" parent="W/VBoxContainer/HBoxContainer2" unique_id=1958535579]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_pressed_color = Color(0.78352344, 0.7835234, 0.7835234, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "Settings"
 icon = ExtResource("1_yqeox")
 flat = true
 alignment = 0
 
-[node name="CreditsBtn" type="Button" parent="W/VBoxContainer" unique_id=1762575282]
+[node name="HBoxContainer3" type="HBoxContainer" parent="W/VBoxContainer" unique_id=1779307898]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="W/VBoxContainer/HBoxContainer3" unique_id=565383756]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="CreditsBtn" type="Button" parent="W/VBoxContainer/HBoxContainer3" unique_id=1762575282]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_pressed_color = Color(0.78352344, 0.7835234, 0.7835234, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
 text = "Credits"
 icon = ExtResource("1_yqeox")
 flat = true
 alignment = 0
 
-[node name="ExitBtn" type="Button" parent="W/VBoxContainer" unique_id=2099958577]
+[node name="HBoxContainer4" type="HBoxContainer" parent="W/VBoxContainer" unique_id=699890635]
 layout_mode = 2
+
+[node name="Control" type="Control" parent="W/VBoxContainer/HBoxContainer4" unique_id=538589386]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+
+[node name="QuitBtn" type="Button" parent="W/VBoxContainer/HBoxContainer4" unique_id=2099958577]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_pressed_color = Color(0.78352344, 0.7835234, 0.7835234, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
-text = "Exit"
+text = "Quit"
 icon = ExtResource("1_yqeox")
 flat = true
 alignment = 0
@@ -125,6 +203,7 @@ visible = false
 layout_mode = 1
 
 [node name="WindowManager" type="Control" parent="." unique_id=1211294707]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -172,13 +251,12 @@ grow_vertical = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
 
 [node name="Title" type="MarginContainer" parent="WindowManager/MarginContainer/Window/ContentMargin" unique_id=821856069]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_constants/margin_top = -32
+theme_override_constants/margin_top = -40
 
 [node name="WindowTitle" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Title" unique_id=1405296428]
 layout_mode = 2
@@ -204,15 +282,50 @@ theme_override_constants/separation = 16
 [node name="Control2" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=1204016795]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 4.0
 
-[node name="MusicLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=362234747]
+[node name="HBoxContainer4" type="HBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=1133400086]
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer4" unique_id=257680246]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Language"
+
+[node name="Control" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer4" unique_id=668998525]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LanguageList" type="OptionButton" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer4" unique_id=220359439]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ufwb2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ufwb2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ufwb2")
+theme_override_icons/arrow = SubResource("DPITexture_ufwb2")
+alignment = 1
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Polski"
+popup/item_1/id = 1
+
+[node name="Control5" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=1807377653]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=420167291]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MusicLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer2" unique_id=362234747]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Music"
 
-[node name="MusicSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=86188292]
+[node name="MusicSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer2" unique_id=86188292]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_icons/grabber = ExtResource("7_70i5f")
 theme_override_icons/grabber_highlight = ExtResource("7_70i5f")
@@ -224,13 +337,19 @@ ticks_position = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SfxLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=904046101]
+[node name="HBoxContainer3" type="HBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=202400885]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SfxLabel" type="Label" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer3" unique_id=904046101]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "SFX"
 
-[node name="SfxSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=875990412]
+[node name="SfxSlider" type="HSlider" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer/HBoxContainer3" unique_id=875990412]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_icons/grabber = ExtResource("7_70i5f")
 theme_override_icons/grabber_highlight = ExtResource("7_70i5f")
@@ -262,9 +381,10 @@ theme_override_icons/unchecked = ExtResource("7_i6lef")
 [node name="Control" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin/Settings/VBoxContainer" unique_id=741486130]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 4.0
+size_flags_stretch_ratio = 2.0
 
 [node name="Credits" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin" unique_id=1620959623]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits" unique_id=865178419]
@@ -281,13 +401,29 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = 32
 
-[node name="RichTextLabel" type="RichTextLabel" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits/VBoxContainer/MarginContainer" unique_id=2122477839]
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits/VBoxContainer/MarginContainer" unique_id=2146173159]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1722810915]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="WindowManager/MarginContainer/Window/ContentMargin/Credits/VBoxContainer/MarginContainer/VBoxContainer" unique_id=2122477839]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/line_separation = 4
+theme_override_constants/paragraph_separation = 12
 theme_override_constants/table_h_separation = 3
-theme_override_font_sizes/normal_font_size = 24
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel tortor in tellus commodo vehicula sed id nisl. Ut tristique mollis nunc vitae vestibulum. Phasellus consequat tempor tincidunt. Vestibulum vitae odio ac ante viverra dictum. Aliquam pharetra, nunc vitae dictum interdum, sapien leo hendrerit ligula, non viverra nisl ante at sem. Vivamus venenatis purus nisi, in scelerisque mi interdum quis. Mauris sit amet volutpat massa, at commodo massa. Sed congue tempus eros. Vestibulum nec porttitor arcu. Nunc vitae ante sit amet sem porta ornare venenatis at turpis. Aliquam lectus ante, laoreet vel placerat non, tincidunt eget quam. Curabitur nulla neque, posuere eget sapien eu, efficitur convallis odio. Donec ultrices sagittis eleifend. Donec tortor turpis, consequat ut magna nec, elementum convallis urna. Maecenas a volutpat ipsum. Pellentesque dignissim et neque ut rhoncus."
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Piotr Gutkowski
+Mateusz Kośka
+Weronika Kowalkowska
+Ibrahim Zhenissuly
+Dawid Kuśmierek
+
+[font_size=16]^_^[/font_size]"
 horizontal_alignment = 1
 
 [node name="CloseMargin" type="MarginContainer" parent="WindowManager/MarginContainer" unique_id=1125490107]

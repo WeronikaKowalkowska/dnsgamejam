@@ -4,6 +4,10 @@ extends Control
 @export var cancel_btn: Button
 
 func _ready() -> void:
+	Utils.all_buttons[exit_btn] = exit_btn
+	Utils.all_buttons[cancel_btn] = cancel_btn
+	
+	
 	exit_btn.pressed.connect(func():
 		get_tree().paused = false
 		match Scenes.current_scene:
@@ -24,3 +28,7 @@ func _input(event: InputEvent) -> void:
 func resume() -> void:
 	hide()
 	get_tree().paused = false
+
+func _exit_tree() -> void:
+	Utils.all_buttons.erase(exit_btn)
+	Utils.all_buttons.erase(cancel_btn)
