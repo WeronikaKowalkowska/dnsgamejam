@@ -65,27 +65,7 @@ func _input(event: InputEvent) -> void:
 
 	# Sprawdzamy warunek w zależności od bieżącego kroku tutorialu
 	match step:
-		0: # W, A, S, D
-			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode in [KEY_W, KEY_A, KEY_S, KEY_D, KEY_SPACE]:
-					can_advance = true
-		1: # Informacyjny - Spacja
-			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode == KEY_SPACE:
-					can_advance = true
-		2: # Przycisk "E"
-			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode in [KEY_E, KEY_SPACE]:
-					can_advance = true
-		3, 4: # Klawisz "ALT"
-			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode in [KEY_ALT, KEY_SPACE]:
-					can_advance = true
-		5: # Przycisk "E"
-			if event is InputEventKey and event.pressed and not event.echo:
-				if event.keycode in [KEY_E, KEY_SPACE]:
-					can_advance = true
-		6, 7, 8, 9, 10: # Kroki informacyjne - Spacja
+		_:
 			if event is InputEventKey and event.pressed and not event.echo:
 				if event.keycode == KEY_SPACE:
 					can_advance = true

@@ -626,7 +626,7 @@ texture_normal = ExtResource("3_akjxb")
 
 [node name="Label2" type="Label" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=1299519448]
 layout_mode = 2
-text = "Wciśnij dowolny klawisz"
+text = "Press any key to restart"
 horizontal_alignment = 1
 
 [node name="QuitPrompt" parent="GUI" unique_id=2141659490 instance=ExtResource("3_eb6dy")]
