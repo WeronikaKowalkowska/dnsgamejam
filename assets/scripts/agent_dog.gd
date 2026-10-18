@@ -44,7 +44,7 @@ func _ready():
 		points = path.curve.get_baked_points()
 		if points.size() > 0:
 			indexPoint = randi_range(0, points.size() - 1)
-	_state = PlayerState.IDLE
+	_state = PlayerState.PATROL
 	_IDLE()
 
 func _on_body_entered(body: Node3D) -> void:
@@ -100,6 +100,8 @@ func _check_cats() -> bool:
 				navigation_agent_3d.set_target_position(catSpectre.position)
 			return true
 		else:
+			if lastAttackCat != null:
+				_state = PlayerState.IDLE
 			if spectre_attacker == self:
 				spectre_attacker = null
 	return false
@@ -122,18 +124,18 @@ func _IDLE():
 				break
 		attempts += 1
 		
-	if (randi_range(1, 10) <= countState):
+	if (randi_range(1, 25) <= countState):
 		_state = PlayerState.PATROL
 		countState = 0
 
 func _PATROL():
-	SPEED = 2.5
+	SPEED = 2.0
 	navigation_agent_3d.set_target_position(path.to_global(points[indexPoint]))
 	indexPoint += 1
 	if (indexPoint >= points.size()):
 		indexPoint = 0
 	
-	if (randi_range(1, 7000) <= countState):
+	if (randi_range(1, 4000) <= countState):
 		_state = PlayerState.IDLE
 		countState = 0
 
