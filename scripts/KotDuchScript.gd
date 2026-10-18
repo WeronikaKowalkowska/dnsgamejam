@@ -6,6 +6,8 @@ extends CharacterBody3D
 
 @onready var sprite_3d: AnimatedSprite3D = $Sprite3D
 
+const TELEPORT = preload('uid://7t7f0qi28y1p')
+
 var is_moving: bool = false
 var last_angle: int = 180
 
@@ -62,10 +64,15 @@ func _unhandled_input(event):
 				# Gdy duch jest widoczny – wyznaczamy cel poruszania się
 				handle_click(result.position)
 			else:
+				Audio.sfx.volume_db = -20
+				Audio.play_sound(TELEPORT)
 				# Gdy duch jest ukryty – próbujemy go postawić
 				probuj_pojawic_duszka(result.position)
 
 func ukryj_duszka():
+	if visible:
+		Audio.sfx.volume_db = -20
+		Audio.play_sound(TELEPORT)
 	visible = false
 	if collision_shape:
 		collision_shape.disabled = true
@@ -133,6 +140,8 @@ func _physics_process(delta):
 		visible = sin((MAX_ODDALENIE_CZAS - timer_oddalenia) * 15) > 0.0;
 		if timer_oddalenia >= MAX_ODDALENIE_CZAS:
 			ukryj_duszka()
+			Audio.sfx.volume_db = -20
+			Audio.play_sound(TELEPORT)
 			print("Duch zniknął z powodu zbyt dużej odległości od kota (> 10 przez 2s).")
 			return
 	else:
