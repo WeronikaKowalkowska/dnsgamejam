@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ddpxfkyejyiee" path="res://assets/models/budynek2.glb" id="4_o6xl0"]
 [ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="4_og1vs"]
 [ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchScript.gd" id="4_ya4ey"]
-[ext_resource type="Script" uid="uid://bbdk1qfr4mnll" path="res://scripts/KameraMovement.gd" id="5_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://dqy3gb68iyj6b" path="res://assets/models/scianka1.glb" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://dqcqgrh0mrmt0" path="res://assets/models/scianka2.glb" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b114m4thkvqsq" path="res://assets/models/scianka3.glb" id="7_o6xl0"]
@@ -576,7 +575,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 8.940697e-08, 0, -5.9604645e-08, 1, 0.830
 cull_mask = 1048567
 projection = 1
 size = 20.0
-script = ExtResource("5_jkv2x")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=201889666]
 script = ExtResource("1_choun")
