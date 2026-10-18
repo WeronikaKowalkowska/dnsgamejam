@@ -691,7 +691,6 @@ animation = &"idle_n"
 transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.299, 0.5, -4.499)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11001587, -0.122478485, 0.08366108)
 navigation_mesh = SubResource("NavigationMesh_tipki")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1663998963]

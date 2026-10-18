@@ -211,9 +211,9 @@ func _physics_process(delta):
 	velocity = target_velocity
 	move_and_slide()
 	
-	label.text = "dir x: " + str(direction.x) + "    dir z: " + str(direction.z)
-	label_2.text = str(last_angle)
-	label_3.text = str(is_moving)
+	#label.text = "dir x: " + str(direction.x) + "    dir z: " + str(direction.z)
+	#label_2.text = str(last_angle)
+	#label_3.text = str(is_moving)
 
 # Odwołania do węzłów:
 @onready var kot_character: CharacterBody3D = $"../KotCharacterBody3D"
