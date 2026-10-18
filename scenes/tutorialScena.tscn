@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://gdim62rciu3p"]
 
-[ext_resource type="Script" uid="uid://cgeyqshfv0j31" path="res://scenes/tutorial_scena.gd" id="1_xhv06"]
 [ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveScript.gd" id="2_lreeg"]
 [ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_n.png" id="4_tgp1v"]
 [ext_resource type="Texture2D" uid="uid://d3sys1wv213ro" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_ne.png" id="5_gtmbk"]
@@ -58,10 +57,10 @@
 [ext_resource type="Texture2D" uid="uid://ci67c7ohiw8h6" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_e2.png" id="52_xhv06"]
 [ext_resource type="Texture2D" uid="uid://dg7a4po0cld3m" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_e3.png" id="53_2rbow"]
 [ext_resource type="PackedScene" uid="uid://b8yi2lscw6do4" path="res://scenes/quit_prompt.tscn" id="53_6do30"]
+[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="53_o1yh7"]
 [ext_resource type="Script" uid="uid://tnu2bxmplgci" path="res://scenes/tutorial.gd" id="54_e6hiv"]
 [ext_resource type="Texture2D" uid="uid://bsx60h7qy4a0j" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_e4.png" id="54_gxhor"]
 [ext_resource type="Texture2D" uid="uid://ba8foa8stq7a5" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_n1.png" id="55_alm0x"]
-[ext_resource type="FontFile" uid="uid://cw0ojfsoce7m3" path="res://assets/fonts/DynaPuff-Medium.ttf" id="55_htg7l"]
 [ext_resource type="Texture2D" uid="uid://u5hmxjxg6apm" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_n2.png" id="56_vci78"]
 [ext_resource type="Texture2D" uid="uid://cwslgd2rfyydk" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_n3.png" id="57_krvuk"]
 [ext_resource type="Texture2D" uid="uid://n8hwfxcwufsh" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_n4.png" id="58_pui7u"]
@@ -517,20 +516,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Curve3D" id="Curve3D_tr6gx"]
-bake_interval = 1.0
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7.960755, 0, 0.78999996, 0.04, 0, 0, 0.88, 0, 0, 14.119606, 0, 0.29300022, 0, 0, 0, 0, 0, 0, 10.43, 0, 3.251545, 0, -0.435, 0, 0, 0, 0, 2.1341877, 0, 3.7973447, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
-}
-point_count = 6
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xhv06"]
 height = 0.6773071
 radius = 0.38964844
 
 [node name="Tutorial" type="Node3D" unique_id=1731204749]
-script = ExtResource("1_xhv06")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=584504574]
 
@@ -538,6 +528,7 @@ script = ExtResource("1_xhv06")
 transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 3.5522394, 7.4877424, 3.5267682)
 cull_mask = 1048567
 projection = 1
+current = true
 size = 20.0
 script = ExtResource("13_lreeg")
 
@@ -648,7 +639,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/line_separation = 4
-theme_override_fonts/normal_font = ExtResource("55_htg7l")
+theme_override_fonts/normal_font = ExtResource("53_o1yh7")
 theme_override_font_sizes/normal_font_size = 18
 text = "step_description"
 horizontal_alignment = 1
@@ -672,10 +663,6 @@ shape = SubResource("SphereShape3D_q5kk5")
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_of2g4")
 animation = &"dash_ne"
-
-[node name="Path3D" type="Path3D" parent="." unique_id=156684528]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
-curve = SubResource("Curve3D_tr6gx")
 
 [node name="Micha" parent="." unique_id=111147647 instance=ExtResource("91_8cgj6")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1371305, -1.5074387, -10.034291)
