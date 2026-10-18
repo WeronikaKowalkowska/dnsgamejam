@@ -190,29 +190,20 @@ func _physics_process(delta):
 	else:
 		if vec_to_angle > -112.5 and vec_to_angle <= -67.5:
 			sprite_3d.play('dash_e')
-			print("dupa_e")
 		if vec_to_angle > -67.5 and vec_to_angle <= -22.5:
 			sprite_3d.play('dash_se')
-			print("dupa_se")
 		if vec_to_angle > -22.5 and vec_to_angle <= 22.5:
 			sprite_3d.play('dash_s')
-			print("dupa_s")
 		if vec_to_angle > 22.5 and vec_to_angle <= 67.5:
 			sprite_3d.play('dash_sw')
-			print("dupa_sw")
 		if vec_to_angle > 67.5 and vec_to_angle <= 112.5:
 			sprite_3d.play('dash_w')
-			print("dupa_w")
 		if vec_to_angle > 112.5 and vec_to_angle <= 134 or vec_to_angle > -225 and vec_to_angle <= -202.5 :
 			sprite_3d.play('dash_nw')
-			
-			print("dupa_nw")
 		if vec_to_angle > -202.5 and vec_to_angle <= -157.5:
 			sprite_3d.play('dash_n')
-			print("dupa_n")
 		if vec_to_angle > -157.5 and vec_to_angle <= -112.5:
 			sprite_3d.play('dash_ne')
-			print("dupa_e")
 	
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed

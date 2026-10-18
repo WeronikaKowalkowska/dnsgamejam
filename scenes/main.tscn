@@ -96,6 +96,7 @@
 [ext_resource type="Texture2D" uid="uid://cxa43swsowotc" path="res://assets/sprites/spectre_cat/dash/Klatka_2w.png" id="79_83607"]
 [ext_resource type="Texture2D" uid="uid://6onw3r3fa6yl" path="res://assets/sprites/spectre_cat/dash/Klatka_3w.png" id="80_vny5k"]
 [ext_resource type="Texture2D" uid="uid://d18t2j7ya21t" path="res://assets/sprites/spectre_cat/dash/Klatka_4w.png" id="81_8lcmr"]
+[ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="97_673bd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6deb"]
 bg_color = Color(0, 0, 0, 0.49803922)
@@ -104,18 +105,9 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-sky_curve = 0.04019157
-sky_energy_multiplier = 0.0
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_0wfyh"]
-sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
-
 [sub_resource type="Environment" id="Environment_0wfyh"]
-background_mode = 2
-sky = SubResource("Sky_0wfyh")
+background_mode = 1
+background_color = Color(0.12318372, 0.09510297, 0.365275, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_15n48"]
 
@@ -558,6 +550,10 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gtd1r"]
+height = 0.24719238
+radius = 0.25
+
 [node name="Main" type="Node3D" unique_id=1048634786]
 script = ExtResource("1_jkv2x")
 
@@ -565,15 +561,10 @@ script = ExtResource("1_jkv2x")
 script = ExtResource("1_choun")
 
 [node name="QuitPrompt" parent="GUI" unique_id=2141659490 instance=ExtResource("3_eb6dy")]
-
-[node name="ColorRect" type="ColorRect" parent="GUI" unique_id=805500418]
-offset_left = 6.0
-offset_top = 10.0
-offset_right = 442.0
-offset_bottom = 124.0
-color = Color(0, 0, 0, 0.39215687)
+visible = false
 
 [node name="Debug" type="MarginContainer" parent="GUI" unique_id=472331366]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/margin_left = 32
@@ -656,15 +647,15 @@ collision_layer = 7
 shape = SubResource("WorldBoundaryShape3D_15n48")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1223964158]
-transform = Transform3D(0.7071068, -0.5770964, 0.40860707, 0, 0.5778576, 0.8161376, -0.7071068, -0.5770964, 0.40860707, 8.389073, 7.4877424, 7.2156544)
+transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 8.389073, 7.4877424, 7.2156544)
 cull_mask = 1048567
 projection = 1
-size = 10.0
+size = 12.0
 script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 9.03474, 0.5773463, 2.3115363)
-collision_layer = 5
+collision_layer = 2053
 collision_mask = 2
 axis_lock_linear_y = true
 script = ExtResource("2_choun")
@@ -679,7 +670,7 @@ sprite_frames = SubResource("SpriteFrames_15n48")
 animation = &"dash_ne"
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=933195050 groups=["catSpectre"]]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 7.0380735, 0.7234764, 7.261724)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 7.0380735, 0.5378493, 7.261724)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("4_ya4ey")
@@ -692,8 +683,7 @@ shape = SubResource("SphereShape3D_15n48")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_augu2")
-animation = &"dash_nw"
-frame_progress = 0.92575306
+animation = &"idle_n"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1646519035]
 
@@ -764,11 +754,18 @@ height = 8.0
 vertices = PackedVector3Array(-11.884724, 0, -12.328873, -12.62565, 0, 11.747886, 12.883987, 0, 11.626556, 12.812683, 0, -12.255276)
 affect_navigation_mesh = true
 
-[node name="Miska" type="StaticBody3D" parent="." unique_id=791910013]
-transform = Transform3D(0.91521746, 0, 0, 0, 1, 0, 0, 0, 1, -0.38928032, 0, 0)
-
-[node name="Node3D" type="Node3D" parent="Miska" unique_id=1765341879]
-
 [node name="Path3D" type="Path3D" parent="." unique_id=69274219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
 curve = SubResource("Curve3D_85g3d")
+
+[node name="Micha" parent="." unique_id=963131759 instance=ExtResource("97_673bd")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.4462337, 1.3113022e-08, -4.454154)
+
+[node name="MichaArea" type="Area3D" parent="Micha" unique_id=20281287]
+collision_layer = 512
+collision_mask = 2048
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=864823935]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123107895, 0)
+shape = SubResource("CylinderShape3D_gtd1r")

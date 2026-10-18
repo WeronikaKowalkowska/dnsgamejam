@@ -22,17 +22,12 @@ func _physics_process(delta):
 	# Wykrywanie nacisniecia przycisku
 	if Input.is_action_pressed("move_back"):
 		direction.x += 1
-		print("back")
-		print(direction.x)
 	if Input.is_action_pressed("move_forward"):
 		direction.x -= 1
-		print("forward")
 	if Input.is_action_pressed("move_left"):
 		direction.z += 1
-		print("left")
 	if Input.is_action_pressed("move_right"):
 		direction.z -= 1
-		print("right")
 	
 	var vec_to_angle: int = round(rad_to_deg(Vector2(direction.x, direction.z).angle()))
 	
@@ -86,7 +81,6 @@ func _physics_process(delta):
 	if direction != Vector3.ZERO:
 		direction = direction.normalized() # Gracz nie bedzie przyspieszał idąc po przekatnej
 		direction = direction.rotated(Vector3.UP, deg_to_rad(-45))
-		print(direction.z)
 	
 	
 	
