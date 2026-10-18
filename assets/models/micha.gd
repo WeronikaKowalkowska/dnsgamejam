@@ -17,4 +17,4 @@ func _on_body_entered(body: Node3D) -> void:
 		if Scenes.current_scene == "main":
 			get_tree().change_scene_to_file("res://scenes/tutorialScena.tscn")
 		elif Scenes.current_scene == "tutorial":
-			get_tree().change_scene_to_file(Scenes.MENU_FILE)
+			get_tree().change_scene_to_packed(Scenes.VICTORY)
