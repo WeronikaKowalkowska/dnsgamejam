@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gdim62rciu3p"]
 
+[ext_resource type="Script" uid="uid://cgeyqshfv0j31" path="res://scenes/tutorial_scena.gd" id="1_xhv06"]
 [ext_resource type="Script" uid="uid://cirijdoiwfyqb" path="res://scripts/KotLiveScript.gd" id="2_lreeg"]
 [ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_n.png" id="4_tgp1v"]
 [ext_resource type="Texture2D" uid="uid://d3sys1wv213ro" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_ne.png" id="5_gtmbk"]
@@ -525,10 +526,11 @@ _data = {
 point_count = 6
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xhv06"]
-height = 0.24719238
-radius = 0.25
+height = 0.6773071
+radius = 0.38964844
 
 [node name="Tutorial" type="Node3D" unique_id=1731204749]
+script = ExtResource("1_xhv06")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=584504574]
 
@@ -684,5 +686,5 @@ collision_mask = 2048
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=1135939090]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123107895, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33816528, 0)
 shape = SubResource("CylinderShape3D_xhv06")
