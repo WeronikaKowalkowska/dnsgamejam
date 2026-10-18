@@ -11,6 +11,8 @@ func _ready() -> void:
 	exit_btn.pressed.connect(func():
 		get_tree().paused = false
 		match Scenes.current_scene:
+			"tutorial":
+				get_tree().change_scene_to_file(Scenes.MENU_FILE)
 			"main":
 				get_tree().change_scene_to_file(Scenes.MENU_FILE)
 			"menu":

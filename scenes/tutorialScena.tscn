@@ -98,7 +98,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wddr1"]
 size = Vector3(0.68011475, 1, 0.8000488)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alm0x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxhor"]
 bg_color = Color(0, 0, 0, 0.49803922)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -581,7 +581,7 @@ layout_mode = 2
 [node name="Label3" type="Label" parent="GUI/Debug/VBoxContainer" unique_id=2143691713]
 layout_mode = 2
 
-[node name="GameOver" type="Control" parent="GUI" unique_id=1941260101]
+[node name="GameOver" type="Control" parent="GUI" unique_id=2110271669]
 process_mode = 3
 visible = false
 layout_mode = 3
@@ -592,7 +592,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("7_2rbow")
 
-[node name="CenterContainer" type="CenterContainer" parent="GUI/GameOver" unique_id=432045070]
+[node name="CenterContainer" type="CenterContainer" parent="GUI/GameOver" unique_id=870933303]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -600,24 +600,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="GUI/GameOver/CenterContainer" unique_id=957762104]
+[node name="Panel" type="Panel" parent="GUI/GameOver/CenterContainer" unique_id=1526869814]
 custom_minimum_size = Vector2(384, 256)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_alm0x")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gxhor")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/GameOver/CenterContainer" unique_id=26981961]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/GameOver/CenterContainer" unique_id=645674782]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=2146651006]
+[node name="Label" type="Label" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=455479209]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "Game Over"
+horizontal_alignment = 1
 
-[node name="RestartBtn" type="TextureButton" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=1308264051]
+[node name="RestartBtn" type="TextureButton" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=182861595]
 layout_mode = 2
 size_flags_horizontal = 4
 texture_normal = ExtResource("8_gxhor")
+
+[node name="Label2" type="Label" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=1006538037]
+layout_mode = 2
+text = "Press any key to restart"
+horizontal_alignment = 1
 
 [node name="CharacterBodyDog3D" parent="." unique_id=1058109685 instance=ExtResource("11_swd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.820149, 0.9999995, -5.979006)
