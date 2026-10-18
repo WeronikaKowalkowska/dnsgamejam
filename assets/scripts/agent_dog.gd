@@ -17,7 +17,7 @@ var countState = 0
 var points: PackedVector3Array
 var indexPoint = -1
 
-var SPEED = 3.0
+var SPEED = 2.0
 const RANGE_IDLE = 3.0
 
 var movement_delta: float
@@ -104,27 +104,27 @@ func _IDLE():
 		random_position.z = global_position.z + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
 		navigation_agent_3d.set_target_position(random_position)
 		
-	if (randi_range(1, 20) <= countState):
+	if (randi_range(1, 10) <= countState):
 		_state = PlayerState.PATROL
 		countState = 0
 
 func _PATROL():
-	SPEED = 3.0
+	SPEED = 2.5
 	navigation_agent_3d.set_target_position(path.to_global(points[indexPoint]))
 	indexPoint += 1
 	if (indexPoint >= points.size()):
 		indexPoint = 0
 	
-	if (randi_range(1, 5000) <= countState):
+	if (randi_range(1, 7000) <= countState):
 		_state = PlayerState.IDLE
 		countState = 0
 
 func _ATTACK():
 	if catAliveNode:
-		SPEED = 6.0
+		SPEED = 5.0
 		
 	if catSpectre:
-		SPEED = 5.0
+		SPEED = 4.0
 
 
 #func _SEARCH():
