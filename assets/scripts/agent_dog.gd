@@ -175,8 +175,10 @@ func _ATTACK():
 
 func _entered_collision_cat(body: Node3D):
 	if (body.is_in_group("catAlive")):
+		
 		get_tree().paused = true
 		game_over.show()
+		Utils.is_game_over = true
 		
 	if (body.is_in_group("catSpectre")):
 		positionStopInSpectreCar = global_position

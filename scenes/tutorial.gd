@@ -17,35 +17,35 @@ var step: int = -1:
 				hide()
 				return
 			0:
-				step_title.text = "Controls"
-				step_description.text = "Press W, A, S, D\n to move the cat.\n(Space)"
+				step_title.text = "Sterowanie"
+				step_description.text = "Naciskaj przyciski W, A, S, D\naby poruszać kotem."
 			1:
 				step_title.text = "Hologram"
-				step_description.text = "Masz możliwość utworzenia hologramowej wersji twojej postaci.\n(Spacja)"
+				step_description.text = "Masz możliwość utworzenia hologramowej wersji twojej postaci."
 			2:
 				step_title.text = "Tworzenie hologramu"
-				step_description.text = "Naciśnij przycisk \"E\" aby mieć możliwość utworzenia hologramu.\n(Spacja)"
+				step_description.text = "Naciśnij przycisk \"E\" aby mieć możliwość utworzenia hologramu."
 			3:
 				step_title.text = "Stawianie hologramu"
-				step_description.text = "Naciśnij prawy przycisk myszy, aby móc umieścić hologram.\n(Spacja)"
+				step_description.text = "Naciśnij prawy przycisk myszy, aby móc umieścić hologram."
 			4:
 				step_title.text = "Usuwanie hologramu"
-				step_description.text = "Kliknij ponownie przycisk \"E\" aby usunąć hologram.\n(Spacja)"
+				step_description.text = "Kliknij ponownie przycisk \"E\" aby usunąć hologram."
 			5:
 				step_title.text = "Dodatkowa pomoc"
-				step_description.text = "Możesz sterować hologramem klikając prawy przycisk myszy.\n(Spacja)"
+				step_description.text = "Możesz sterować hologramem klikając prawy przycisk myszy."
 			6:
 				step_title.text = "Odległość"
-				step_description.text = "Hologram zacznie znikać gdy znajdzie się zbyt daleko od kota.\n(Spacja)"
+				step_description.text = "Hologram zacznie znikać gdy znajdzie się zbyt daleko od kota."
 			7:
 				step_title.text = "Zmyłka"
-				step_description.text = "Hologram zwraca na siebie uwagę psów, używaj tego do odciągania ich z drogi.\n(Spacja)"
+				step_description.text = "Hologram zwraca na siebie uwagę psów, używaj tego do odciągania ich z drogi."
 			8:
 				step_title.text = "Przeciwnik"
-				step_description.text = "Twoim wrogiem będą psy, musisz ich unikać.\n(Spacja)"
+				step_description.text = "Twoim wrogiem będą psy, musisz ich unikać."
 			9:
 				step_title.text = "Cel gry"
-				step_description.text = "Twoim zadaniem jest dostać się do karmy. Powodzenia!\n(Spacja)"
+				step_description.text = "Twoim zadaniem jest dostać się do karmy. Powodzenia!"
 		show()
 
 func _ready() -> void:

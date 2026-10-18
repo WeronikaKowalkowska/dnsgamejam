@@ -8,5 +8,11 @@ func _ready() -> void:
 
 
 func restart() -> void:
+	Utils.is_game_over = false
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if Utils.is_game_over:
+			restart()

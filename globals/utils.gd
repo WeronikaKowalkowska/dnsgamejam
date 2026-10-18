@@ -22,6 +22,8 @@ var sfx_volume: int = 50:
 
 var all_buttons: Dictionary
 
+var is_game_over: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_language = 1
