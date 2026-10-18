@@ -35,7 +35,7 @@ size = Vector3(0.7809143, 1, 2.465332)
 size = Vector3(3.7243042, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_liv67"]
-size = Vector3(0.7501221, 1, 12)
+size = Vector3(0.7501221, 1, 11.353394)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8up1n"]
 size = Vector3(3.7537842, 1, 1.1907959)
@@ -118,11 +118,11 @@ shape = SubResource("BoxShape3D_8l7d5")
 transform = Transform3D(1, 0, 0, 0, 1.371095, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=1481031723]
-transform = Transform3D(1, 0, 0, 0, 1.8794695, 0, 0, 0, 1, 0, 0.3544054, 0)
+transform = Transform3D(1, 0, 0, 0, 1.8794695, 0, 0, 0, 0.78694934, 0, 0.3544054, -0.28794193)
 collision_layer = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5" unique_id=1528175010]
-transform = Transform3D(1.1999997, 0, 0, 0, 1.2387896, 0, 0, 0, 0.9999998, -0.14992672, 0, 4.4999986)
+transform = Transform3D(1.1999997, 0, 0, 0, 1.2387896, 0, 0, 0, 0.9999999, -0.14992672, 0, 4.176696)
 shape = SubResource("BoxShape3D_liv67")
 
 [node name="level1_11" parent="StaticBody3D5" unique_id=1651250728 instance=ExtResource("11_rjket")]
