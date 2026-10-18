@@ -91,18 +91,19 @@ func _IDLE():
 	SPEED = 1.0
 	await get_tree().create_timer(2).timeout
 	var random_position: Vector3 
-	random_position.x = global_position.x + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
-	random_position.z = global_position.z + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
-	while abs(random_position.x - global_position.x) < 0.9:
-		random_position.x = global_position.x + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
-	while abs(random_position.z - global_position.z) < 0.9:
-		random_position.z = global_position.z + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
-	navigation_agent_3d.set_target_position(random_position)
 	
-	while not navigation_agent_3d.is_target_reachable():
+	var attempts = 0
+	var max_attempts = 10
+	
+	while attempts < max_attempts:
 		random_position.x = global_position.x + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
 		random_position.z = global_position.z + snapped(randf_range(-RANGE_IDLE, RANGE_IDLE), 0.1)
-		navigation_agent_3d.set_target_position(random_position)
+		
+		if abs(random_position.x - global_position.x) >= 0.9 and abs(random_position.z - global_position.z) >= 0.9:
+			navigation_agent_3d.set_target_position(random_position)
+			if navigation_agent_3d.is_target_reachable():
+				break
+		attempts += 1
 		
 	if (randi_range(1, 20) <= countState):
 		_state = PlayerState.PATROL

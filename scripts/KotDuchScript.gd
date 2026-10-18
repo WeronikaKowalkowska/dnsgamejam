@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-@onready var label: Label = $'../GUI/Debug/VBoxContainer/Label'
-@onready var label_2: Label = $'../GUI/Debug/VBoxContainer/Label2'
-@onready var label_3: Label = $'../GUI/Debug/VBoxContainer/Label3'
+@onready var label: Label = get_node_or_null("../GUI/Debug/VBoxContainer/Label")
+@onready var label_2: Label = get_node_or_null("../GUI/Debug/VBoxContainer/Label2")
+@onready var label_3: Label = get_node_or_null("../GUI/Debug/VBoxContainer/Label3")
 
 @onready var sprite_3d: AnimatedSprite3D = $Sprite3D
 
