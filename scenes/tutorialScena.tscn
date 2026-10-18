@@ -622,7 +622,10 @@ texture_normal = ExtResource("8_gxhor")
 [node name="CharacterBodyDog3D" parent="." unique_id=1058109685 instance=ExtResource("11_swd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3776581, 0.9999995, 0.66900325)
 
-[node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("11_swd00")]
+[node name="CharacterBodyDog3D2" parent="." unique_id=727850767 instance=ExtResource("11_swd00")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1122689, 1, -6.114625)
+
+[node name="CharacterBody3D" parent="." unique_id=1660781649 instance=ExtResource("11_swd00")]
 transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -1.986, 1, 4.843)
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=498940902 groups=["catAlive"]]
@@ -663,6 +666,7 @@ animation = &"idle_n"
 navigation_mesh = SubResource("NavigationMesh_8cgj6")
 
 [node name="buildings" parent="NavigationRegion3D" unique_id=1157841335 instance=ExtResource("13_g8vqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022602558, 0, 0.0131287575)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1173780769]
 transform = Transform3D(19.880089, 0, 0, 0, 1, 0, 0, 0, 21.76654, 2.421, -0.5, 0)
