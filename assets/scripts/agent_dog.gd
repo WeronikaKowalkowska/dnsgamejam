@@ -188,6 +188,7 @@ func _physics_process(delta: float) -> void:
 		navigation_agent_3d.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
+	
 
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:

@@ -15,13 +15,14 @@ func _ready() -> void:
 	
 	Signals.menu_open_window.connect(open_window)
 	close_btn.pressed.connect(close_window)
+	
+	Utils.all_buttons[close_btn] = close_btn
 
 func _input(event: InputEvent) -> void:
 	if current_window:
 		if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 			close_window()
 			get_viewport().set_input_as_handled()
-
 
 
 func open_window(window_name: String) -> void:
@@ -42,3 +43,6 @@ func close_window() -> void:
 	current_window.hide()
 	hide()
 	current_window = null
+
+func _exit_tree() -> void:
+	Utils.all_buttons.erase(close_btn)
