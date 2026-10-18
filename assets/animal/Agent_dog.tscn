@@ -310,6 +310,7 @@ mesh = SubResource("CapsuleMesh_swaa2")
 shape = SubResource("CapsuleShape3D_hqvog")
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=424208173 groups=["catAlive"]]
+collision_layer = 7
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1481095810]
