@@ -5,6 +5,7 @@ const DOG_BARK_V_2_1 = preload('uid://c624kfsfxxyug')
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $View/DetectionArea
 @onready var path: Path3D = get_tree().current_scene.get_node("Path3D")
+@onready var sprite: AnimatedSprite3D = $DogSprite
 
 static var spectre_attacker: Node3D = null
 
@@ -39,7 +40,7 @@ var barked: bool = false
 
 func _ready():
 	game_over.hide()
-	
+	sprite.modulate = Color.WHITE
 	if path:
 		points = path.curve.get_baked_points()
 		if points.size() > 0:
@@ -80,6 +81,7 @@ func _raycast_check_cat(cat: Node3D, group: StringName) -> bool:
 	return false
 
 func _check_cats() -> bool:
+	sprite.modulate = Color.WHITE
 	if catAliveNode:
 		lastPositionAliveCat = catAliveNode.global_position
 		if _raycast_check_cat(catAliveNode, "catAlive"):
@@ -148,6 +150,7 @@ func bark() -> void:
 		barked = false
 
 func _ATTACK():
+	sprite.modulate = Color("#de92a9")
 	bark()
 	if catAliveNode:
 		SPEED = 5.0
