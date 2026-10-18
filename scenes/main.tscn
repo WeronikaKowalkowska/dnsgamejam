@@ -651,7 +651,7 @@ shape = SubResource("WorldBoundaryShape3D_15n48")
 transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 8.389073, 7.4877424, 7.2156544)
 cull_mask = 1048567
 projection = 1
-size = 20.0
+size = 21.0
 script = ExtResource("5_jkv2x")
 
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
@@ -689,7 +689,7 @@ animation = &"idle_n"
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1646519035]
 
 [node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.299, 0.5, -4.499)
+transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -1.3852751, 0.5, -4.499)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
 navigation_mesh = SubResource("NavigationMesh_tipki")
