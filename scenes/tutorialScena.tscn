@@ -554,6 +554,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 sky_mode = 1
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1132485551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32186985, 0)
 collision_layer = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=642584916]
@@ -697,7 +698,7 @@ sprite_frames = SubResource("SpriteFrames_of2g4")
 animation = &"dash_ne"
 
 [node name="KotDuchCharacterBody3D" type="CharacterBody3D" parent="." unique_id=1082254950 groups=["catSpectre"]]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 8.804494, 0.5, -3.326449)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 8.804, 0.538, -3.326)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("11_5xv8u")
