@@ -22,7 +22,7 @@ func _ready() -> void:
 	
 	play_btn.pressed.connect(func():
 		Audio.stop_music()
-		get_tree().change_scene_to_file("res://scenes/tutorialScena.tscn")
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
 		)
 	
 	Utils.all_buttons[play_btn] = play_btn

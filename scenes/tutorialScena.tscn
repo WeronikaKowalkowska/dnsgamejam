@@ -90,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://cen888jee21" path="res://assets/sprites/normal_cat/dash/normal_cat_dash_w4.png" id="82_f76vr"]
 [ext_resource type="Texture2D" uid="uid://cvmwnc3sortal" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_e.png" id="83_7qukw"]
 [ext_resource type="Texture2D" uid="uid://hlum8j4hmvq2" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_w.png" id="90_xf0gy"]
+[ext_resource type="PackedScene" uid="uid://deqe8ykh2k5ii" path="res://assets/models/MichaZZarciem.fbx" id="91_8cgj6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wddr1"]
 size = Vector3(0.68011475, 1, 0.8000488)
@@ -523,6 +524,10 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xhv06"]
+height = 0.24719238
+radius = 0.25
+
 [node name="Tutorial" type="Node3D" unique_id=1731204749]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=584504574]
@@ -669,3 +674,15 @@ animation = &"dash_ne"
 [node name="Path3D" type="Path3D" parent="." unique_id=156684528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2093697, 0, -6.1942897)
 curve = SubResource("Curve3D_tr6gx")
+
+[node name="Micha" parent="." unique_id=111147647 instance=ExtResource("91_8cgj6")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.1371305, -1.5074387, -10.034291)
+
+[node name="MichaArea" type="Area3D" parent="Micha" unique_id=332590575]
+collision_layer = 512
+collision_mask = 2048
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Micha/MichaArea" unique_id=1135939090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123107895, 0)
+shape = SubResource("CylinderShape3D_xhv06")

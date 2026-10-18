@@ -13,7 +13,9 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
-		get_tree().call_deferred("change_scene_to_file", Scenes.MENU_FILE)
+		#get_tree().call_deferred("change_scene_to_file", Scenes.MENU_FILE)
+		get_tree().change_scene_to_file("res://scenes/tutorialScena.tscn")
+		
 
 func play_gameplay_music() -> void:
 	await get_tree().create_timer(1).timeout
