@@ -23,4 +23,3 @@ func play_gameplay_music() -> void:
 func _exit_tree() -> void:
 	Audio.current_music = null
 	Audio.stop_music()
-	Audio.sfx.stop()
