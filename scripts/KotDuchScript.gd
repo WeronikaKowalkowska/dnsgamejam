@@ -233,11 +233,11 @@ func handle_click(click_position: Vector3):
 	var distance = kot_pos.distance_to(click_position)
 	
 	var target_position: Vector3
-	
-	if distance <= 6.0:
-		target_position = click_position
-	else:
-		var direction = kot_pos.direction_to(click_position)
-		target_position = kot_pos + direction * 6.0
+	target_position = click_position
+	#if distance <= 6.0:
+	#	target_position = click_position
+	#else:
+	#	var direction = kot_pos.direction_to(click_position)
+	#	target_position = kot_pos + direction * 6.0
 		
 	kot_duch_agent.target_position = target_position

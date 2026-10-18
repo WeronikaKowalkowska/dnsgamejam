@@ -122,6 +122,7 @@ background_color = Color(0.12318372, 0.09510297, 0.365275, 1)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_15n48"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_15n48"]
+radius = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_15n48"]
 animations = [{
@@ -708,6 +709,13 @@ collision_layer = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1819890612]
 shape = SubResource("WorldBoundaryShape3D_15n48")
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1223964158]
+transform = Transform3D(0.70710677, -0.5770964, 0.40860704, 0, 0.5778576, 0.8161376, -0.70710677, -0.5770964, 0.40860704, 8.389073, 7.4877424, 7.2156544)
+cull_mask = 1048567
+projection = 1
+size = 21.0
+script = ExtResource("5_jkv2x")
+
 [node name="KotCharacterBody3D" type="CharacterBody3D" parent="." unique_id=644475014 groups=["catAlive"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 9.03474, 0.5773463, 2.3115363)
 collision_layer = 2053
@@ -743,7 +751,7 @@ animation = &"idle_n"
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="KotDuchCharacterBody3D" unique_id=1646519035]
 
 [node name="CharacterBody3D" parent="." unique_id=727850767 instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -2.299, 0.5, -4.499)
+transform = Transform3D(1, -1.5832484e-08, 1.3038516e-08, 3.7252903e-09, 1.0000001, 2.9802322e-08, 3.5390258e-08, -2.9802322e-08, 1, -1.3852751, 0.5, -4.499)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=966443250]
 navigation_mesh = SubResource("NavigationMesh_tipki")
