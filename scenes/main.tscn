@@ -588,6 +588,7 @@ offset_bottom = 40.0
 
 [node name="GameOver" type="Control" parent="GUI" unique_id=244580700]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

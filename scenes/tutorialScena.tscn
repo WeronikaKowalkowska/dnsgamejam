@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b28vx6ukr6s5i" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_n.png" id="4_tgp1v"]
 [ext_resource type="Texture2D" uid="uid://d3sys1wv213ro" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_ne.png" id="5_gtmbk"]
 [ext_resource type="Texture2D" uid="uid://ctqp70tq6k24l" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_nw.png" id="6_8ee1e"]
+[ext_resource type="Script" uid="uid://diq2k2x8b62wj" path="res://scenes/game_over.gd" id="7_2rbow"]
 [ext_resource type="Texture2D" uid="uid://cdtvbmai6h3hm" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_s.png" id="7_7xj3a"]
 [ext_resource type="Texture2D" uid="uid://cg2oc70jcynqg" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_se.png" id="8_4qqyl"]
+[ext_resource type="Texture2D" uid="uid://dq5sq1mag3hyy" path="res://assets/restart_button_wo_128x128.svg" id="8_gxhor"]
 [ext_resource type="Texture2D" uid="uid://cxt8gqtymr2ly" path="res://assets/sprites/normal_cat/idle/normal_cat_idle_sw.png" id="9_415c4"]
 [ext_resource type="Script" uid="uid://dj8y37nvm1btm" path="res://scripts/KotDuchScript.gd" id="11_5xv8u"]
 [ext_resource type="PackedScene" uid="uid://buo81e5n6vmcr" path="res://assets/animal/Agent_dog.tscn" id="11_swd00"]
@@ -96,6 +98,13 @@
 size = Vector3(0.68011475, 1, 0.8000488)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7j2a"]
+bg_color = Color(0, 0, 0, 0.49803922)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alm0x"]
 bg_color = Color(0, 0, 0, 0.49803922)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
@@ -626,6 +635,44 @@ theme_override_font_sizes/normal_font_size = 18
 text = "step_description"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameOver" type="Control" parent="GUI" unique_id=1941260101]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_2rbow")
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/GameOver" unique_id=432045070]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GUI/GameOver/CenterContainer" unique_id=957762104]
+custom_minimum_size = Vector2(384, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_alm0x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/GameOver/CenterContainer" unique_id=26981961]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=2146651006]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Game Over"
+
+[node name="RestartBtn" type="TextureButton" parent="GUI/GameOver/CenterContainer/VBoxContainer" unique_id=1308264051]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("8_gxhor")
 
 [node name="CharacterBodyDog3D" parent="." unique_id=1058109685 instance=ExtResource("11_swd00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3776581, 0.9999995, 0.66900325)
