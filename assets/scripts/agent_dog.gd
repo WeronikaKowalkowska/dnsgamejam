@@ -32,7 +32,7 @@ func _ready():
 	if path:
 		points = path.curve.get_baked_points()
 		if points.size() > 0:
-			indexPoint = 0
+			indexPoint = randi_range(0, points.size() - 1)
 	_state = PlayerState.IDLE
 	_IDLE()
 
